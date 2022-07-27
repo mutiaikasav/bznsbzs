@@ -3,7 +3,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-            <img src="assets/img/logo.png" alt="" width="60px" height="60px">
+            <img src="<?php base_url();?>/assets/img/logo.png" alt="" width="60px" height="60px">
         </div>
     </a>
     <!-- Divider -->
@@ -17,13 +17,13 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="about">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-info fa-tachometer-alt"></i>
             <span>Tentang Kami</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <a class="nav-link" href="banner">
+            <i class="fas fa-image fa-tachometer-alt"></i>
             <span>Banner</span>
         </a>
     </li>

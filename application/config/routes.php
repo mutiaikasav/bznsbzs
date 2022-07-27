@@ -52,3 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['banner-add'] = 'banner/add';
+$route['banner-edit/(:num)'] = 'banner/edit/$1';
+$route['banner-delete/(:num)'] = 'banner/delete/$1';
