@@ -64,3 +64,7 @@ $route['collaboration-delete/(:num)'] = 'collaboration/delete/$1';
 $route['bank-add'] = 'bank/add';
 $route['bank-edit/(:num)'] = 'bank/edit/$1';
 $route['bank-delete/(:num)'] = 'bank/delete/$1';
+
+$route['program-add'] = 'program/add';
+$route['program-edit/(:num)'] = 'program/edit/$1';
+$route['program-delete/(:num)'] = 'program/delete/$1';

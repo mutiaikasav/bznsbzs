@@ -78,8 +78,8 @@
     </div>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <a class="nav-link" href="program">
+            <i class="fas fa-fw fa-object-group"></i>
             <span>Program Category</span>
         </a>
     </li>
