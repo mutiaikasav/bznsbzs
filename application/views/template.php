@@ -21,6 +21,8 @@
     <link href="assets/css/sb-admin-2.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <script src="assets/js/demo/tinymce-demo.min.js"></script>
 </head>
 <body id="page-top">
     <!-- Page Wrapper -->
@@ -36,9 +38,7 @@
                 <?php $this->load->view('partials/navbar'); ?>
 
                 <!-- content -->
-                <?php $this->load->view('dashboard'); ?>
-
-
+                <?= @$content; ?>
             </div>
             <!-- End of Main Content -->
 
@@ -73,5 +73,13 @@
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/datatables-demo.js"></script>
 
+    <!-- TinyMCE -->
+    <script>
+        tinymce.init({
+            selector: 'textarea#default'
+        });
+    </script>
+
 </body>
 </html>
+<?php die;?>
