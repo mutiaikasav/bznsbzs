@@ -84,8 +84,8 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <a class="nav-link" href="category">
+            <i class="fas fa-fw fa-layer-group"></i>
             <span>News Category</span>
         </a>
     </li>

@@ -68,3 +68,7 @@ $route['bank-delete/(:num)'] = 'bank/delete/$1';
 $route['program-add'] = 'program/add';
 $route['program-edit/(:num)'] = 'program/edit/$1';
 $route['program-delete/(:num)'] = 'program/delete/$1';
+
+$route['category-add'] = 'category/add';
+$route['category-edit/(:num)'] = 'category/edit/$1';
+$route['category-delete/(:num)'] = 'category/delete/$1';
