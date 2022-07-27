@@ -59,7 +59,7 @@
                 <textarea class="tinymce" id="kebijakan" name="kebijakan"><?= $data[0]->kebijakan?></textarea>
             </div>
         </div>
-        <button class="btn btn-primary btn-icon-split" type="submit">
+        <button class="btn btn-success btn-icon-split" type="submit">
             <span class="icon text-white-50">
                 <i class="fas fa-save"></i>
             </span>
