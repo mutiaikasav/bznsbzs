@@ -99,10 +99,11 @@
         <div id="collapseArticle" class="collapse" aria-labelledby="headingArticle"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="utilities-color.html">Create New</a>
-                <a class="collapse-item" href="utilities-border.html">Published</a>
-                <a class="collapse-item" href="utilities-animation.html">Draft</a>
-                <a class="collapse-item" href="utilities-other.html">Delete</a>
+                <a class="collapse-item" href="article-add">Create New</a>
+                <a class="collapse-item" href="article">Published</a>
+                <a class="collapse-item" href="article-draft">Draft</a>
+                <a class="collapse-item" href="article-pending">Pending</a>
+                <a class="collapse-item" href="article-hide">Delete</a>
                 <a class="collapse-item" href="utilities-other.html">Comments</a>
             </div>
         </div>

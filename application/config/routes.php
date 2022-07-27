@@ -72,3 +72,10 @@ $route['program-delete/(:num)'] = 'program/delete/$1';
 $route['category-add'] = 'category/add';
 $route['category-edit/(:num)'] = 'category/edit/$1';
 $route['category-delete/(:num)'] = 'category/delete/$1';
+
+$route['article-draft'] = 'article/draft';
+$route['article-pending'] = 'article/pending';
+$route['article-hide'] = 'article/hide';
+$route['article-add'] = 'article/add';
+$route['article-edit/(:num)'] = 'article/edit/$1';
+$route['article-delete/(:num)'] = 'article/delete/$1';
