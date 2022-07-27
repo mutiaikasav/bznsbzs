@@ -59,8 +59,8 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
+        <a class="nav-link" href="bank">
+            <i class="fas fa-fw fa-money-check"></i>
             <span>Rekening</span>
         </a>
     </li>
