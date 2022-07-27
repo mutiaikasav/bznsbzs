@@ -17,13 +17,13 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="about">
-            <i class="fas fa-info fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-info"></i>
             <span>Tentang Kami</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="banner">
-            <i class="fas fa-image fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-image"></i>
             <span>Banner</span>
         </a>
     </li>
@@ -34,8 +34,8 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <a class="nav-link" href="collaboration">
+            <i class="fas fa-fw fa-handshake"></i>
             <span>Kerjasama</span>
         </a>
     </li>

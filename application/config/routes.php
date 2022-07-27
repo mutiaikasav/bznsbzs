@@ -56,3 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['banner-add'] = 'banner/add';
 $route['banner-edit/(:num)'] = 'banner/edit/$1';
 $route['banner-delete/(:num)'] = 'banner/delete/$1';
+
+$route['collaboration-add'] = 'collaboration/add';
+$route['collaboration-edit/(:num)'] = 'collaboration/edit/$1';
+$route['collaboration-delete/(:num)'] = 'collaboration/delete/$1';
