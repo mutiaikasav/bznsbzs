@@ -129,7 +129,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="report">
             <i class="fas fa-fw fa-file"></i>
             <span>Laporan</span>
         </a>
