@@ -104,7 +104,7 @@
                 <a class="collapse-item" href="article-draft">Draft</a>
                 <a class="collapse-item" href="article-pending">Pending</a>
                 <a class="collapse-item" href="article-hide">Delete</a>
-                <a class="collapse-item" href="utilities-other.html">Comments</a>
+                <a class="collapse-item" href="comments">Comments</a>
             </div>
         </div>
     </li>

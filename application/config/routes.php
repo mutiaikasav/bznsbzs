@@ -79,3 +79,4 @@ $route['article-hide'] = 'article/hide';
 $route['article-add'] = 'article/add';
 $route['article-edit/(:num)'] = 'article/edit/$1';
 $route['article-delete/(:num)'] = 'article/delete/$1';
+$route['comments'] = 'article/comments';

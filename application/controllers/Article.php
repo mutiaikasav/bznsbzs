@@ -8,6 +8,7 @@ class Article extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->model('article_model');
+        $this->load->model('comment_model');
     }
 
     public function index()
@@ -82,5 +83,12 @@ class Article extends CI_Controller
         $data['status'] = 3;
         $this->article_model->update($id, $data);
         redirect('../../article');
+    }
+
+    public function comments()
+    {
+        $content['data'] = $this->comment_model->get();
+        $data['content'] = $this->helper->loadView('comments', $content, TRUE);
+        return $this->load->view('template', $data, TRUE);
     }
 }
