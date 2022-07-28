@@ -92,3 +92,7 @@ $route['publication-delete/(:num)'] = 'publication/delete/$1';
 $route['user-add'] = 'user/add';
 $route['user-edit/(:num)'] = 'user/edit/$1';
 $route['user-delete/(:num)'] = 'user/delete/$1';
+
+$route['role-add'] = 'role/add';
+$route['role-edit/(:num)'] = 'role/edit/$1';
+$route['role-delete/(:num)'] = 'role/delete/$1';
