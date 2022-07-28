@@ -29,7 +29,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-heading"></i>
             <span>Headline</span>
         </a>
     </li>
@@ -66,7 +66,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa-money-check"></i>
             <span>Konfirmasi Zakat</span>
         </a>
     </li>
@@ -93,7 +93,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseArticle"
             aria-expanded="true" aria-controls="collapseArticle">
-            <i class="fas fa-fw fa-wrench"></i>
+            <i class="fas fa-fw fa-file"></i>
             <span>Articles</span>
         </a>
         <div id="collapseArticle" class="collapse" aria-labelledby="headingArticle"
@@ -116,18 +116,10 @@
     </div>
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGaleri"
-            aria-expanded="true" aria-controls="collapseGaleri">
-            <i class="fas fa-fw fa-wrench"></i>
+        <a class="nav-link" href="gallery">
+            <i class="fas fa-fw fa-images"></i>
             <span>Galeri</span>
         </a>
-        <div id="collapseGaleri" class="collapse" aria-labelledby="headingGaleri"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="utilities-color.html">Foto</a>
-                <a class="collapse-item" href="utilities-border.html">Video</a>
-            </div>
-        </div>
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
