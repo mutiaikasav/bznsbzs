@@ -124,13 +124,13 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-file"></i>
             <span>Publikasi</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-file"></i>
             <span>Laporan</span>
         </a>
     </li>
@@ -144,20 +144,20 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-users"></i>
             <span>User</span>
         </a>
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-user"></i>
             <span>Role</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-user"></i>
             <span>Admin</span>
         </a>
     </li>
