@@ -156,7 +156,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="admin">
             <i class="fas fa-fw fa-user"></i>
             <span>Admin</span>
         </a>

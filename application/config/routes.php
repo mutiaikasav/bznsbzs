@@ -96,3 +96,7 @@ $route['user-delete/(:num)'] = 'user/delete/$1';
 $route['role-add'] = 'role/add';
 $route['role-edit/(:num)'] = 'role/edit/$1';
 $route['role-delete/(:num)'] = 'role/delete/$1';
+
+$route['admin-add'] = 'admin/add';
+$route['admin-edit/(:num)'] = 'admin/edit/$1';
+$route['admin-delete/(:num)'] = 'admin/delete/$1';
