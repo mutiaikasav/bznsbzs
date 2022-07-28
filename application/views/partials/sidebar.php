@@ -143,7 +143,7 @@
     <!-- Nav Item - Utilities Collapse Menu -->
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="user">
             <i class="fas fa-fw fa-users"></i>
             <span>User</span>
         </a>
