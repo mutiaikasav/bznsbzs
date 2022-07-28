@@ -123,7 +123,7 @@
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="publication">
             <i class="fas fa-fw fa-file"></i>
             <span>Publikasi</span>
         </a>
