@@ -38,10 +38,12 @@
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" class="form-control" value="<?= @$data[0]->username; ?>">
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" value="<?= @$data[0]->password; ?>">
-                </div>
+                <?php if ($data[0]->password==null) { ?>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" value="<?= @$data[0]->password; ?>">
+                    </div>
+                <?php } ?>
                 <div class="form-group">
                     <label for="phone">Telepon</label>
                     <input type="number" id="phone" name="phone" class="form-control" value="<?= @$data[0]->phone; ?>">
@@ -49,6 +51,10 @@
                 <div class="form-group">
                     <label for="role">Peran</label>
                     <input type="text" id="role" name="role" class="form-control" value="<?= @$data[0]->role; ?>">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" id="old_photo" name="old_photo" value="<?= @$data[0]->photo; ?>" class="form-control">
+                    <img src="<?= base_url()?>/assets/img/user/<?= @$data[0]->photo; ?>" alt="" width="100">
                 </div>
                 <div class="form-group">
                     <label for="photo">Foto</label>

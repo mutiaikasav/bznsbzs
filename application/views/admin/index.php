@@ -30,7 +30,7 @@
                         <?php $i=1; foreach ($data as $admin) { ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $admin->photo; ?></td>
+                            <td><img src="<?= base_url()?>/assets/img/admin/<?= $admin->photo; ?>" alt="" width="100"></td>
                             <td><?= $admin->nik; ?></td>
                             <td><?= $admin->name; ?></td>
                             <td><?= $admin->username; ?></td>
@@ -39,7 +39,7 @@
                                 <a href="admin-edit/<?= $admin->id_admin; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="admin-delete/<?= $admin->id_admin; ?>" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus('<?= base_url()?>/admin-delete/<?= $admin->id_admin; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

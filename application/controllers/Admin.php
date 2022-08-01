@@ -35,22 +35,48 @@ class Admin extends CI_Controller
         $data['address'] = $this->input->post('address');
         $data['email'] = $this->input->post('email');
         $data['username'] = $this->input->post('username');
-        // $data['password'] = $this->input->post('password');
+        $data['password'] = md5($this->input->post('password'));
         $data['role'] = $this->input->post('role');
         $data['phone'] = $this->input->post('phone');
-        // $data['photo'] = $this->input->post('photo');
+        if (!empty($_FILES['photo']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/img/admin';
+            $config['allowed_types']        = 'jpeg|jpg|png';
+            $config['max_size']             = 102400;
+            // $config['max_width']            = 2048;
+            // $config['max_height']           = 1024;
+            $config['file_name']            = 'admin';
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('photo'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload = $this->upload->data();
+                $photo = $upload['file_name'];
+            }
+        } else {
+            $photo = $this->input->post('old_photo');
+        }
+        $data['photo'] = $photo;
 
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = '1';
             $this->admin_model->update($id, $data);
-            redirect('../../admin');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('admin'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = '1';
             $this->admin_model->insert($data);
-            redirect('../../admin-add');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('admin'));
         }
     }
 
@@ -66,6 +92,6 @@ class Admin extends CI_Controller
     public function delete($id)
     {
         $this->admin_model->delete($id);
-        redirect('../../admin');
+        redirect(site_url('admin'));
     }
 }
