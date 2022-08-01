@@ -19,6 +19,10 @@
                     <input type="text" id="title_publication" name="title_publication" class="form-control" value="<?= @$data[0]->title_publication; ?>">
                 </div>
                 <div class="form-group">
+                    <a href="<?= base_url('assets/upload/').@$data[0]->content_publication?>" target="_blank"><?= @$data[0]->content_publication; ?></a>
+                    <input type="hidden" id="old_content_publication" name="old_content_publication" class="form-control" value="<?= @$data[0]->content_publication; ?>">
+                </div>
+                <div class="form-group">
                     <label for="content_publication">Konten</label>
                     <input type="file" id="content_publication" name="content_publication" class="form-control">
                 </div>

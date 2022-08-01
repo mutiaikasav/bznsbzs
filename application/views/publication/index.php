@@ -29,13 +29,13 @@
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $publication->title_publication; ?></td>
-                            <td><?= $publication->content_publication; ?></td>
+                            <td><a href="<?= base_url('assets/upload/').$publication->content_publication?>" target="_blank"><?= $publication->content_publication; ?></a></td>
                             <td><?= $publication->description_publication; ?></td>
                             <td>
                                 <a href="publication-edit/<?= $publication->id_publication; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="publication-delete/<?= $publication->id_publication; ?>" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus(<?php base_url()?>'/publication-delete/<?= $publication->id_publication; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

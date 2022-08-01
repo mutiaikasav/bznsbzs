@@ -27,7 +27,30 @@ class Publication extends CI_Controller
     public function save()
     {
         $id = $this->input->post('id');
-        // $data['content_publication'] = $this->input->post('content_publication');
+        if (!empty($_FILES['content_publication']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/upload';
+            $config['allowed_types']        = 'pdf|doc|docx|xls|xlxs|jpg|jpeg';
+            $config['max_size']             = 102400;
+            // $config['max_width']            = 2048;
+            // $config['max_height']           = 1024;
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('content_publication'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload = $this->upload->data();
+                $content_publication = $upload['file_name'];
+            }
+        } else {
+            $content_publication = $this->input->post('old_content_publication');
+        }
+        $data['content_publication'] = $content_publication;
         $data['title_publication'] = $this->input->post('title_publication');
         $data['description_publication'] = $this->input->post('description_publication');
         // update
@@ -35,12 +58,14 @@ class Publication extends CI_Controller
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = '1';
             $this->publication_model->update($id, $data);
-            redirect('../../publication');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('publication'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = '1';
             $this->publication_model->insert($data);
-            redirect('../../publication-add');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('publication'));
         }
     }
 
@@ -55,6 +80,6 @@ class Publication extends CI_Controller
     public function delete($id)
     {
         $this->publication_model->delete($id);
-        redirect('../../publication');
+        redirect(site_url('publication'));
     }
 }
