@@ -29,15 +29,15 @@
                         <?php $i=1; foreach ($data as $category) { ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $category->logo; ?></td>
+                            <td><img src="<?= base_url()?>/assets/img/kategori/<?= $category->logo; ?>" alt="" width="100"></td>
                             <td><?= $category->category_name; ?></td>
                             <td><?= $category->description; ?></td>
-                            <td><?= $category->cover_image; ?></td>
+                            <td><img src="<?= base_url()?>/assets/img/kategori/<?= $category->cover_image; ?>" alt="" width="100"></td>
                             <td>
                                 <a href="category-edit/<?= $category->id_category; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="category-delete/<?= $category->id_category; ?>" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus('<?= base_url()?>/category-delete/<?= $category->id_category; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

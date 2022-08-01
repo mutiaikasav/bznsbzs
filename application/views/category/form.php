@@ -15,6 +15,10 @@
             <form action="<?php base_url();?>/category/save" method="post" enctype="multipart/form-data">
                 <input type="hidden" id="id" name="id" class="form-control" value="<?= @$data[0]->id_category; ?>">
                 <div class="form-group">
+                    <input type="hidden" id="old_logo" name="old_logo" class="form-control" value="<?= @$data[0]->logo; ?>">
+                    <img src="<?= base_url().'assets/img/kategori/'.@$data[0]->logo; ?>" alt="" width="100">
+                </div>
+                <div class="form-group">
                     <label for="logo">Logo</label>
                     <input type="file" id="logo" name="logo" class="form-control">
                 </div>
@@ -25,6 +29,10 @@
                 <div class="form-group">
                     <label for="description">Deskripsi</label>
                     <input type="text" id="description" name="description" class="form-control" value="<?= @$data[0]->description; ?>">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" id="old_cover" name="old_cover" class="form-control" value="<?= @$data[0]->cover_image; ?>">
+                    <img src="<?= base_url().'assets/img/kategori/'.@$data[0]->cover_image; ?>" alt="" width="100">
                 </div>
                 <div class="form-group">
                     <label for="cover_image">Cover Image</label>

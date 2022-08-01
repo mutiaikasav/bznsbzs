@@ -27,21 +27,69 @@ class Category extends CI_Controller
     public function save()
     {
         $id = $this->input->post('id');
-        // $data['logo'] = $this->input->post('logo');
+        if (!empty($_FILES['logo']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/img/kategori';
+            $config['allowed_types']        = 'jpeg|jpg|png';
+            $config['max_size']             = 2040;
+            // $config['max_width']            = 2048;
+            // $config['max_height']           = 1024;
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('logo'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload = $this->upload->data();
+                $logo = $upload['file_name'];
+            }
+        } else {
+            $logo = $this->input->post('old_logo');
+        }
+        $data['logo'] = $logo;
         $data['category_name'] = $this->input->post('category_name');
         $data['description'] = $this->input->post('description');
-        // $data['cover_image'] = $this->input->post('cover_image');
+        if (!empty($_FILES['cover_image']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/img/kategori';
+            $config['allowed_types']        = 'jpeg|jpg|png';
+            $config['max_size']             = 102400;
+            // $config['max_width']            = 2048;
+            // $config['max_height']           = 1024;
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('cover_image'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload = $this->upload->data();
+                $cover = $upload['file_name'];
+            }
+        } else {
+            $cover = $this->input->post('old_cover');
+        }
+        $data['cover_image'] = $cover;
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = '1';
             $this->category_model->update($id, $data);
-            redirect('../../category');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('category'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = '1';
             $this->category_model->insert($data);
-            redirect('../../category-add');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('category'));
         }
     }
 
@@ -56,6 +104,6 @@ class Category extends CI_Controller
     public function delete($id)
     {
         $this->category_model->delete($id);
-        redirect('../../category');
+        redirect(site_url('category'));
     }
 }
