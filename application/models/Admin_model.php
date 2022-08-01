@@ -28,4 +28,12 @@ class Admin_model extends CI_Model {
         $this->db->where('id_admin', $id);
         $this->db->delete('admins');
     }
+
+    public function login($username, $pass)
+    {
+        $this->db->where('username', $username);
+        $this->db->where('password', $pass);
+        $query = $this->db->get('admins');
+        return $query->result();
+    }
 }

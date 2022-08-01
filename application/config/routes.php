@@ -53,6 +53,9 @@ $route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['authentication'] = 'login/process';
+$route['logout'] = 'login/signout';
+
 $route['banner-add'] = 'banner/add';
 $route['banner-edit/(:num)'] = 'banner/edit/$1';
 $route['banner-delete/(:num)'] = 'banner/delete/$1';
