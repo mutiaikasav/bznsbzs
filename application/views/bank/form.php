@@ -15,6 +15,10 @@
             <form action="<?php base_url();?>/bank/save" method="post" enctype="multipart/form-data">
                 <input type="hidden" id="id" name="id" class="form-control" value="<?= @$data[0]->id_bank_account; ?>">
                 <div class="form-group">
+                    <input type="hidden" id="old_logo" name="old_logo" value="<?= @$data[0]->logo_bank; ?>" class="form-control">
+                    <img src="<?= base_url().'assets/img/bank/'.@$data[0]->logo_bank; ?>" alt="" width="100">
+                </div>
+                <div class="form-group">
                     <label for="logo">Logo</label>
                     <input type="file" id="logo" name="logo" class="form-control">
                 </div>
@@ -24,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="account_number">Nomor Rekening</label>
-                    <input type="text" id="account_number" name="account_number" class="form-control" value="<?= @$data[0]->account_number; ?>">
+                    <input type="number" id="account_number" name="account_number" class="form-control" value="<?= @$data[0]->account_number; ?>">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success btn-icon-split form-control" type="submit">

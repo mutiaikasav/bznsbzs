@@ -28,14 +28,14 @@
                         <?php $i=1; foreach ($data as $bank) { ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $bank->logo_bank; ?></td>
+                            <td><img src="<?= base_url('assets/img/bank/'.$bank->logo_bank)?>" alt="" width="100"></td>
                             <td><?= $bank->name_bank; ?></td>
                             <td><?= $bank->account_number; ?></td>
                             <td>
                                 <a href="bank-edit/<?= $bank->id_bank_account; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="bank-delete/<?= $bank->id_bank_account; ?>" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus('<?php base_url()?>/bank-delete/<?= $bank->id_bank_account; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

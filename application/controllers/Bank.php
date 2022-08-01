@@ -27,7 +27,30 @@ class Bank extends CI_Controller
     public function save()
     {
         $id = $this->input->post('id');
-        // $data['logo_collab'] = $this->input->post('logo_collab');
+        if (!empty($_FILES['logo']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/img/bank';
+            $config['allowed_types']        = 'jpeg|jpg|png';
+            $config['max_size']             = 2040;
+            // $config['max_width']            = 2048;
+            // $config['max_height']           = 1024;
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('logo'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload = $this->upload->data();
+                $logo = $upload['file_name'];
+            }
+        } else {
+            $logo = $this->input->post('old_logo');
+        }
+        $data['logo_bank'] = $logo;
         $data['name_bank'] = $this->input->post('name_bank');
         $data['account_number'] = $this->input->post('account_number');
         // update
@@ -35,12 +58,14 @@ class Bank extends CI_Controller
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = '1';
             $this->bank_model->update($id, $data);
-            redirect('../../bank');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('bank'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = '1';
             $this->bank_model->insert($data);
-            redirect('../../bank-add');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('bank'));
         }
     }
 
@@ -55,6 +80,6 @@ class Bank extends CI_Controller
     public function delete($id)
     {
         $this->bank_model->delete($id);
-        redirect('../../bank');
+        redirect(site_url('bank'));
     }
 }
