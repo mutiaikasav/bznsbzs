@@ -29,15 +29,15 @@
                         <?php $i=1; foreach ($data as $program) { ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $program->logo; ?></td>
+                            <td><img src="<?= base_url().'assets/img/program/'.$program->logo; ?>" alt="" width="100"></td>
                             <td><?= $program->program_name; ?></td>
                             <td><?= $program->description_program; ?></td>
-                            <td><?= $program->cover_image_program; ?></td>
+                            <td><img src="<?= base_url().'assets/img/program/'.$program->cover_image_program; ?>" alt="" width="100"></td>
                             <td>
                                 <a href="program-edit/<?= $program->id_program; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="program-delete/<?= $program->id_program; ?>" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus('<?php base_url()?>/program-delete/<?= $program->id_program; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>
