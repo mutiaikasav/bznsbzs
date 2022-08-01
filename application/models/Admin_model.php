@@ -2,6 +2,7 @@
 class Admin_model extends CI_Model {
     public function get()
     {
+        $this->db->join('roles', 'roles.id_role = admins.role', 'left');
         $query = $this->db->get('admins');
         return $query->result();
     }

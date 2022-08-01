@@ -23,8 +23,16 @@
                     <input type="text" id="name" name="name" class="form-control" value="<?= @$data[0]->name; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="gender">Jenis Kelamin</label>
-                    <input type="text" id="gender" name="gender" class="form-control" value="<?= @$data[0]->gender; ?>">
+                    <label>Jenis Kelamin</label>
+                    <!-- <input type="hidden" id="gender" name="gender" class="form-control" value="<?= @$data[0]->gender; ?>"> -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="pria" value="Pria" <?php echo (@$data[0]->gender=='Pria')?'checked':'';?>>
+                        <label class="form-check-label" for="pria">Pria</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="wanita" value="Wanita" <?php echo (@$data[0]->gender=='Wanita')?'checked':'';?>>
+                        <label class="form-check-label" for="wanita">Wanita</label>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="address">Alamat</label>
@@ -38,23 +46,26 @@
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" class="form-control" value="<?= @$data[0]->username; ?>">
                 </div>
-                <?php if ($data[0]->password==null) { ?>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" class="form-control" value="<?= @$data[0]->password; ?>">
-                    </div>
-                <?php } ?>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="hidden" id="old_password" name="old_password" class="form-control" value="<?= @$data[0]->password; ?>">
+                    <input type="password" id="password" name="password" class="form-control">
+                </div>
                 <div class="form-group">
                     <label for="phone">Telepon</label>
                     <input type="number" id="phone" name="phone" class="form-control" value="<?= @$data[0]->phone; ?>">
                 </div>
                 <div class="form-group">
                     <label for="role">Peran</label>
-                    <input type="text" id="role" name="role" class="form-control" value="<?= @$data[0]->role; ?>">
+                    <select name="role" id="role" class="custom-select">
+                        <?php foreach ($role as $r) { ?>
+                            <option value="<?= $r->id_role; ?>"><?= $r->role_name; ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="hidden" id="old_photo" name="old_photo" value="<?= @$data[0]->photo; ?>" class="form-control">
-                    <img src="<?= base_url()?>/assets/img/user/<?= @$data[0]->photo; ?>" alt="" width="100">
+                    <img src="<?= base_url()?>/assets/img/admin/<?= @$data[0]->photo; ?>" alt="" width="100">
                 </div>
                 <div class="form-group">
                     <label for="photo">Foto</label>

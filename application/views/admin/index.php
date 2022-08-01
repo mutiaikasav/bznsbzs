@@ -34,7 +34,7 @@
                             <td><?= $admin->nik; ?></td>
                             <td><?= $admin->name; ?></td>
                             <td><?= $admin->username; ?></td>
-                            <td><?= $admin->role; ?></td>
+                            <td><?= $admin->role_name; ?></td>
                             <td>
                                 <a href="admin-edit/<?= $admin->id_admin; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>

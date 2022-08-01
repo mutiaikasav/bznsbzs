@@ -35,7 +35,9 @@ class Admin extends CI_Controller
         $data['address'] = $this->input->post('address');
         $data['email'] = $this->input->post('email');
         $data['username'] = $this->input->post('username');
-        $data['password'] = md5($this->input->post('password'));
+        if (!empty($this->input->post('password'))) {
+            $data['password'] = md5($this->input->post('password'));
+        }
         $data['role'] = $this->input->post('role');
         $data['phone'] = $this->input->post('phone');
         if (!empty($_FILES['photo']['name'])) {
