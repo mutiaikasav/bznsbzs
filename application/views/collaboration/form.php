@@ -15,6 +15,10 @@
             <form action="<?php base_url();?>/collaboration/save" method="post" enctype="multipart/form-data">
                 <input type="hidden" id="id" name="id" class="form-control" value="<?= @$data[0]->id_collaboration; ?>">
                 <div class="form-group">
+                    <input type="hidden" id="old_logo" name="old_logo" class="form-control" value="<?= $data[0]->logo_collab;?>">
+                    <img src="<?= @base_url('assets/img/collab/'.$data[0]->logo_collab); ?>" alt="" width="100">
+                </div>
+                <div class="form-group">
                     <label for="image">Logo</label>
                     <input type="file" id="logo_collab" name="logo_collab" class="form-control">
                 </div>

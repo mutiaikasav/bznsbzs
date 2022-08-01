@@ -27,7 +27,30 @@ class Collaboration extends CI_Controller
     public function save()
     {
         $id = $this->input->post('id');
-        // $data['logo_collab'] = $this->input->post('logo_collab');
+        if (!empty($_FILES['logo_collab']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/img/collab';
+            $config['allowed_types']        = 'jpeg|jpg|png';
+            $config['max_size']             = 2040;
+            // $config['max_width']            = 2048;
+            // $config['max_height']           = 1024;
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('logo_collab'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload = $this->upload->data();
+                $logo_collab = $upload['file_name'];
+            }
+        } else {
+            $logo_collab = $this->input->post('old_logo');
+        }
+        $data['logo_collab'] = $logo_collab;
         $data['name_collab'] = $this->input->post('name_collab');
         $data['link'] = $this->input->post('link');
         $data['description_collab'] = $this->input->post('description_collab');
@@ -36,12 +59,14 @@ class Collaboration extends CI_Controller
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = '1';
             $this->collaboration_model->update($id, $data);
-            redirect('../../collaboration');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('collaboration'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = '1';
             $this->collaboration_model->insert($data);
-            redirect('../../collaboration-add');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('collaboration'));
         }
     }
 
@@ -56,6 +81,6 @@ class Collaboration extends CI_Controller
     public function delete($id)
     {
         $this->collaboration_model->delete($id);
-        redirect('../../collaboration');
+        redirect(site_url('collaboration'));
     }
 }

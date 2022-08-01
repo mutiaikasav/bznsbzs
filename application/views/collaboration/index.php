@@ -29,7 +29,7 @@
                         <?php $i=1; foreach ($data as $collaboration) { ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $collaboration->logo_collab; ?></td>
+                            <td><img src="<?= base_url('assets/img/collab/'.$collaboration->logo_collab.'')?>" alt="" width="100"></td>
                             <td><?= $collaboration->name_collab; ?></td>
                             <td><?= $collaboration->link; ?></td>
                             <td><?= $collaboration->description_collab; ?></td>
@@ -37,7 +37,7 @@
                                 <a href="collaboration-edit/<?= $collaboration->id_collaboration; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="collaboration-delete/<?= $collaboration->id_collaboration; ?>" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus('<?php base_url()?>/collaboration-delete/<?= $collaboration->id_collaboration; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>
