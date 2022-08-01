@@ -15,6 +15,10 @@
             <form action="<?php base_url();?>/banner/save" method="post" enctype="multipart/form-data">
                 <input type="hidden" id="id" name="id" class="form-control" value="<?= @$data[0]->id_banner; ?>">
                 <div class="form-group">
+                    <input type="hidden" id="old_image" class="form-control" name="old_image" value="<?= @$data[0]->image;?>">
+                    <img src="<?= base_url('assets/img/banner/'.@$data[0]->image);?>" alt="" width="200">
+                </div>
+                <div class="form-group">
                     <label for="image">Gambar</label>
                     <input type="file" id="image" name="image" class="form-control">
                 </div>

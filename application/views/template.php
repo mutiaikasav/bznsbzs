@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href="<?php base_url();?>/assets/img/logo.png" rel="icon">
+    <link href="<?php base_url();?>/assets/img/logo.png" rel="apple-touch-icon">
 
     <title>CMS Baznas Bazis DKI Jakarta</title>
 
@@ -102,7 +104,48 @@
             },
         });
     </script>
-
+    <!-- Swal -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- flash -->
+    <?php if($this->session->flashdata('flashSimpan')){ ?>
+        <script type="text/javascript">
+            swal("Sukses!", "<?php echo $this->session->flashdata('flashSimpan'); ?>", "success");
+        </script>
+    <?php } else if($this->session->flashdata('flashUpdate')) {
+    ?>
+        <script type="text/javascript">
+            swal("Sukses!", "<?php echo $this->session->flashdata('flashUpdate'); ?>", "success");            
+        </script>
+    <?php } else if($this->session->flashdata('flashHapus')) {
+    ?>
+        <script type="text/javascript">
+            swal("Sukses!", "<?php echo $this->session->flashdata('flashHapus'); ?>", "success");
+        </script>
+    <?php } else if($this->session->flashdata('flashGagal')){
+    ?>
+        <script type="text/javascript">
+            swal("Error!", "<?php echo $this->session->flashdata('flashGagal'); ?>", "error");
+        </script>
+    <?php } ?>
+    <script type="text/javascript">
+        function hapus(url){
+            swal({
+                title: "Anda yakin menghapus data ini?",
+                text: "Data akan terhapus dari database",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                })
+                .then((willDelete) => {
+                if (willDelete) {
+                    location = url;
+                    swal("Data berhasil dihapus!", {
+                    icon: "success",
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>
 <?php die;?>

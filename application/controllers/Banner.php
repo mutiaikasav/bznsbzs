@@ -27,7 +27,31 @@ class Banner extends CI_Controller
     public function save()
     {
         $id = $this->input->post('id');
-        // $data['image'] = $this->input->post('image');
+        if (!empty($_FILES['image']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/img/banner';
+            $config['allowed_types']        = 'jpeg|jpg|png';
+            $config['max_size']             = 102400;
+            // $config['max_width']            = 2048;
+            // $config['max_height']           = 1024;
+            $config['file_name']            = 'banner';
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('image'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload = $this->upload->data();
+                $image = $upload['file_name'];
+            }
+        } else {
+            $image = $this->input->post('old_image');
+        }
+        $data['image'] = $image;
         $data['link'] = $this->input->post('link');
         $data['description_banner'] = $this->input->post('description_banner');
         // update
@@ -35,12 +59,15 @@ class Banner extends CI_Controller
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = '1';
             $this->banner_model->update($id, $data);
-            redirect('../../banner');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('banner'));
+
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = '1';
             $this->banner_model->insert($data);
-            redirect('../../banner-add');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('banner'));
         }
     }
 
@@ -55,6 +82,6 @@ class Banner extends CI_Controller
     public function delete($id)
     {
         $this->banner_model->delete($id);
-        redirect('../../banner');
+        redirect(site_url('banner'));
     }
 }
