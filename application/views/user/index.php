@@ -18,6 +18,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Foto</th>
                             <th>Nama</th>
                             <th>Panggilan</th>
                             <th>Username</th>
@@ -30,6 +31,7 @@
                         <?php $i=1; foreach ($data as $user) { ?>
                         <tr>
                             <td><?= $i; ?></td>
+                            <td><img src="<?= base_url()?>/assets/img/user/<?= $user->photo?>" alt="" width="100"></td>
                             <td><?= $user->name_user; ?></td>
                             <td><?= $user->panggilan; ?></td>
                             <td><?= $user->username; ?></td>
@@ -39,7 +41,7 @@
                                 <a href="user-edit/<?= $user->id_user; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="user-delete/<?= $user->id_user; ?>" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus('<?php base_url()?>./user-delete/.<?= $user->id_user; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>
