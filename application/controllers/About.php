@@ -26,9 +26,9 @@ class About extends CI_Controller {
         $data['kebijakan'] = $this->input->post('kebijakan');
 
         // $data['created_at'] = date("Y-m-d H:i:s");
-        // $data['created_by'] = '1';
+        // $data['created_by'] = $this->session->userdata('id');
         $data['updated_at'] = date("Y-m-d H:i:s");
-        $data['updated_by'] = '1';
+        $data['updated_by'] = $this->session->userdata('id');
 
         $this->about_model->update(1,$data);
         $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');

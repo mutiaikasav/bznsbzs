@@ -63,13 +63,13 @@ class User extends CI_Controller
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");
-            $data['updated_by'] = '1';
+            $data['updated_by'] = $this->session->userdata('id');
             $this->user_model->update($id, $data);
             $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
             redirect(site_url('user'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
-            $data['created_by'] = '1';
+            $data['created_by'] = $this->session->userdata('id');
             $this->user_model->insert($data);
             $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
             redirect(site_url('user'));
