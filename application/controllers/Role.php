@@ -28,18 +28,21 @@ class Role extends CI_Controller
     {
         $id = $this->input->post('id');
         $data['role_name'] = $this->input->post('role_name');
-        $data['access'] = $this->input->post('access');
+        $access = implode(", ",$this->input->post('access'));
+        $data['access'] = $access;
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = '1';
             $this->role_model->update($id, $data);
-            redirect('../../role');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('role'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = '1';
             $this->role_model->insert($data);
-            redirect('../../role-add');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('role'));
         }
     }
 
@@ -54,6 +57,6 @@ class Role extends CI_Controller
     public function delete($id)
     {
         $this->role_model->delete($id);
-        redirect('../../role');
+        redirect(site_url('role'));
     }
 }

@@ -20,7 +20,27 @@
                 </div>
                 <div class="form-group">
                     <label for="access">Akses</label>
-                    <input type="text" id="access" name="access" class="form-control" value="<?= @$data[0]->access; ?>">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="general" id="general" name="access[]">
+                        <label class="form-check-label" for="general">General</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="muzakki" id="muzakki" name="access[]">
+                        <label class="form-check-label" for="muzakki">Layanan Muzakki</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="artikel" id="artikel" name="access[]">
+                        <label class="form-check-label" for="artikel">Artikel</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="galeri" id="galeri" name="access[]">
+                        <label class="form-check-label" for="galeri">Galeri</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="credentials" id="credentials" name="access[]">
+                        <label class="form-check-label" for="credentials">Credentials</label>
+                    </div>
+                    <!-- <input type="text" id="access" name="access" class="form-control" value="<?= @$data[0]->access; ?>"> -->
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success btn-icon-split form-control" type="submit">

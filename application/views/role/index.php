@@ -33,7 +33,7 @@
                                 <a href="role-edit/<?= $role->id_role; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="role-delete/<?= $role->id_role; ?>" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus('<?= base_url()?>/role-delete/<?= $role->id_role; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>
