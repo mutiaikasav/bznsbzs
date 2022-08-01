@@ -18,12 +18,12 @@ class About extends CI_Controller {
 
     public function save()
     {   
-        $data['legalitas'] = $_POST['legalitas'];
-        $data['visimisi'] = $_POST['visimisi'];
-        $data['struktur'] = $_POST['struktur'];
-        $data['organisasi'] = $_POST['organisasi'];
-        $data['sejarah'] = $_POST['sejarah'];
-        $data['kebijakan'] = $_POST['kebijakan'];
+        $data['legalitas'] = $this->input->post('legalitas');
+        $data['visimisi'] = $this->input->post('visimisi');
+        $data['struktur'] = $this->input->post('struktur');
+        $data['organisasi'] = $this->input->post('organisasi');
+        $data['sejarah'] = $this->input->post('sejarah');
+        $data['kebijakan'] = $this->input->post('kebijakan');
 
         // $data['created_at'] = date("Y-m-d H:i:s");
         // $data['created_by'] = '1';
@@ -31,7 +31,8 @@ class About extends CI_Controller {
         $data['updated_by'] = '1';
 
         $this->about_model->update(1,$data);
-        redirect('../../about');
+        $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+        redirect(site_url('about'));
 
     }
 }
