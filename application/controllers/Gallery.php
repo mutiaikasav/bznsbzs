@@ -27,20 +27,48 @@ class Gallery extends CI_Controller
     public function save()
     {
         $id = $this->input->post('id');
-        // $data['content_gallery'] = $this->input->post('content_gallery');
+        if (!empty($_FILES['content_gallery']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/img/galeri';
+            $config['allowed_types']        = 'jpeg|jpg|png';
+            $config['max_size']             = 102400;
+            // $config['max_width']            = 2048;
+            // $config['max_height']           = 1024;
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('content_gallery'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload = $this->upload->data();
+                $content_gallery = $upload['file_name'];
+            }
+        } else {
+            $content_gallery = $this->input->post('old_content_gallery');
+        }
+        // echo $content_gallery;
         $data['title_gallery'] = $this->input->post('title_gallery');
         $data['description_gallery'] = $this->input->post('description_gallery');
+        $data['content_gallery'] = $content_gallery;
+        $data['video'] = $this->input->post('video');
+        
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = '1';
             $this->gallery_model->update($id, $data);
-            redirect('../../gallery');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('gallery'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = '1';
             $this->gallery_model->insert($data);
-            redirect('../../gallery-add');
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('gallery'));
         }
     }
 
@@ -55,6 +83,6 @@ class Gallery extends CI_Controller
     public function delete($id)
     {
         $this->gallery_model->delete($id);
-        redirect('../../gallery');
+        redirect(site_url('gallery'));
     }
 }

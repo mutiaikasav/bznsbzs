@@ -19,7 +19,8 @@
                         <tr>
                             <th>No</th>
                             <th>Judul</th>
-                            <th>Konten</th>
+                            <th>Foto</th>
+                            <th>Video</th>
                             <th>Deskripsi</th>
                             <th></th>
                         </tr>
@@ -29,13 +30,14 @@
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $gallery->title_gallery; ?></td>
-                            <td><?= $gallery->content_gallery; ?></td>
+                            <td><img src="<?= base_url()?>/assets/img/galeri/<?= $gallery->content_gallery; ?>" alt="" width="100"></td>
+                            <td><?= $gallery->video; ?></td>
                             <td><?= $gallery->description_gallery; ?></td>
                             <td>
                                 <a href="gallery-edit/<?= $gallery->id_gallery; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a href="gallery-delete/<?= $gallery->id_gallery; ?>" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus('gallery-delete/<?= $gallery->id_gallery; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

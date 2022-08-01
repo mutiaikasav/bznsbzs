@@ -19,8 +19,16 @@
                     <input type="text" id="title_gallery" name="title_gallery" class="form-control" value="<?= @$data[0]->title_gallery; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="content_gallery">Konten</label>
+                    <input type="hidden" id="old_content_gallery" name="old_content_gallery" value="<?= @$data[0]->content_gallery; ?>" class="form-control">
+                    <img src="<?= base_url('assets/img/galeri/'.@$data[0]->content_gallery)?>" alt="" width="100">
+                </div>
+                <div class="form-group">
+                    <label for="content_gallery">Foto</label>
                     <input type="file" id="content_gallery" name="content_gallery" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="video">Video</label>
+                    <input type="text" id="video" name="video" class="form-control" value="<?= @$data[0]->video; ?>">
                 </div>
                 <div class="form-group">
                     <label for="description_gallery">Deskripsi</label>
