@@ -41,7 +41,7 @@
                                 <a href="user-edit/<?= $user->id_user; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a type="button" onclick="hapus('<?php base_url()?>./user-delete/.<?= $user->id_user; ?>')" class="btn btn-danger btn-circle btn-sm">
+                                <a type="button" onclick="hapus('<?php base_url()?>/user-delete/<?= $user->id_user; ?>')" class="btn btn-danger btn-circle btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>
