@@ -8,6 +8,9 @@ class Role extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->model('role_model');
+        if ($this->session->userdata('logged_in')!==TRUE) {
+            redirect(site_url('login'));
+        }
     }
 
     public function index()

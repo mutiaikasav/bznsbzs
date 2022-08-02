@@ -7,6 +7,9 @@ class About extends CI_Controller {
         parent::__construct();
         $this->load->database();
         $this->load->model('about_model');
+        if ($this->session->userdata('logged_in')!==TRUE) {
+            redirect(site_url('login'));
+        }
     }
 
     public function index()
