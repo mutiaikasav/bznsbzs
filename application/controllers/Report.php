@@ -10,7 +10,7 @@ class Report extends CI_Controller
         $this->load->model('transactions_model');
         $this->load->model('donations_model');
         if ($this->session->userdata('logged_in')!==TRUE) {
-            redirect(site_url('login'));
+            redirect(site_url('cms'));
         }
     }
 

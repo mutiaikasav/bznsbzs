@@ -10,7 +10,7 @@ class Article extends CI_Controller
         $this->load->model('article_model');
         $this->load->model('comment_model');
         if ($this->session->userdata('logged_in')!==TRUE) {
-            redirect(site_url('login'));
+            redirect(site_url('cms'));
         }
     }
 

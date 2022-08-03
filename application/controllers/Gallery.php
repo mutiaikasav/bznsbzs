@@ -9,7 +9,7 @@ class Gallery extends CI_Controller
         $this->load->database();
         $this->load->model('gallery_model');
         if ($this->session->userdata('logged_in')!==TRUE) {
-            redirect(site_url('login'));
+            redirect(site_url('cms'));
         }
     }
 
