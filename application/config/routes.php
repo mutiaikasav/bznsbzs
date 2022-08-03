@@ -55,6 +55,13 @@ $route['translate_uri_dashes'] = FALSE;
 
 /* Frontend */
 $route['welcome_page'] = 'frontend';
+$route['legalitas'] = 'frontend/legalitas';
+$route['visimisi'] = 'frontend/visimisi';
+$route['struktur'] = 'frontend/struktur';
+$route['organisasi'] = 'frontend/organisasi';
+$route['sejarah'] = 'frontend/sejarah';
+$route['hubungi-kami'] = 'frontend/hubungi';
+$route['kebijakan'] = 'frontend/kebijakan';
 
 /* Backend */
 $route['login-cms'] = 'login';
