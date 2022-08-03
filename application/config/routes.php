@@ -63,9 +63,25 @@ $route['sejarah'] = 'frontend/sejarah';
 $route['hubungi-kami'] = 'frontend/hubungi';
 $route['kebijakan'] = 'frontend/kebijakan';
 $route['program/(:any)'] = 'frontend/program/$1';
+$route['article/(:num)/(:any)'] = 'frontend/article/$1/$1';
+$route['kalkulator'] = 'frontend/kalkulator';
+$route['rekening'] = 'frontend/rekening';
+$route['konfirmasi'] = 'frontend/konfirmasi';
+$route['bayarzis'] = 'frontend/bayarzis';
+$route['daftar-donatur'] = 'frontend/daftar';
+$route['kurban'] = 'frontend/kurban';
+$route['kategori/(:any)'] = 'frontend/kategori/$1';
+$route['galeri'] = 'frontend/galeri';
+$route['galeri/(:num)/(:any)'] = 'frontend/galeri_detail/$1/$1';
+$route['publikasi'] = 'frontend/publikasi';
+$route['login'] = 'frontend/login';
+$route['register'] = 'frontend/register';
+$route['change-password'] = 'frontend/change_password';
+$route['forgot-password'] = 'frontend/forgot';
+$route['profile'] = 'frontend/profile';
 
 /* Backend */
-$route['login-cms'] = 'login';
+$route['cms'] = 'login';
 $route['authentication'] = 'login/process';
 $route['logout-cms'] = 'login/signout';
 $route['banner-add'] = 'banner/add';
