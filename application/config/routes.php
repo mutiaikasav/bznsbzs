@@ -62,8 +62,7 @@ $route['organisasi'] = 'frontend/organisasi';
 $route['sejarah'] = 'frontend/sejarah';
 $route['hubungi-kami'] = 'frontend/hubungi';
 $route['kebijakan'] = 'frontend/kebijakan';
-
-
+$route['program/(:any)'] = 'frontend/program/$1';
 
 /* Backend */
 $route['login-cms'] = 'login';

@@ -62,4 +62,11 @@ class Frontend extends CI_Controller {
 		$data['content'] = $this->helper->loadView('frontend/about/index', $content, TRUE);
         return $this->load->view('frontend/template', $data, TRUE);
 	}
+
+	// Program
+	public function program($id)
+	{
+		$data['content'] = $this->helper->loadView('frontend/program/index');
+        return $this->load->view('frontend/template', $data, TRUE);
+	}
 }
