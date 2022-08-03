@@ -16,88 +16,89 @@
     <link href="assets/frontend/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     </head>
 <body>
+    <div class="bg-nav-white"></div>
     <!-- Start Navbar -->
     <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top" id="myNav">
         <div class="container">
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
             <span></span>
             <span></span>
-          </button>
-          <a class="navbar-brand text-brand" href="index.html"><img src="assets/frontend/img/Logo Baznas Bazis_2019_v2.png" alt="Logo Baznas Bazis DKI Jakarta"></a>
-    
-          <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+            </button>
+            <a class="navbar-brand text-brand" href=""><img src="assets/frontend/img/Logo Baznas Bazis_2019_v2.png" alt="Logo Baznas Bazis DKI Jakarta"></a>
+
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
             <ul class="navbar-nav">
-    
-              <li class="nav-item">
-                <a href="index.html" class="nav-link">Beranda</a>
-              </li>
-    
-              <li class="nav-item dropdown">
+
+                <li class="nav-item">
+                <a href="" class="nav-link active">Beranda</a>
+                </li>
+
+                <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang</a>
                 <div class="dropdown-menu">
-                    <a href="legalitas.html" class="dropdown-item">Legalitas</a>
-                    <a href="visimisi.html" class="dropdown-item">Visi Misi</a>
-                    <a href="struktur.html" class="dropdown-item">Struktur Organisasi</a>
-                    <a href="organisasi.html" class="dropdown-item">Organisasi</a>
-                    <a href="sejarah.html" class="dropdown-item">Sejarah</a>
-                    <a href="hubungi-kami.html" class="dropdown-item">Hubungi Kami</a>
-                    <a href="kebijakan.html" class="dropdown-item">Kebijakan Privasi</a>
+                    <a href="legalitas" class="dropdown-item">Legalitas</a>
+                    <a href="visimisi" class="dropdown-item">Visi Misi</a>
+                    <a href="struktur" class="dropdown-item">Struktur Organisasi</a>
+                    <a href="organisasi" class="dropdown-item">Organisasi</a>
+                    <a href="sejarah" class="dropdown-item">Sejarah</a>
+                    <a href="hubungi-kami" class="dropdown-item">Hubungi Kami</a>
+                    <a href="kebijakan" class="dropdown-item">Kebijakan Privasi</a>
                 </div>
-              </li>
-    
-              <li class="nav-item dropdown">
+                </li>
+
+                <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Program</a>
                 <div class="dropdown-menu">
-                    <a href="program.html" class="dropdown-item">Jak B Bertaqwa</a>
-                    <a href="program.html" class="dropdown-item">Jak B Cerdas</a>
-                    <a href="program.html" class="dropdown-item">Jak B Sehat</a>
-                    <a href="program.html" class="dropdown-item">Jak B Green</a>
-                    <a href="program.html" class="dropdown-item">Jak B Berdaya</a>
+                    <a href="program/jak-b-bertaqwa" class="dropdown-item">Jak B Bertaqwa</a>
+                    <a href="program/jak-b-cerdas" class="dropdown-item">Jak B Cerdas</a>
+                    <a href="program/jak-b-sehat" class="dropdown-item">Jak B Sehat</a>
+                    <a href="program/jak-b-green" class="dropdown-item">Jak B Green</a>
+                    <a href="program/jak-b-berdaya" class="dropdown-item">Jak B Berdaya</a>
                 </div>
-              </li>
-    
-              <li class="nav-item dropdown">
+                </li>
+
+                <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Layanan Muzakki</a>
                 <div class="dropdown-menu">
-                    <a href="kalkulator.html" class="dropdown-item">Kalkulator Zakat</a>
-                    <a href="rekening.html" class="dropdown-item">Rekening Zakat</a>
-                    <a href="konfirmasi.html" class="dropdown-item">Konfirmasi Zakat</a>
+                    <a href="kalkulator" class="dropdown-item">Kalkulator Zakat</a>
+                    <a href="rekening" class="dropdown-item">Rekening Zakat</a>
+                    <a href="konfirmasi" class="dropdown-item">Konfirmasi Zakat</a>
                     <a class="dropdown-item dropdown-toggle" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bayar Zakat Wilayah</a>
                     <ul>
-                        <li><a href="bayarzis.html" class="sub-dropdown-item">Jakarta Pusat</a></li>
-                        <li><a href="bayarzis.html" class="sub-dropdown-item">Jakarta Utara</a></li>
-                        <li><a href="bayarzis.html" class="sub-dropdown-item">Jakarta Barat</a></li>
-                        <li><a href="bayarzis.html" class="sub-dropdown-item">Jakarta Selatan</a></li>
-                        <li><a href="bayarzis.html" class="sub-dropdown-item">Jakarta Timur</li>
-                        <li><a href="bayarzis.html" class="sub-dropdown-item">Kepulauan Seribu</a></li>
+                        <li><a href="bayarzis" class="sub-dropdown-item">Jakarta Pusat</a></li>
+                        <li><a href="bayarzis" class="sub-dropdown-item">Jakarta Utara</a></li>
+                        <li><a href="bayarzis" class="sub-dropdown-item">Jakarta Barat</a></li>
+                        <li><a href="bayarzis" class="sub-dropdown-item">Jakarta Selatan</a></li>
+                        <li><a href="bayarzis" class="sub-dropdown-item">Jakarta Timur</li>
+                        <li><a href="bayarzis" class="sub-dropdown-item">Kepulauan Seribu</a></li>
                     </ul>
                 </div>
-              </li>
-    
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Berita</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Berita</a>
                 <div class="dropdown-menu">
-                  <a href="kategori.html" class="dropdown-item">Kabar Zakat</a>
-                  <a href="kategori.html" class="dropdown-item">Inspirasi</a>
-                  <a href="kategori.html" class="dropdown-item">Lainnya</a>
+                    <a href="kategori/kabar-zakat" class="dropdown-item">Kabar Zakat</a>
+                    <a href="kategori/inspirasi" class="dropdown-item">Inspirasi</a>
+                    <a href="kategori/lainnya" class="dropdown-item">Lainnya</a>
                 </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Media</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Media</a>
                 <div class="dropdown-menu">
-                  <a href="galeri.html" class="dropdown-item">Galeri</a>
-                  <a href="publikasi.html" class="dropdown-item">Publikasi</a>
+                    <a href="galeri" class="dropdown-item">Galeri</a>
+                    <a href="publikasi" class="dropdown-item">Publikasi</a>
                 </div>
-              </li>
-              <li class="nav-item">
-                <a href="login.html" class="nav-link">Login</a>
-              </li>
+                </li>
+                <li class="nav-item">
+                <a href="login" class="nav-link">Login</a>
+                </li>
             </ul>
-          </div>
-    
-          <div class="navbar-toggle-box navbar-toggle-box-collapse">
-          </div>
+            </div>
+
+            <div class="navbar-toggle-box navbar-toggle-box-collapse">
+            </div>
         </div>
     </nav>
     <!-- End Header/Navbar -->
