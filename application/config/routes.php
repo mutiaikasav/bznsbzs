@@ -63,31 +63,27 @@ $route['sejarah'] = 'frontend/sejarah';
 $route['hubungi-kami'] = 'frontend/hubungi';
 $route['kebijakan'] = 'frontend/kebijakan';
 
+
+
 /* Backend */
 $route['login-cms'] = 'login';
 $route['authentication'] = 'login/process';
 $route['logout-cms'] = 'login/signout';
-
 $route['banner-add'] = 'banner/add';
 $route['banner-edit/(:num)'] = 'banner/edit/$1';
 $route['banner-delete/(:num)'] = 'banner/delete/$1';
-
 $route['collaboration-add'] = 'collaboration/add';
 $route['collaboration-edit/(:num)'] = 'collaboration/edit/$1';
 $route['collaboration-delete/(:num)'] = 'collaboration/delete/$1';
-
 $route['bank-add'] = 'bank/add';
 $route['bank-edit/(:num)'] = 'bank/edit/$1';
 $route['bank-delete/(:num)'] = 'bank/delete/$1';
-
 $route['program-add'] = 'program/add';
 $route['program-edit/(:num)'] = 'program/edit/$1';
 $route['program-delete/(:num)'] = 'program/delete/$1';
-
 $route['category-add'] = 'category/add';
 $route['category-edit/(:num)'] = 'category/edit/$1';
 $route['category-delete/(:num)'] = 'category/delete/$1';
-
 $route['article-draft'] = 'article/draft';
 $route['article-pending'] = 'article/pending';
 $route['article-hide'] = 'article/hide';
@@ -95,23 +91,18 @@ $route['article-add'] = 'article/add';
 $route['article-edit/(:num)'] = 'article/edit/$1';
 $route['article-delete/(:num)'] = 'article/delete/$1';
 $route['comments'] = 'article/comments';
-
 $route['gallery-add'] = 'gallery/add';
 $route['gallery-edit/(:num)'] = 'gallery/edit/$1';
 $route['gallery-delete/(:num)'] = 'gallery/delete/$1';
-
 $route['publication-add'] = 'publication/add';
 $route['publication-edit/(:num)'] = 'publication/edit/$1';
 $route['publication-delete/(:num)'] = 'publication/delete/$1';
-
 $route['user-add'] = 'user/add';
 $route['user-edit/(:num)'] = 'user/edit/$1';
 $route['user-delete/(:num)'] = 'user/delete/$1';
-
 $route['role-add'] = 'role/add';
 $route['role-edit/(:num)'] = 'role/edit/$1';
 $route['role-delete/(:num)'] = 'role/delete/$1';
-
 $route['admin-add'] = 'admin/add';
 $route['admin-edit/(:num)'] = 'admin/edit/$1';
 $route['admin-delete/(:num)'] = 'admin/delete/$1';
