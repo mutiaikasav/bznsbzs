@@ -1,3 +1,26 @@
+<script>
+    window.addEventListener('load', function () {
+        var url = window.location.href;
+        var split = url.split('/');
+        var title = split[3];
+        $.ajax({
+            type:"GET",
+            url: "<?php echo base_url(); ?>api/about",
+            // data: {id: value},
+            dataType: 'json',
+            success: function(rows)
+            { 
+                var content = rows[0][title];
+                document.querySelector(".data").innerHTML = content;
+            },
+
+            error:function()
+            {
+                alert("Error Database");
+            }
+        });
+    });
+</script>
 <div class="content">
     <section class="intro-single">
         <div class="container">
@@ -32,7 +55,7 @@
                 </div>
                 <div class="col-md-12 section-t8 position-relative">
                 <div class="row">
-                    <div class="section-md-t3">
+                    <div class="section-md-t3 data">
                         
                     </div>
                 </div>
