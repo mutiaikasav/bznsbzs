@@ -35,7 +35,7 @@ class Login extends CI_Controller {
             $this->session->set_userdata($newdata);
 
             $this->session->set_flashdata('flashSimpan','Berhasil Login', 'success');
-            redirect(site_url());
+            redirect(site_url('dashboard'));
         }
     }
 
@@ -46,6 +46,6 @@ class Login extends CI_Controller {
         $this->session->unset_userdata('name'); 
         $this->session->unset_userdata('logged_in'); 
 
-        redirect(site_url('login'));
+        redirect(site_url('cms'));
     }
 }
