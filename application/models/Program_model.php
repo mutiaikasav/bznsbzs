@@ -28,4 +28,10 @@ class Program_model extends CI_Model
         $this->db->where('id_program', $id);
         $this->db->delete('programs');
     }
+
+    public function select_slug($slug)
+    {
+        $query = $this->db->get_where('programs', array('slug'=>$slug));
+        return $query->result();
+    }
 }

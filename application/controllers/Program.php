@@ -56,6 +56,8 @@ class Program extends CI_Controller
         $data['logo'] = $logo;
         $data['program_name'] = $this->input->post('program_name');
         $data['description_program'] = $this->input->post('description_program');
+        $data['slug'] = str_replace(' ', '-', strtolower($this->input->post('program_name'))); 
+
         if (!empty($_FILES['cover_image_program']['name'])) {
             # code...
             $config['upload_path']          = './assets/img/program';

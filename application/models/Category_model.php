@@ -28,4 +28,10 @@ class Category_model extends CI_Model
         $this->db->where('id_category', $id);
         $this->db->delete('categories');
     }
+
+    public function select_slug($slug)
+    {
+        $query = $this->db->get_where('categories', array('slug'=>$slug));
+        return $query->result();
+    }
 }

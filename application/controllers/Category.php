@@ -56,6 +56,7 @@ class Category extends CI_Controller
         $data['logo'] = $logo;
         $data['category_name'] = $this->input->post('category_name');
         $data['description'] = $this->input->post('description');
+        $data['slug'] = str_replace(' ', '-', strtolower($this->input->post('category_name'))); 
         if (!empty($_FILES['cover_image']['name'])) {
             # code...
             $config['upload_path']          = './assets/img/kategori';
