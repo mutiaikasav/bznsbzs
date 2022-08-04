@@ -9,11 +9,8 @@
             dataType: 'json',
             success: function(rows)
             { 
-                console.log(rows)
-                var no=1;
                 var url_image = window.location.origin+'/assets/img/bank/';
                 $.each(rows, function (i, item) {
-                    console.log(no)
                     document.querySelector("#data").innerHTML += "<tr>"+
                     "<td><img src='"+url_image+item['logo_bank']+"' alt='"+item['name_bank']+"' width='100'></td>"+
                     "<td>"+item['name_bank']+"</td>"+
@@ -21,7 +18,6 @@
                     "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
                     "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
                     "</tr>";
-                    no++;
                 })
             },
             error:function()
@@ -35,12 +31,9 @@
             url: "<?php echo base_url(); ?>api/rekening_infak",
             dataType: 'json',
             success: function(rows)
-            { 
-                console.log(rows)
-                var no=1;
+            {
                 var url_image = window.location.origin+'/assets/img/bank/';
                 $.each(rows, function (i, item) {
-                    console.log(no)
                     document.querySelector("#data-infak").innerHTML += "<tr>"+
                     "<td><img src='"+url_image+item['logo_bank']+"' alt='"+item['name_bank']+"' width='100'></td>"+
                     "<td>"+item['name_bank']+"</td>"+
@@ -48,7 +41,6 @@
                     "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
                     "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
                     "</tr>";
-                    no++;
                 })
             },
             error:function()
