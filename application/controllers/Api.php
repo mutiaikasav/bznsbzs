@@ -40,9 +40,19 @@ class Api extends CI_Controller {
         
     }
 
-    public function kategori()
+    public function section()
     {
-        
+        $category = $this->input->post('category');
+        $title = $this->input->post('title');
+
+        // $this->load->model('article_model');
+        if ($category == 'program') {
+            $this->load->model('program_model');
+            echo json_encode($this->program_model->select_slug($title));
+        } elseif ($category == 'kategori') {
+            $this->load->model('category_model');
+            echo json_encode($this->category_model->select_slug($title));
+        }
     }
 
     public function rekening_zakat()

@@ -12,7 +12,7 @@
             <h6 class="m-0 font-weight-bold text-primary"><?= @$title;?> Program</h6>
         </div>
         <div class="card-body">
-            <form action="<?php base_url();?>/program/save" method="post" enctype="multipart/form-data">
+            <form action="<?php base_url();?>/program-save" method="post" enctype="multipart/form-data">
                 <input type="hidden" id="id" name="id" class="form-control" value="<?= @$data[0]->id_program; ?>">
                 <div class="form-group">
                     <input type="hidden" id="old_logo" name="old_logo" class="form-control" value="<?= @$data[0]->logo;?>">

@@ -1,3 +1,30 @@
+<script>
+    var url = window.location.href;
+    var split = url.split('/');
+    var category = split[3];
+    var title = split[4];
+    $.ajax({
+        type:"POST",
+        url: "<?php echo base_url(); ?>api/section",
+        data: {category: category, title: title},
+        dataType: 'json',
+        success: function(rows)
+        { 
+            if (category == 'program') {
+                document.querySelector("#title").innerHTML = rows[0]['program_name'];
+                document.querySelector("#desc").innerHTML = rows[0]['description_program'];
+            } else if (category == 'kategori') {
+                document.querySelector("#title").innerHTML = rows[0]['category_name'];
+                // document.querySelector("#desc").innerHTML = rows[0]['description_category'];
+            }
+
+        },
+        error:function()
+        {
+            alert("Error Connection");
+        }
+    });
+</script>
 <div class="content">
     <div class="break-img">
     <img src="<?= base_url(); ?>assets/frontend/img/DSC05194.JPG" alt="" class="lozad">
@@ -6,8 +33,8 @@
     <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
             <center>
-                <h2>Jak B Bertaqwa</h2><br>
-                <p>Jak B Bertaqwa merupakan salah satu Program BAZNAS BAZIS DKI Jakarta yang bertujuan untuk membantu para mustahik di DKI Jakarta di bidang keagamaan.</p>
+                <h2 id="title"></h2><br>
+                <p id="desc"></p>
             </center>
         </div>
     </section>
