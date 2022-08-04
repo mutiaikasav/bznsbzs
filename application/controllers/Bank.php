@@ -56,6 +56,8 @@ class Bank extends CI_Controller
         $data['logo_bank'] = $logo;
         $data['name_bank'] = $this->input->post('name_bank');
         $data['account_number'] = $this->input->post('account_number');
+        $data['account_name'] = $this->input->post('account_name');
+        $data['category'] = $this->input->post('category');
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");

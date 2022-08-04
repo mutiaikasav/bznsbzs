@@ -34,10 +34,16 @@ class Api extends CI_Controller {
         
     }
 
-    public function rekening()
+    public function rekening_zakat()
     {
         $this->load->model('bank_model');
-        echo json_encode($this->bank_model->get());
+        echo json_encode($this->bank_model->select_category('Rekening Zakat'));
+    }
+
+    public function rekening_infak()
+    {
+        $this->load->model('bank_model');
+        echo json_encode($this->bank_model->select_category('Rekening Infak'));
     }
 
     public function galeri()
