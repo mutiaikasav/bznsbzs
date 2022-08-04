@@ -8,11 +8,11 @@
             var program = rows['program'];
             var kategori = rows['category'];
             $.each(program, function (i, p) {
-                document.querySelector(".menu-program").innerHTML += "<a href='<?= base_url('program/jak-b-bertaqwa')?>'"+
+                document.querySelector(".menu-program").innerHTML += "<a href='<?= base_url('program')?>/"+p['slug']+"'"+
                 " class='dropdown-item'>"+p['program_name']+"</a>";
             });
             $.each(kategori, function (j, k) {
-                document.querySelector(".menu-kategori").innerHTML += "<a href='<?= base_url('kategori/kabar-zakat')?>'"+
+                document.querySelector(".menu-kategori").innerHTML += "<a href='<?= base_url('kategori')?>/"+k['slug']+"'"+
                 " class='dropdown-item'>"+k['category_name']+"</a>";
             });
         },
@@ -37,35 +37,35 @@
         <ul class="navbar-nav">
 
             <li class="nav-item">
-            <a href="<?= base_url(); ?>" class="nav-link active">Beranda</a>
+            <a href="<?= base_url(); ?>" class="nav-link <?php echo ($this->uri->segment(1) == '')?'active':''?>">Beranda</a>
             </li>
 
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang</a>
+            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'legalitas' || $this->uri->segment(1) == 'visimisi' || $this->uri->segment(1) == 'struktur' || $this->uri->segment(1) == 'organisasi' || $this->uri->segment(1) == 'sejarah' || $this->uri->segment(1) == 'hubungi-kami' || $this->uri->segment(1) == 'kebijakan')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang</a>
             <div class="dropdown-menu">
-                <a href="<?= base_url('legalitas'); ?>" class="dropdown-item">Legalitas</a>
-                <a href="<?= base_url('visimisi'); ?>" class="dropdown-item">Visi Misi</a>
-                <a href="<?= base_url('struktur'); ?>" class="dropdown-item">Struktur Organisasi</a>
-                <a href="<?= base_url('organisasi'); ?>" class="dropdown-item">Organisasi</a>
-                <a href="<?= base_url('sejarah'); ?>" class="dropdown-item">Sejarah</a>
-                <a href="<?= base_url('hubungi-kami'); ?>" class="dropdown-item">Hubungi Kami</a>
-                <a href="<?= base_url('kebijakan'); ?>" class="dropdown-item">Kebijakan Privasi</a>
+                <a href="<?= base_url('legalitas'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'legalitas')?'active':''?>">Legalitas</a>
+                <a href="<?= base_url('visimisi'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'visimisi')?'active':''?>">Visi Misi</a>
+                <a href="<?= base_url('struktur'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'struktur')?'active':''?>">Struktur Organisasi</a>
+                <a href="<?= base_url('organisasi'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'organisasi')?'active':''?>">Organisasi</a>
+                <a href="<?= base_url('sejarah'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'sejarah')?'active':''?>">Sejarah</a>
+                <a href="<?= base_url('hubungi-kami'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'hubungi-kami')?'active':''?>">Hubungi Kami</a>
+                <a href="<?= base_url('kebijakan'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'kebijakan')?'active':''?>">Kebijakan Privasi</a>
             </div>
             </li>
 
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Program</a>
+            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'program')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Program</a>
             <div class="dropdown-menu menu-program">
             </div>
             </li>
 
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Layanan Muzakki</a>
+            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'kalkulator' || $this->uri->segment(1) == 'rekening' || $this->uri->segment(1) == 'konfirmasi' || $this->uri->segment(1) == 'bayarzis' || $this->uri->segment(1) == 'daftar-donatur')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Layanan Muzakki</a>
             <div class="dropdown-menu">
-                <a href="<?= base_url('kalkulator')?>" class="dropdown-item">Kalkulator Zakat</a>
-                <a href="<?= base_url('rekening')?>" class="dropdown-item">Rekening Zakat</a>
-                <a href="<?= base_url('konfirmasi')?>" class="dropdown-item">Konfirmasi Zakat</a>
-                <a class="dropdown-item dropdown-toggle" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bayar Zakat Wilayah</a>
+                <a href="<?= base_url('kalkulator')?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'kalkulator')?'active':''?>">Kalkulator Zakat</a>
+                <a href="<?= base_url('rekening')?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'rekening')?'active':''?>">Rekening Zakat</a>
+                <a href="<?= base_url('konfirmasi')?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'konfirmasi')?'active':''?>">Konfirmasi Zakat</a>
+                <a class="dropdown-item dropdown-toggle <?php echo ($this->uri->segment(1) == 'bayarzis')?'active':''?>" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bayar Zakat Wilayah</a>
                 <ul>
                     <li><a href="<?= base_url('bayarzis')?>" class="sub-dropdown-item">Jakarta Pusat</a></li>
                     <li><a href="<?= base_url('bayarzis')?>" class="sub-dropdown-item">Jakarta Utara</a></li>
@@ -78,19 +78,19 @@
             </li>
 
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Berita</a>
+            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'kategori')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Berita</a>
             <div class="dropdown-menu menu-kategori">
             </div>
             </li>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Media</a>
+            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'galeri' || $this->uri->segment(1) == 'publikasi')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Media</a>
             <div class="dropdown-menu">
-                <a href="<?= base_url('galeri'); ?>" class="dropdown-item">Galeri</a>
-                <a href="<?= base_url('publikasi'); ?>" class="dropdown-item">Publikasi</a>
+                <a href="<?= base_url('galeri'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'galeri')?'active':''?>">Galeri</a>
+                <a href="<?= base_url('publikasi'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'publikasi')?'active':''?>">Publikasi</a>
             </div>
             </li>
             <li class="nav-item">
-            <a href="<?= base_url('login'); ?>" class="nav-link">Login</a>
+            <a href="<?= base_url('login'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'login')?'active':''?>">Login</a>
             </li>
         </ul>
         </div>
