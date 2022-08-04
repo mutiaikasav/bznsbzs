@@ -1,3 +1,28 @@
+<script>
+    $.ajax({
+        type:"GET",
+        url: "<?php echo base_url(); ?>api/menu",
+        dataType: 'json',
+        success: function(rows)
+        { 
+            var program = rows['program'];
+            var kategori = rows['category'];
+            console.log(kategori)
+            $.each(program, function (i, p) {
+                document.querySelector(".menu-program").innerHTML = "<a href='<?= base_url('program/jak-b-bertaqwa')?>'"+
+                " class='dropdown-item'>"+p['program_name']+"</a>";
+            });
+            $.each(kategori, function (j, k) {
+                document.querySelector(".menu-kategori").innerHTML = "<a href='<?= base_url('kategori/kabar-zakat')?>'"+
+                " class='dropdown-item'>"+k['category_name']+"</a>";
+            });
+        },
+        error:function()
+        {
+            alert("Error Connection");
+        }
+    });
+</script>
 <div class="bg-nav-white"></div>
 <!-- Start Navbar -->
 <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top" id="myNav">
@@ -31,12 +56,7 @@
 
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Program</a>
-            <div class="dropdown-menu">
-                <a href="<?= base_url('program/jak-b-bertaqwa')?>" class="dropdown-item">Jak B Bertaqwa</a>
-                <a href="<?= base_url('program/jak-b-cerdas')?>" class="dropdown-item">Jak B Cerdas</a>
-                <a href="<?= base_url('program/jak-b-sehat')?>" class="dropdown-item">Jak B Sehat</a>
-                <a href="<?= base_url('program/jak-b-green')?>" class="dropdown-item">Jak B Green</a>
-                <a href="<?= base_url('program/jak-b-berdaya')?>" class="dropdown-item">Jak B Berdaya</a>
+            <div class="dropdown-menu menu-program">
             </div>
             </li>
 
@@ -60,10 +80,7 @@
 
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Berita</a>
-            <div class="dropdown-menu">
-                <a href="<?= base_url('kategori/kabar-zakat'); ?>" class="dropdown-item">Kabar Zakat</a>
-                <a href="<?= base_url('kategori/inspirasi'); ?>" class="dropdown-item">Inspirasi</a>
-                <a href="<?= base_url('kategori/lainnya'); ?>" class="dropdown-item">Lainnya</a>
+            <div class="dropdown-menu menu-kategori">
             </div>
             </li>
             <li class="nav-item dropdown">
