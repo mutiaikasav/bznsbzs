@@ -7,13 +7,12 @@
         { 
             var program = rows['program'];
             var kategori = rows['category'];
-            console.log(kategori)
             $.each(program, function (i, p) {
-                document.querySelector(".menu-program").innerHTML = "<a href='<?= base_url('program/jak-b-bertaqwa')?>'"+
+                document.querySelector(".menu-program").innerHTML += "<a href='<?= base_url('program/jak-b-bertaqwa')?>'"+
                 " class='dropdown-item'>"+p['program_name']+"</a>";
             });
             $.each(kategori, function (j, k) {
-                document.querySelector(".menu-kategori").innerHTML = "<a href='<?= base_url('kategori/kabar-zakat')?>'"+
+                document.querySelector(".menu-kategori").innerHTML += "<a href='<?= base_url('kategori/kabar-zakat')?>'"+
                 " class='dropdown-item'>"+k['category_name']+"</a>";
             });
         },
