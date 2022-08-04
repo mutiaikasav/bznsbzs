@@ -1,3 +1,45 @@
+<script>
+    window.addEventListener('load', function () {
+        var url = window.location.href;
+        var split = url.split('/');
+        var title = split[3];
+        $.ajax({
+            type:"GET",
+            url: "<?php echo base_url(); ?>api/rekening",
+            dataType: 'json',
+            success: function(rows)
+            { 
+                console.log(rows)
+                var no=1;
+                var url_image = window.location.origin+'/assets/img/bank/';
+                $.each(rows, function (i, item) {
+                    console.log(no)
+                    document.querySelector("#data").innerHTML += "<tr>"+
+                    "<td><img src='"+url_image+item['logo_bank']+"' alt='"+item['name_bank']+"' width='100'></td>"+
+                    "<td>"+item['name_bank']+"</td>"+
+                    "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
+                    "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
+                    "</tr>";
+                    no++;
+                })
+            },
+            error:function()
+            {
+                alert("Error Connection");
+            }
+        });
+    });
+
+    function copy(param) {
+        var copyText = document.getElementById(param).value;
+        document.addEventListener('copy', function(e) {
+            e.clipboardData.setData('text/plain', copyText);
+            e.preventDefault();
+        }, true);
+
+        document.execCommand('copy');
+    }
+</script>
 <!-- Start Content -->
 <div class="content">
     <section class="intro-single">
@@ -42,29 +84,9 @@
                                     <th scope="col"></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bank DKI</td>
-                                    <td>70270030011<input type="hidden" id="1" value="70270030011"></td>
-                                    <td>
-                                        <button onclick="copy('1')" class="btn btn-sm"><i class="bi bi-clipboard"></i></button>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row">2</th>
-                                    <td>Bank BSI</td>
-                                    <td>7001316607<input type="hidden" id="2" value="7001316607"></td>
-                                    <td><button onclick="copy('2')" class="btn btn-sm"><i class="bi bi-clipboard"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row">3</th>
-                                    <td>Bank BJB Syariah</td>
-                                    <td>5400102000328<input type="hidden" id="3" value="5400102000328"></td>
-                                    <td><button onclick="copy('3')" class="btn btn-sm"><i class="bi bi-clipboard"></i></button></td>
-                                    </tr>
+                                <tbody id="data">
                                 </tbody>
-                                </table>
+                            </table>
                         </div>
                     </div>
                 </div>

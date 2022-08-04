@@ -16,7 +16,7 @@
 
             error:function()
             {
-                alert("Error Database");
+                alert("Error Connection");
             }
         });
     });
