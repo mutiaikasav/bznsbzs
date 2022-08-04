@@ -5,7 +5,7 @@
         var title = split[3];
         $.ajax({
             type:"GET",
-            url: "<?php echo base_url(); ?>api/rekening",
+            url: "<?php echo base_url(); ?>api/rekening_zakat",
             dataType: 'json',
             success: function(rows)
             { 
@@ -17,6 +17,34 @@
                     document.querySelector("#data").innerHTML += "<tr>"+
                     "<td><img src='"+url_image+item['logo_bank']+"' alt='"+item['name_bank']+"' width='100'></td>"+
                     "<td>"+item['name_bank']+"</td>"+
+                    "<td>"+item['account_name']+"</td>"+
+                    "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
+                    "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
+                    "</tr>";
+                    no++;
+                })
+            },
+            error:function()
+            {
+                alert("Error Connection");
+            }
+        });
+
+        $.ajax({
+            type:"GET",
+            url: "<?php echo base_url(); ?>api/rekening_infak",
+            dataType: 'json',
+            success: function(rows)
+            { 
+                console.log(rows)
+                var no=1;
+                var url_image = window.location.origin+'/assets/img/bank/';
+                $.each(rows, function (i, item) {
+                    console.log(no)
+                    document.querySelector("#data-infak").innerHTML += "<tr>"+
+                    "<td><img src='"+url_image+item['logo_bank']+"' alt='"+item['name_bank']+"' width='100'></td>"+
+                    "<td>"+item['name_bank']+"</td>"+
+                    "<td>"+item['account_name']+"</td>"+
                     "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
                     "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
                     "</tr>";
@@ -55,7 +83,7 @@
                 <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                    <a href="index.html">Beranda</a>
+                    <a href="<?= base_url();?>">Beranda</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
                     Rekening
@@ -78,13 +106,34 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                    <th scope="col">No</th>
-                                    <th scope="col">Bank</th>
+                                    <th scope="col" colspan="2">Bank</th>
+                                    <th scope="col">Rekening Atas Nama</th>
                                     <th scope="col">No Rekening</th>
                                     <th scope="col"></th>
                                     </tr>
                                 </thead>
                                 <tbody id="data">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h4>Rekening Infak</h4>
+                <br>
+                <div class="col-lg-12">
+                    <div class="konfirmasi">
+                        <div class="row col-lg-12">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                    <th scope="col" colspan="2">Bank</th>
+                                    <th scope="col">Rekening Atas Nama</th>
+                                    <th scope="col">No Rekening</th>
+                                    <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="data-infak">
                                 </tbody>
                             </table>
                         </div>

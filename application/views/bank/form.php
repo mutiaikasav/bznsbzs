@@ -31,6 +31,17 @@
                     <input type="number" id="account_number" name="account_number" class="form-control" value="<?= @$data[0]->account_number; ?>">
                 </div>
                 <div class="form-group">
+                    <label for="account_number">Rekening Atas Nama</label>
+                    <input type="text" id="account_name" name="account_name" class="form-control" value="<?= @$data[0]->account_name; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="category">Kategori</label>
+                    <select name="category" id="category" class="form-control">
+                        <option value="Rekening Zakat">Rekening Zakat</option>
+                        <option value="Rekening Infak">Rekening Infak</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <button class="btn btn-success btn-icon-split form-control" type="submit">
                         <span class="icon text-white-50">
                             <i class="fas fa-save"></i>

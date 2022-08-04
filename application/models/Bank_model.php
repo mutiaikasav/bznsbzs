@@ -12,6 +12,12 @@ class Bank_model extends CI_Model {
         return $query->result();
     }
 
+    public function select_category($category)
+    {
+        $query = $this->db->get_where('bank_accounts', array('category'=>$category));
+        return $query->result();
+    }
+
     public function insert($data)
     {
         $this->db->insert('bank_accounts', $data);
