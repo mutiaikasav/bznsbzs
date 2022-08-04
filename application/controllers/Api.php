@@ -19,9 +19,20 @@ class Api extends CI_Controller {
         echo json_encode($this->about_model->select(1));
     }
 
-    public function program()
+    public function menu()
     {
-        
+        $this->load->model('program_model');
+        $this->load->model('category_model');
+
+        $program = $this->program_model->get();
+        $category = $this->category_model->get();
+
+        $menu = array(
+            'program' => $program,
+            'category' => $category
+        );
+
+        echo json_encode($menu);
     }
 
     public function artikel()
