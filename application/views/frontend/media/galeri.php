@@ -1,7 +1,7 @@
 <!-- Start Content -->
 <div class="content">
     <div class="break-img">
-    <img src="assets/img/DSC05194.JPG" alt="" class="lozad">
+    <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" alt="" class="lozad">
     </div>
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
@@ -30,7 +30,7 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
             <a href="galeri-detail.html">
-            <img src="assets/img/DSC05194.JPG" class="img-fluid" alt="">
+            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
                 <h4>App 1</h4>
                 <p>App</p>
@@ -39,7 +39,7 @@
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-video">
             <a href="galeri-detail.html">
-            <img src="assets/img/DSC05194.JPG" class="img-fluid" alt="">
+            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
                 <h4>Web 3</h4>
                 <p>Web</p>
@@ -48,7 +48,7 @@
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
             <a href="galeri-detail.html">
-            <img src="assets/img/DSC05194.JPG" class="img-fluid lozad" alt="">
+            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid lozad" alt="">
             <div class="portfolio-info">
                 <h4>App 1</h4>
                 <p>App</p>
@@ -57,7 +57,7 @@
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
             <a href="galeri-detail.html">
-            <img src="assets/img/DSC05194.JPG" class="img-fluid" alt="">
+            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
                 <h4>Card 2</h4>
                 <p>Card</p>
@@ -66,7 +66,7 @@
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-video">
             <a href="galeri-detail.html">
-            <img src="assets/img/DSC05194.JPG" class="img-fluid" alt="">
+            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
                 <h4>Web 2</h4>
                 <p>Web</p>
@@ -75,7 +75,7 @@
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
             <a href="galeri-detail.html">
-            <img src="assets/img/DSC05194.JPG" class="img-fluid lozad" alt="">
+            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid lozad" alt="">
             <div class="portfolio-info">
                 <h4>App 1</h4>
                 <p>App</p>
@@ -84,7 +84,7 @@
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
             <a href="galeri-detail.html">
-            <img src="assets/img/DSC05194.JPG" class="img-fluid" alt="">
+            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
                 <h4>Card 1</h4>
                 <p>Card</p>
@@ -93,7 +93,7 @@
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-video">
             <a href="galeri-detail.html">
-            <img src="assets/img/DSC05194.JPG" class="img-fluid" alt="">
+            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
                 <h4>Card 3</h4>
                 <p>Card</p>
@@ -102,7 +102,7 @@
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-video">
             <a href="galeri-detail.html">
-            <img src="assets/img/DSC05194.JPG" class="img-fluid" alt="">
+            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
             <div class="portfolio-info">
                 <h4>Web 3</h4>
                 <p>Web</p>
