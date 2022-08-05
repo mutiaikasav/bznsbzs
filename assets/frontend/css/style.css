@@ -1944,6 +1944,8 @@ body {
 }
 .contact .info {
   background: #fff;
+  display: block;
+  height: fit-content;
 }
 .contact .info i {
   font-size: 20px;
@@ -1968,7 +1970,7 @@ body {
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 13px;
   color: #444444;
 }
 .contact .info:hover i {
