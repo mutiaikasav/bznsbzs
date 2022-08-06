@@ -22,16 +22,26 @@
                    <textarea name="content" id="content" class="tinymce"><?= @$data[0]->content;?></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="category">Kategori</label>
-                    <select class="js-example-basic-multiple" name="category[]" multiple="multiple">
-                        <option value="AL">Alabama</option>
-                            ...
-                        <option value="WY">Wyoming</option>
-                    </select>
+                    <label for="category">Kategori Berita</label>
+                    <?php foreach ($category as $cate) { ?>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="category|<?= $cate->id_category?>" id="category" name="category[]">
+                            <label class="form-check-label" for="category"><?= $cate->category_name?></label>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="form-group">
+                    <label for="category">Program</label>
+                    <?php foreach ($program as $pr) { ?>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="program|<?= $pr->id_program?>" id="program" name="category[]">
+                            <label class="form-check-label" for="program"><?= $pr->program_name?></label>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="form-group">
                     <label for="related_articles">Artikel Terkait</label>
-                    <select class="js-example-basic-multiple" name="related_articles[]" multiple="multiple">
+                    <select class="js-example-basic-multiple form-control" name="related_articles[]" multiple="multiple">
                         <option value="AL">Alabama</option>
                             ...
                         <option value="WY">Wyoming</option>
@@ -39,18 +49,30 @@
                 </div>
                 <div class="form-group">
                     <label for="others_articles">Artikel Lainnya</label>
-                    <select class="js-example-basic-multiple" name="others_articles[]" multiple="multiple">
+                    <select class="js-example-basic-multiple form-control" name="others_articles[]" multiple="multiple">
                         <option value="AL">Alabama</option>
                             ...
                         <option value="WY">Wyoming</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <button class="btn btn-success btn-icon-split form-control" type="submit">
+                <div class="form-group d-flex justify-content-right">
+                    <button class="btn btn-success form-control m-3" type="button">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-paper-plane"></i>
+                        </span>
+                        <span class="text"> Publish</span>
+                    </button>
+                    <button class="btn btn-warning form-control m-3" type="button">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-clock"></i>
+                        </span>
+                        <span class="text"> Schedule</span>
+                    </button>
+                    <button class="btn btn-info form-control m-3" type="submit">
                         <span class="icon text-white-50">
                             <i class="fas fa-save"></i>
                         </span>
-                        <span class="text">Simpan</span>
+                        <span class="text"> Simpan</span>
                     </button>
                 </div>
             </form>

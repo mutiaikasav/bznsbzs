@@ -108,7 +108,7 @@
                 <a class="collapse-item" href="<?php base_url()?>/article-add">Create New</a>
                 <a class="collapse-item" href="<?php base_url()?>/article">Published</a>
                 <a class="collapse-item" href="<?php base_url()?>/article-draft">Draft</a>
-                <a class="collapse-item" href="<?php base_url()?>/article-pending">Pending</a>
+                <a class="collapse-item" href="<?php base_url()?>/article-schedule">Schedule</a>
                 <a class="collapse-item" href="<?php base_url()?>/article-hide">Delete</a>
                 <a class="collapse-item" href="<?php base_url()?>/comments">Comments</a>
             </div>

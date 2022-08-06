@@ -23,6 +23,7 @@
     <link href="<?php base_url(); ?>/assets/css/sb-admin-2.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="<?php base_url(); ?>/assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="<?php base_url(); ?>/assets/css/select2.min.css" rel="stylesheet" type="text/css">
 
     <script src="<?php base_url(); ?>/assets/js/demo/tinymce-demo.min.js"></script>
 </head>
@@ -127,6 +128,7 @@
             swal("Error!", "<?php echo $this->session->flashdata('flashGagal'); ?>", "error");
         </script>
     <?php } ?>
+    <script src="<?php base_url(); ?>/assets/js/demo/select2-demo.min.js"></script>
     <script type="text/javascript">
         function hapus(url){
             swal({
@@ -145,6 +147,7 @@
                 }
             });
         }
+        $(".js-example-basic-multiple").select2();
     </script>
 </body>
 </html>
