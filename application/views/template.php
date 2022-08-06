@@ -24,6 +24,7 @@
     <!-- Custom styles for this page -->
     <link href="<?php base_url(); ?>/assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="<?php base_url(); ?>/assets/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php base_url(); ?>/assets/css/datepicker.min.css" rel="stylesheet"/>
 
     <script src="<?php base_url(); ?>/assets/js/demo/tinymce-demo.min.js"></script>
 </head>
@@ -129,6 +130,7 @@
         </script>
     <?php } ?>
     <script src="<?php base_url(); ?>/assets/js/demo/select2-demo.min.js"></script>
+    <script src="<?php base_url(); ?>/assets/js/demo/datepicker.min.js"></script>
     <script type="text/javascript">
         function hapus(url){
             swal({
@@ -166,6 +168,8 @@
                 },
             },
         });
+        // Data Picker Initialization
+        $('.datepicker').datepicker();
     </script>
 </body>
 </html>

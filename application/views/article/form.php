@@ -62,7 +62,7 @@
                         </span>
                         <span class="text"> Publish</span>
                     </button>
-                    <button class="btn btn-warning form-control m-3" type="button">
+                    <button class="btn btn-warning form-control m-3" type="button" data-toggle="modal" data-target="#exampleModal">
                         <span class="icon text-white-50">
                             <i class="fas fa-clock"></i>
                         </span>
@@ -79,4 +79,5 @@
         </div>
     </div>
 </div>
+<?php $this->load->view('article/modal_schedule'); ?>
 <!-- /.container-fluid -->
