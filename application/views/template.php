@@ -106,7 +106,7 @@
         });
     </script>
     <!-- Swal -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="<?php base_url(); ?>/assets/js/demo/swal-demo.min.js"></script>
     <!-- flash -->
     <?php if($this->session->flashdata('flashSimpan')){ ?>
         <script type="text/javascript">
