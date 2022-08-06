@@ -18,21 +18,43 @@
                     <label for="title_gallery">Judul</label>
                     <input type="text" id="title_gallery" name="title_gallery" class="form-control" value="<?= @$data[0]->title_gallery; ?>">
                 </div>
-                <div class="form-group">
-                    <input type="hidden" id="old_content_gallery" name="old_content_gallery" value="<?= @$data[0]->content_gallery; ?>" class="form-control">
-                    <img src="<?= base_url('assets/img/galeri/'.@$data[0]->content_gallery)?>" alt="" width="100">
+                <div class="d-flex">
+                    <div class="foto">
+                        <div class="form-group">
+                            <input type="hidden" id="old_content_gallery" name="old_content_gallery[]" value="<?= @$data[0]->content_gallery; ?>" class="form-control">
+                            <img src="<?= base_url('assets/img/galeri/'.@$data[0]->content_gallery)?>" alt="" width="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="content_gallery">Foto</label>
+                            <input type="file" id="content_gallery" name="content_gallery[]" class="form-control">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="content_gallery">Foto</label>
-                    <input type="file" id="content_gallery" name="content_gallery" class="form-control">
+                    <button class="btn btn-warning btn-sm" type="button" onclick="addfoto();">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                        <span class="text">Tambah Foto</span>
+                    </button>
+                </div>
+                <div class="video">
+                    <div class="form-group">
+                        <label for="video">Video</label>
+                        <input type="text" id="video" name="video" class="form-control" value="<?= @$data[0]->video; ?>">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="video">Video</label>
-                    <input type="text" id="video" name="video" class="form-control" value="<?= @$data[0]->video; ?>">
+                    <button class="btn btn-warning btn-sm" type="button" onclick="addvideo();">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                        <span class="text">Tambah Video</span>
+                    </button>
                 </div>
                 <div class="form-group">
                     <label for="description_gallery">Deskripsi</label>
-                    <input type="text" id="description_gallery" name="description_gallery" class="form-control" value="<?= @$data[0]->description_gallery; ?>">
+                    <textarea name="description_gallery" id="description_gallery" cols="30" rows="10" class="form-control"><?= @$data[0]->description_gallery; ?></textarea>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success btn-icon-split form-control" type="submit">

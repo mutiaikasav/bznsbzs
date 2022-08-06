@@ -170,6 +170,19 @@
         });
         // Data Picker Initialization
         $('.datepicker').datepicker();
+
+        function addfoto() {
+            document.querySelector(".foto").innerHTML += "<div class='form-group'>"+
+            "<label for='content_gallery'>Foto</label>"+
+            "<input type='file' id='content_gallery' name='content_gallery[]' class='form-control'>"+
+            "</div>";
+        }
+        function addvideo() {
+            document.querySelector(".video").innerHTML += "<div class='form-group'>"+
+            "<label for='video'>Video</label>"+
+            "<input type='text' id='video' name='video' class='form-control'>"+
+            "</div>";
+        }
     </script>
 </body>
 </html>
