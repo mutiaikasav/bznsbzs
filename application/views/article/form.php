@@ -41,18 +41,18 @@
                 </div>
                 <div class="form-group">
                     <label for="related_articles">Artikel Terkait</label>
-                    <select class="js-example-basic-multiple form-control" name="related_articles[]" multiple="multiple">
-                        <option value="AL">Alabama</option>
-                            ...
-                        <option value="WY">Wyoming</option>
+                    <select class="article form-control" name="related_articles[]" multiple="multiple">
+                        <?php foreach ($article as $ar) { ?>
+                            <option value="<?= $ar->id_article;?>"><?= $ar->title;?></option>
+                        <?php } ?>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="others_articles">Artikel Lainnya</label>
-                    <select class="js-example-basic-multiple form-control" name="others_articles[]" multiple="multiple">
-                        <option value="AL">Alabama</option>
-                            ...
-                        <option value="WY">Wyoming</option>
+                    <select class="article form-control" name="others_articles[]" multiple="multiple">
+                        <?php foreach ($article as $ar) { ?>
+                            <option value="<?= $ar->id_article;?>"><?= $ar->title;?></option>
+                        <?php } ?>
                     </select>
                 </div>
                 <div class="form-group d-flex justify-content-right">

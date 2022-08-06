@@ -54,6 +54,7 @@ class Article extends CI_Controller
         $content['category'] = $this->category_model->get();
         $content['program'] = $this->program_model->get();
         $content['title'] = 'Tambah';
+        $content['article'] = $this->article_model->select_published();
         $data['content'] = $this->helper->loadView('article/form', $content, TRUE);
         return $this->load->view('template', $data, TRUE);
     }
@@ -65,8 +66,10 @@ class Article extends CI_Controller
         $data['content'] = $this->input->post('content');
         $category = implode(", ",$this->input->post('category'));
         $data['show_at'] = $category;
-        $data['related_articles'] = $this->input->post('related_articles');
-        $data['others_articles'] = $this->input->post('others_articles');
+        $related = implode(", ",$this->input->post('related_articles'));
+        $data['related_articles'] = $related;
+        $others = implode(", ",$this->input->post('others_articles'));
+        $data['others_articles'] = $others;
         $data['status'] = 0;
         // update
         if ($id!=null || $id!='') {        
@@ -91,8 +94,10 @@ class Article extends CI_Controller
         $data['content'] = $this->input->post('content');
         $category = implode(", ",$this->input->post('category'));
         $data['show_at'] = $category;
-        $data['related_articles'] = $this->input->post('related_articles');
-        $data['others_articles'] = $this->input->post('others_articles');
+        $related = implode(", ",$this->input->post('related_articles'));
+        $data['related_articles'] = $related;
+        $others = implode(", ",$this->input->post('others_articles'));
+        $data['others_articles'] = $others;
         $data['status'] = 1;
         // update
         if ($id!=null || $id!='') {        
@@ -119,6 +124,7 @@ class Article extends CI_Controller
         $content['category'] = $this->category_model->get();
         $content['program'] = $this->program_model->get();
         $content['title'] = 'Ubah';
+        $content['article'] = $this->article_model->select_published();
         $content['data'] = $this->article_model->select($id);
         $data['content'] = $this->helper->loadView('article/form', $content, TRUE);
         return $this->load->view('template', $data, TRUE);

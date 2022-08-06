@@ -147,7 +147,25 @@
                 }
             });
         }
-        $(".js-example-basic-multiple").select2();
+        $(".article").select2();
+        $(".js-example-basic-multiple").select2({
+            ajax: {
+                url: "<?php base_url()?>/api/artikel",
+                dataType: 'json',
+                delay: 250,
+                // data: function (params) {
+                //     return {
+                //         q: params.term, 
+                //         page: params.page
+                //     };
+                // },
+                processResults: function (data) {
+                    return {
+                        results: data.items
+                    };
+                },
+            },
+        });
     </script>
 </body>
 </html>
