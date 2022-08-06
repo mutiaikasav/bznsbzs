@@ -158,7 +158,7 @@ class Article extends CI_Controller
     {
         $data['status'] = 1; //nonaktif
         $this->comment_model->update($id, $data);
-        $this->session->set_flashdata('flashSimpan','Artikel Berhasil dihapus', 'success');
+        $this->session->set_flashdata('flashSimpan','Komentar Berhasil dihapus', 'success');
         redirect(site_url('article'));
     }
 }
