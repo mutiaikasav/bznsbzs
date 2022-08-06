@@ -81,6 +81,7 @@ $route['article-edit/(:num)'] = 'article/edit/$1';
 $route['article-delete/(:num)'] = 'article/delete/$1';
 $route['article-publishing/(:num)'] = 'article/publishing/$1';
 $route['comments'] = 'article/comments';
+$route['comment-delete/(:num)'] = 'article/comment_delete/$1';
 $route['gallery-add'] = 'gallery/add';
 $route['gallery-edit/(:num)'] = 'gallery/edit/$1';
 $route['gallery-delete/(:num)'] = 'gallery/delete/$1';

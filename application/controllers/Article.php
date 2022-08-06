@@ -153,4 +153,12 @@ class Article extends CI_Controller
         $data['content'] = $this->helper->loadView('comments', $content, TRUE);
         return $this->load->view('template', $data, TRUE);
     }
+
+    public function comment_delete($id)
+    {
+        $data['status'] = 1; //nonaktif
+        $this->comment_model->update($id, $data);
+        $this->session->set_flashdata('flashSimpan','Artikel Berhasil dihapus', 'success');
+        redirect(site_url('article'));
+    }
 }
