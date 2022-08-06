@@ -37,7 +37,8 @@ class Api extends CI_Controller {
 
     public function artikel()
     {
-        
+        $this->load->model('article_model');
+        echo json_encode($this->article_model->select_published());
     }
 
     public function section()
