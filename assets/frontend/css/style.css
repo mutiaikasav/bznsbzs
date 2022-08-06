@@ -174,7 +174,7 @@ body {
 }
 .bg-nav {
 	min-height: 250px;
-	background-image: url("../../assets/img/header-img.jpg");
+	background-image: url("../img/header-img.jpg");
 	background-attachment: fixed;
 	background-position: 70% 100%;
 	background-repeat: no-repeat;
@@ -192,14 +192,14 @@ body {
 }
 
 .bg-img {
-	background-image: url("../../assets/img/header-img.jpg");
+	background-image: url("../img/header-img.jpg");
 	background-attachment: fixed;
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-size:cover;
 }
 .bg-img-rad {
-	background-image: url("../../assets/img/header-img.jpg");
+	background-image: url("../img/header-img.jpg");
 	background-attachment: fixed;
 	background-position: bottom center;
 	background-repeat: no-repeat;
@@ -210,7 +210,7 @@ body {
 }
 .bg-img-bw {
 	/* position: relative; */
-	background-image: url("../../assets/img/bg-bw.jpg");
+	background-image: url("../img/bg-bw.jpg");
 	background-attachment: fixed;
 	background-position: bottom center;
 	background-repeat: no-repeat;
@@ -753,6 +753,15 @@ body {
 	#hero .carousel-content p {
 	  font-size: 15px;
 	}
+  }
+  @media(max-width: 760px)
+  {
+    #hero .carousel-inner .carousel-item{
+      max-height: max-content;
+    }
+    #hero .carousel-inner .carousel-container{
+      display: none;
+    }
   }
   @media (max-height: 500px) {
 	#hero {

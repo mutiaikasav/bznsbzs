@@ -1,164 +1,165 @@
 <!-- Hero -->
 <section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-inner" role="listbox">          
-        <div class="carousel-item active" style="background-image: url('../../<?php base_url();?>/assets/frontend/img/DSC05210.JPG');">
-        <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-            <h2>Judul Artikel</h2>
-            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-            <div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>
+    <!-- Carousel -->
+    <div id="carouselExampleFade" data-bs-interval="3000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" >
+          <div class="carousel-item active">
+            <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="d-block w-100" alt="...">
+            <div class="carousel-container">
+              <div class="carousel-content animate__animated animate__fadeInUp">
+                <h2>Sequi ea ut et est quaerat</h2>
+                <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>
+              </div>
             </div>
-        </div>
-        </div>
-
-        <div class="carousel-item " style="background-image: url('../../<?php base_url();?>/assets/frontend/img/DSC05194.JPG');">
-        <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-            <div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>
+          </div>
+          <div class="carousel-item">
+            <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="d-block w-100" alt="...">
+            <div class="carousel-container">
+              <div class="carousel-content animate__animated animate__fadeInUp">
+                <h2>Sequi ea ut et est quaerat</h2>
+                <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>
+              </div>
             </div>
-        </div>
-        </div>
-
-        <div class="carousel-item " style="background-image: url('../../<?php base_url();?>/assets/frontend/img/DSC05241.JPG');">
-        <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-            <h2>Sequi ea ut et est quaerat</h2>
-            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-            <div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>
+          </div>
+          <div class="carousel-item">
+            <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="d-block w-100" alt="...">
+            <div class="carousel-container">
+              <div class="carousel-content animate__animated animate__fadeInUp">
+                <h2>Sequi ea ut et est quaerat</h2>
+                <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>
+              </div>
             </div>
+          </div>
         </div>
-        </div>
-
-    </div>
-
-    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-    </a>
-
-    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-    </a>
-
-    <ol class="carousel-indicators" id="hero-carousel-indicators">
-        <li data-bs-target='#heroCarousel' data-bs-slide-to='1' class='active'></li>
-    </ol>
-
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </section>
 <!-- End Hero -->
 <div class="bg-img-bw">
     <div class="widget container" style="margin-top:-20px;">
-    <br><br>
-    <center>
-        <h2 class="widget-title" style="color: yellow;font-weight: bold;">Kabar Baznas Bazis</h2>
-    </center>
-    <section class="section-property">
-        <div class="container">
-        <div class="row">
-            <div class="title-wrap text-right">
-            <div class="title-link">
-                <a href="kategori.html">Lihat lainnya
-                <span class="bi bi-chevron-right"></span>
-                </a>
-            </div>
-            </div>
-        </div>
-
-        <div id="property-carousel" class="swiper">
-            <div class="swiper-wrapper">      
-            <div class="carousel-item-b swiper-slide">
-                <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                    <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" alt="" class="img-a img-fluid lozad">
-                </div>
-                <div class="card-overlay">
-                    <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                        <h2 class="card-title-a">
-                        <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
-                        </h2>
-                    </div>
-                    <div class="card-body-a">
-                        <a href="#" class="btn-detail">Baca Selengkapnya
-                        <span class="bi bi-chevron-right"></span>
-                        </a>
-                    </div>
-                    </div>
+        <!-- <br><br>
+        <center>
+            <h2 class="widget-title" style="color: yellow;font-weight: bold;">Kabar Baznas Bazis</h2>
+        </center>
+        <section class="section-property">
+            <div class="container">
+            <div class="row">
+                <div class="title-wrap text-right">
+                <div class="title-link">
+                    <a href="kategori.html">Lihat lainnya
+                    <span class="bi bi-chevron-right"></span>
+                    </a>
                 </div>
                 </div>
             </div>
 
-            <div class="carousel-item-b swiper-slide">
-                <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                    <img src="<?php base_url();?>/assets/frontend/img/DSC05210.JPG" alt="" class="img-a img-fluid lozad">
-                </div>
-                <div class="card-overlay">
-                    <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                        <h2 class="card-title-a">
-                        <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
-                        </h2>
+            <div id="property-carousel" class="swiper">
+                <div class="swiper-wrapper">      
+                <div class="carousel-item-b swiper-slide">
+                    <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" alt="" class="img-a img-fluid lozad">
                     </div>
-                    <div class="card-body-a">
-                        <a href="artikel.html" class="btn-detail">Baca Selengkapnya
-                        <span class="bi bi-chevron-right"></span>
-                        </a>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                        <div class="card-header-a">
+                            <h2 class="card-title-a">
+                            <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
+                            </h2>
+                        </div>
+                        <div class="card-body-a">
+                            <a href="#" class="btn-detail">Baca Selengkapnya
+                            <span class="bi bi-chevron-right"></span>
+                            </a>
+                        </div>
+                        </div>
                     </div>
                     </div>
                 </div>
-                </div>
-            </div>
 
-            <div class="carousel-item-b swiper-slide">
-                <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                    <img src="<?php base_url();?>/assets/frontend/img/DSC05241.JPG" alt="" class="img-a img-fluid lozad">
-                </div>
-                <div class="card-overlay">
-                    <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                        <h2 class="card-title-a">
-                        <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
-                        </h2>
+                <div class="carousel-item-b swiper-slide">
+                    <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="<?php base_url();?>/assets/frontend/img/DSC05210.JPG" alt="" class="img-a img-fluid lozad">
                     </div>
-                    <div class="card-body-a">
-                        <a href="artikel.html" class="btn-detail">Baca Selengkapnya
-                        <span class="bi bi-chevron-right"></span>
-                        </a>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                        <div class="card-header-a">
+                            <h2 class="card-title-a">
+                            <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
+                            </h2>
+                        </div>
+                        <div class="card-body-a">
+                            <a href="artikel.html" class="btn-detail">Baca Selengkapnya
+                            <span class="bi bi-chevron-right"></span>
+                            </a>
+                        </div>
+                        </div>
                     </div>
                     </div>
                 </div>
-                </div>
-            </div>
 
-            <div class="carousel-item-b swiper-slide">
-                <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                    <img src="<?php base_url();?>/assets/frontend/img/DSC05276.JPG" alt="" class="img-a img-fluid lozad">
-                </div>
-                <div class="card-overlay">
-                    <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                        <h2 class="card-title-a">
-                        <a href="artikel.html">Lorem, ipsum dolor sit amet....</a>
-                        </h2>
+                <div class="carousel-item-b swiper-slide">
+                    <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="<?php base_url();?>/assets/frontend/img/DSC05241.JPG" alt="" class="img-a img-fluid lozad">
                     </div>
-                    <div class="card-body-a">
-                        <a href="artikel.html" class="btn-detail" >Baca Selengkapnya</a>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                        <div class="card-header-a">
+                            <h2 class="card-title-a">
+                            <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
+                            </h2>
+                        </div>
+                        <div class="card-body-a">
+                            <a href="artikel.html" class="btn-detail">Baca Selengkapnya
+                            <span class="bi bi-chevron-right"></span>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item-b swiper-slide">
+                    <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="<?php base_url();?>/assets/frontend/img/DSC05276.JPG" alt="" class="img-a img-fluid lozad">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                        <div class="card-header-a">
+                            <h2 class="card-title-a">
+                            <a href="artikel.html">Lorem, ipsum dolor sit amet....</a>
+                            </h2>
+                        </div>
+                        <div class="card-body-a">
+                            <a href="artikel.html" class="btn-detail" >Baca Selengkapnya</a>
+                        </div>
+                        </div>
                     </div>
                     </div>
                 </div>
                 </div>
             </div>
+            <div class="propery-carousel-pagination carousel-pagination"></div>      
             </div>
-        </div>
-        <div class="propery-carousel-pagination carousel-pagination"></div>      
-        </div>
-    </section>
+        </section> -->
     </div>
 </div>
 <div>
@@ -166,35 +167,35 @@
     <h2 class="widget-title container">Program</h2>
     <section class="cards-wrapper" id="program">
         <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(../../<?php base_url();?>/assets/frontend/img/Jak-B-Bertaqwa-keagamaan-360x325.png)">
+        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Bertaqwa-keagamaan-360x325.png)">
             <div>
                 <h3>Jak B Bertaqwa</h3>
             </div>
         </a>
         </div>
         <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(../../<?php base_url();?>/assets/frontend/img/Jak-B-Cerdas-Pendidikan-360x325.png)">
+        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Cerdas-Pendidikan-360x325.png)">
             <div>
             <h3>Jak B Cerdas</h3>
             </div>
         </a>
         </div>
         <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(../../<?php base_url();?>/assets/frontend/img/Jak-B-Sehat-Kesehatan-360x325.png)">
+        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Sehat-Kesehatan-360x325.png)">
             <div>
             <h3>Jak B Sehat</h3>
             </div>
         </a>
         </div>
         <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(../../<?php base_url();?>/assets/frontend/img/Jak-B-Green-Lingkungan-360x325.png)">
+        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Green-Lingkungan-360x325.png)">
             <div>
             <h3>Jak B Green</h3>
             </div>
         </a>
         </div>
         <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(../../<?php base_url();?>/assets/frontend/img/Jak-B-Berdaya-Ekonomi-360x325.png)">
+        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Berdaya-Ekonomi-360x325.png)">
             <div>
             <h3>Jak B Berdaya</h3>
             </div>
@@ -247,30 +248,18 @@
             <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
                 <a href="galeri-detail.html" style="text-decoration:none;">
                 <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="img-fluid lozad" alt="">
-                <div class="portfolio-info">
-                <h4>Dharma Jaya</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
             </a>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-video">
                 <a href="galeri-detail.html" style="text-decoration:none;">
                 <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="img-fluid lozad" alt="">
-                <div class="portfolio-info">
-                <h4>Dharma Jaya</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
             </a>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
             <a href="galeri-detail.html" style="text-decoration:none;">
                 <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="img-fluid lozad" alt="">
-                <div class="portfolio-info">
-                <h4>Dharma Jaya</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
             </a>
             </div>
         </div>
