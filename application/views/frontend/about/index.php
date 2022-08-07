@@ -21,6 +21,7 @@
         });
     });
 </script>
+<div class="bg-nav"></div>
 <div class="content">
     <section class="intro-single">
         <div class="container">
