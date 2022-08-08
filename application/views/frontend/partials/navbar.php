@@ -89,8 +89,16 @@
                 <a href="<?= base_url('publikasi'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'publikasi')?'active':''?>">Publikasi</a>
             </div>
             </li>
-            <li class="nav-item">
-            <a href="<?= base_url('login'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'login')?'active':''?>">Login</a>
+            <li class="nav-item <?php ($this->session->userdata('logged_in_user') == TRUE)?'dropdown':''?>">
+                <?php if ($this->session->userdata('logged_in_user') == TRUE) { ?>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('name_user'); ?></a>
+                    <div class="dropdown-menu">
+                        <a href="<?= base_url('profile'); ?>" class="dropdown-item">Profil</a>
+                        <a href="<?= base_url('logout'); ?>" class="dropdown-item">Keluar</a>
+                    </div>
+                <?php } else { ?>
+                    <a href="<?= base_url('login'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'login')?'active':''?>">Login</a>
+                <?php } ?>
             </li>
         </ul>
         </div>

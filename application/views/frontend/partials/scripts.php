@@ -7,6 +7,8 @@
 <script>
     $(document).ready( function () {
         $('#table_donatur').DataTable();
+        $('#table_transaction').DataTable();
+        $('#table_donation').DataTable();
     } );
     const observer = lozad(); // lazy loads elements with default selector as '.lozad'
     observer.observe();

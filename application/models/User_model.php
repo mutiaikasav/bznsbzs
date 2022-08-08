@@ -27,4 +27,12 @@ class User_model extends CI_Model {
         $this->db->where('id_user', $id);
         $this->db->delete('users');
     }
+
+    public function login($username, $pass)
+    {
+        $this->db->where('username', $username);
+        $this->db->where('password', $pass);
+        $query = $this->db->get('users');
+        return $query->result();
+    }
 }
