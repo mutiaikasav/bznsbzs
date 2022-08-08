@@ -139,6 +139,67 @@
                 input.click();
             },
         });
+
+        function example_image_upload_handler_about (blobInfo, success, failure) {
+            var xhr, formData;
+
+            xhr = new XMLHttpRequest();
+            xhr.withCrendentials = false;
+            xhr.open('POST', "<?php echo base_url('about/upload')?>");
+
+            xhr.onload = function () {
+                var json;
+                if (xhr.status != 200) {
+                    failure('Http Error:' + xhr.status);
+                    return;
+                }
+
+                json = JSON.parse(xhr.responseText);
+
+                if (!json || typeof json.location != 'string') {
+                    failure('Invalid JSON: '+xhr.responseText);
+                    return;
+                }
+
+                success(json.location);
+            }
+
+            formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+            xhr.send(formData);
+        }
+        
+        tinymce.init({
+            selector: '.tinymceabout',
+            plugins: 'image link media table wordcount lists',
+            toolbar: 'undo redo | styles | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | link image media',
+            paste_as_text: true,
+            file_picker_types: 'file image media',
+            images_upload_url: '<?php echo base_url()?>about/upload',
+            automatic_uploads: true,
+            image_upload_handler: example_image_upload_handler_about,
+            file_picker_callback: function (cb, value, meta) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+
+                input.onchange = function () {
+                    var file = this.files[0];
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        var id = 'blobid' + (new Date()).getTime();
+                        var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+                        var base64 = reader.result.split(',')[1];
+                        var blobInfo = blobCache.create(id, file, base64);
+                        blobCache.add(blobInfo);
+                        cb(blobInfo.blobUri(), { alt: file.name });
+                    };
+                    reader.readAsDataURL(file);
+                };
+                input.click();
+            },
+        });
     </script>
     <!-- Swal -->
     <script src="<?php base_url(); ?>/assets/js/demo/swal-demo.min.js"></script>

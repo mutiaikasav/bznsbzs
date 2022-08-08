@@ -19,6 +19,50 @@ class About extends CI_Controller {
         return $this->load->view('template', $data, TRUE);
     }
 
+    public function upload()
+    {
+        $accepted_origins = array("http://bznsbzs.com", "http://103.154.128.18");
+        $imageFolder = "assets/img";
+
+        if (isset($_SERVER['HTTP_ORIGIN'])) {
+            if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
+                header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+            } else {
+                header("HTTP/1.1 403 Origin Denied");
+                return;
+            }
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+            header("Access-Control-Allow-Methods: POST, OPTIONS");
+            return;
+        }
+
+        reset ($_FILES);
+        $temp = current($_FILES);
+        if (is_uploaded_file($temp['tmp_name'])){
+            if (preg_match("/([^\w\s\d\-_~,;:\[\]\(\).])|([\.]{2,})/", $temp['name'])) {
+                header("HTTP/1.1 400 Invalid file name.");
+                return;
+            }
+
+            if (!in_array(strtolower(pathinfo($temp['name'], PATHINFO_EXTENSION)), array("gif", "jpg", "png"))) {
+                header("HTTP/1.1 400 Invalid extension.");
+                return;
+            }
+
+            $filetowrite = $imageFolder . $temp['name'];
+            move_uploaded_file($temp['tmp_name'], $filetowrite);
+
+            $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "https://" : "http://";
+            $baseurl = $protocol . $_SERVER["HTTP_HOST"] .  "/";
+            
+            echo json_encode(array('location' => $baseurl . $filetowrite));
+        } else {
+            header("HTTP/1.1 500 Server Error");
+        }
+    }
+
     public function save()
     {   
         $data['legalitas'] = $this->input->post('legalitas');
