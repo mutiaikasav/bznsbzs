@@ -79,11 +79,45 @@
 
     <!-- TinyMCE -->
     <script>
+        function example_image_upload_handler (blobInfo, success, failure) {
+            var xhr, formData;
+
+            xhr = new XMLHttpRequest();
+            xhr.withCrendentials = false;
+            xhr.open('POST', "<?php echo base_url('article/upload')?>");
+
+            xhr.onload = function () {
+                var json;
+                if (xhr.status != 200) {
+                    failure('Http Error:' + xhr.status);
+                    return;
+                }
+
+                json = JSON.parse(xhr.responseText);
+
+                if (!json || typeof json.location != 'string') {
+                    failure('Invalid JSON: '+xhr.responseText);
+                    return;
+                }
+
+                success(json.location);
+            }
+
+            formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+            xhr.send(formData);
+        }
+
         tinymce.init({
             selector: '.tinymce',
             plugins: 'image link media table wordcount lists',
             toolbar: 'undo redo | styles | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | link image media',
             paste_as_text: true,
+            file_picker_types: 'file image media',
+            images_upload_url: '<?php echo base_url()?>article/upload',
+            automatic_uploads: true,
+            image_upload_handler: example_image_upload_handler,
             file_picker_callback: function (cb, value, meta) {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'file');
@@ -98,7 +132,7 @@
                         var base64 = reader.result.split(',')[1];
                         var blobInfo = blobCache.create(id, file, base64);
                         blobCache.add(blobInfo);
-                        cb(blobInfo.blobUri(), { title: file.name });
+                        cb(blobInfo.blobUri(), { alt: file.name });
                     };
                     reader.readAsDataURL(file);
                 };
