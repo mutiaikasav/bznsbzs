@@ -22,7 +22,7 @@ class Login extends CI_Controller {
         $login    = $this->admin_model->login($username, $pass);
         if (count($login)===0){
             $this->session->set_flashdata('flashGagal','Username/Password salah', 'error');
-            redirect(site_url('login'));
+            redirect(site_url('cms'));
         } else {
             $newdata = array( 
                 'id'        => $login[0]->id_admin,
