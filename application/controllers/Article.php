@@ -115,6 +115,7 @@ class Article extends CI_Controller
         $others = implode(", ",$this->input->post('others_articles'));
         $data['others_articles'] = $others;
         $data['status'] = 0;
+        $data['slug'] = str_replace(' ', '-', strtolower($this->input->post('title'))); 
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");
@@ -143,6 +144,7 @@ class Article extends CI_Controller
         $others = implode(", ",$this->input->post('others_articles'));
         $data['others_articles'] = $others;
         $data['status'] = 1;
+        $data['slug'] = str_replace(' ', '-', strtolower($this->input->post('title'))); 
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");

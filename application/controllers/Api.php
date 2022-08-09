@@ -41,6 +41,13 @@ class Api extends CI_Controller {
         echo json_encode($this->article_model->select_published());
     }
 
+    public function artikel_detail()
+    {
+        $id = $this->input->post('id');
+        $this->load->model('article_model');
+        echo json_encode($this->article_model->select($id));
+    }
+
     public function section()
     {
         $category = $this->input->post('category');
