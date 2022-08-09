@@ -30,30 +30,43 @@ class Gallery extends CI_Controller
     public function save()
     {
         $id = $this->input->post('id');
-        if (!empty($_FILES['content_gallery']['name'])) {
-            # code...
-            $config['upload_path']          = './assets/img/galeri';
-            $config['allowed_types']        = 'jpeg|jpg|png';
-            $config['max_size']             = 102400;
-            // $config['max_width']            = 2048;
-            // $config['max_height']           = 1024;
-    
-            $this->load->library('upload', $config);
-    
-            if ( ! $this->upload->do_upload('content_gallery'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                echo $this->upload->display_errors();
+        $foto = array();
+        $old = $this->input->post('old_content_gallery');
+        $old_content = array();
+        $count = count($_FILES['content_gallery']['name']);
+        for($i=0;$i<$count;$i++){
+            if (!empty($_FILES['content_gallery']['name'][$i])) {
+                $_FILES['content']['name'] = $_FILES['content_gallery']['name'][$i];
+                $_FILES['content']['type'] = $_FILES['content_gallery']['type'][$i];
+                $_FILES['content']['tmp_name'] = $_FILES['content_gallery']['tmp_name'][$i];
+                $_FILES['content']['error'] = $_FILES['content_gallery']['error'][$i];
+                $_FILES['content']['size'] = $_FILES['content_gallery']['size'][$i];
+
+                $config['upload_path']          = './assets/img/galeri';
+                $config['allowed_types']        = 'jpeg|jpg|png';
+                $config['max_size']             = 102400;
+                // $config['max_width']            = 2048;
+                // $config['max_height']           = 1024;
+        
+                $this->load->library('upload', $config);
+        
+                if ( ! $this->upload->do_upload('content'))
+                {
+                    $error = array('error' => $this->upload->display_errors());
+                    echo $this->upload->display_errors();
+                }
+                else
+                {
+                    $upload = $this->upload->data();
+                    array_push($foto, $upload['file_name']);
+                    $content_gallery = implode(",",$foto);
+                }
+            } else {
+                array_push($old_content, $old[$i]);
+                $content_gallery = implode(",",$old_content);
             }
-            else
-            {
-                $upload = $this->upload->data();
-                $content_gallery = $upload['file_name'];
-            }
-        } else {
-            $content_gallery = $this->input->post('old_content_gallery');
         }
-        // echo $content_gallery;
+
         $data['title_gallery'] = $this->input->post('title_gallery');
         $data['description_gallery'] = $this->input->post('description_gallery');
         $data['content_gallery'] = $content_gallery;

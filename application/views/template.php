@@ -266,18 +266,24 @@
         // Data Picker Initialization
         $('.datepicker').datepicker();
 
-        function addfoto() {
-            document.querySelector(".foto").innerHTML += "<div class='form-group'>"+
-            "<label for='content_gallery'>Foto</label>"+
-            "<input type='file' id='content_gallery' name='content_gallery[]' class='form-control'>"+
-            "</div>";
-        }
-        function addvideo() {
-            document.querySelector(".video").innerHTML += "<div class='form-group'>"+
-            "<label for='video'>Video</label>"+
-            "<input type='text' id='video' name='video' class='form-control'>"+
-            "</div>";
-        }
+        $(document).ready(function(){
+            $("#jum_foto").change(function(){
+                let jum = $("#jum_foto").val();
+                document.querySelector(".foto").innerHTML = "";
+                console.log(jum);
+                for (let index = 0; index < jum; index++) {
+                    document.querySelector(".foto").innerHTML += "<div class='form-group'>"+
+                    "<input type='hidden' id='old_content_gallery' name=old_content_gallery[]'"+
+                    "value='' class='form-control'>"+
+                    "<img src='' alt='' width='100'>"+
+                    "</div>"+
+                    "<div class='form-group'>"+
+                    "<label for='content_gallery'>Foto</label>"+
+                    "<input type='file' id='content_gallery' name='content_gallery[]' class='form-control'>"+
+                    "</div>";
+                }
+            });
+        });
     </script>
 </body>
 </html>
