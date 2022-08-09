@@ -60,6 +60,7 @@
         document.execCommand('copy');
     }
 </script>
+<div class="bg-nav"></div>
 <!-- Start Content -->
 <div class="content">
     <section class="intro-single">
