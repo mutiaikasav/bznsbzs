@@ -66,7 +66,6 @@ class Gallery extends CI_Controller
                 $content_gallery = implode(",",$old_content);
             }
         }
-
         $data['title_gallery'] = $this->input->post('title_gallery');
         $data['description_gallery'] = $this->input->post('description_gallery');
         $data['content_gallery'] = $content_gallery;
