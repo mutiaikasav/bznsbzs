@@ -22,6 +22,7 @@
                 <div class="form-group">
                     <label for="sum">Jumlah Foto</label>
                     <input type="text" id="jum_foto" name="jum_foto" class="form-control" value="<?= (@$data[0]->id_gallery==null)?'':$count_foto; ?>">
+                    <small>*Upload ulang semua foto jika ingin edit salah satu foto</small>
                 </div>
                 <div class="d-flex">
                     <div class="foto">

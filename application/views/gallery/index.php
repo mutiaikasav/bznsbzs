@@ -30,7 +30,7 @@
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $gallery->title_gallery; ?></td>
-                            <td><img src="<?= base_url()?>/assets/img/galeri/<?= $gallery->content_gallery; ?>" alt="" width="100"></td>
+                            <td><?php $foto=explode(',',$gallery->content_gallery);?><img src="<?= base_url()?>/assets/img/galeri/<?= @$foto[0]; ?>" alt="" width="100"></td>
                             <td><?= $gallery->video; ?></td>
                             <td><?= $gallery->description_gallery; ?></td>
                             <td>
