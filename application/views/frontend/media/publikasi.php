@@ -1,3 +1,28 @@
+<script>
+    $.ajax({
+        type:"GET",
+        url: "<?php echo base_url(); ?>api/publikasi",
+        dataType: 'json',
+        success: function(rows)
+        {             
+            $.each(rows, function (i, item) {
+                document.querySelector(".publication-container").innerHTML += '<div class="col-lg-3 col-md-6 publication-item filter-category1">'+
+              '<a href="<?= base_url(); ?>assets/upload/'+item['content_publication']+'" target="_blank">'+
+                '<img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">'+
+                '<center>'+
+                  '<h4>'+item['title_publication']+'</h4>'+
+                  '<button class="btn btn-warning">Download</button>'+
+                '</center>'+
+              '</a>'+
+            '</div>';
+            });
+        },
+        error:function()
+        {
+            alert("Error Connection");
+        }
+    });
+</script>
 <!-- Start Content -->
 <div class="content">
     <div class="break-img">
@@ -26,15 +51,7 @@
             </div>
         </div>
         <div class="row publication-container" data-aos="fade-up">
-            <div class="col-lg-3 col-md-6 publication-item filter-category1">
-              <a href="<?= @$link?>">
-                <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
-                <center>
-                  <h4><?= @$title?></h4>
-                  <button class="btn btn-warning">Download</button>
-                </center>
-              </a>
-            </div>
+            
         </div>
     </div>
     </section>

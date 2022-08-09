@@ -90,7 +90,8 @@ class Api extends CI_Controller {
 
     public function publikasi()
     {
-        
+        $this->load->model('publication_model');
+        echo json_encode($this->publication_model->get());
     }
 
     public function user($id)
