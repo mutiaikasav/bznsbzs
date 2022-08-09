@@ -70,6 +70,7 @@ class Gallery extends CI_Controller
         $data['description_gallery'] = $this->input->post('description_gallery');
         $data['content_gallery'] = $content_gallery;
         $data['video'] = $this->input->post('video');
+        $data['slug'] = str_replace(' ', '-', strtolower($this->input->post('title_gallery'))); 
         
         // update
         if ($id!=null || $id!='') {        

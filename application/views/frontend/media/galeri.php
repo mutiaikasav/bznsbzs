@@ -1,3 +1,28 @@
+<script>
+    $.ajax({
+        type:"GET",
+        url: "<?php echo base_url(); ?>api/galeri",
+        dataType: 'json',
+        success: function(rows)
+        {             
+            $.each(rows, function (i, item) {
+                document.querySelector(".portfolio-container").innerHTML += '<div class="col-lg-4 col-md-6 portfolio-item filter-photo">'+
+                '<a href="<?= base_url(); ?>galeri/'+item['id_gallery']+'/'+item['slug']+'">'+
+                '<img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">'+
+                '<div class="portfolio-info">'+
+                '<h4>'+item['title_gallery']+'</h4>'+
+                '<p>'+item['created_at']+'</p>'+
+                '</div>'+
+                '</a>'+
+                '</div>';
+            });
+        },
+        error:function()
+        {
+            alert("Error Connection");
+        }
+    });
+</script>
 <!-- Start Content -->
 <div class="content">
     <div class="break-img">
@@ -27,88 +52,6 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
-            <a href="galeri-detail.html">
-            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-            </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-video">
-            <a href="galeri-detail.html">
-            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-            </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
-            <a href="galeri-detail.html">
-            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid lozad" alt="">
-            <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-            </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
-            <a href="galeri-detail.html">
-            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-            </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-video">
-            <a href="galeri-detail.html">
-            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-            </div>
-            </a>  
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
-            <a href="galeri-detail.html">
-            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid lozad" alt="">
-            <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-            </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
-            <a href="galeri-detail.html">
-            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-            </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-video">
-            <a href="galeri-detail.html">
-            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-            </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-video">
-            <a href="galeri-detail.html">
-            <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-            </div>
-            </a>
-        </div>
         </div>
         <!-- End blog entries list -->
     </div>

@@ -77,12 +77,15 @@ class Api extends CI_Controller {
 
     public function galeri()
     {
-        
+        $this->load->model('gallery_model');
+        echo json_encode($this->gallery_model->get());
     }
 
     public function galeri_detail()
     {
-        
+        $id = $this->input->post('id');
+        $this->load->model('gallery_model');
+        echo json_encode($this->gallery_model->select($id));
     }
 
     public function publikasi()
