@@ -61,7 +61,7 @@ class Article extends CI_Controller
 
     public function upload()
     {
-        $accepted_origins = array("http://bznsbzs.com");
+        $accepted_origins = array("http://bznsbzs.com", "http://103.154.128.18");
         $imageFolder = "assets/img/article";
 
         if (isset($_SERVER['HTTP_ORIGIN'])) {
@@ -121,13 +121,13 @@ class Article extends CI_Controller
             $data['updated_by'] = $this->session->userdata('id');
             $this->article_model->update($id, $data);
             $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
-            redirect(site_url('article'));
+            redirect(site_url('article-draft'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = $this->session->userdata('id');
             $this->article_model->insert($data);
             $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
-            redirect(site_url('article'));
+            redirect(site_url('article-draft'));
         }
     }
 
@@ -148,15 +148,15 @@ class Article extends CI_Controller
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = $this->session->userdata('id');
             $this->article_model->update($id, $data);
-            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
-            redirect(site_url('article'));
+            // $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            // redirect(site_url('article'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = $this->session->userdata('id');
             $data['published_at'] = date("Y-m-d H:i:s");
             $this->article_model->insert($data);
-            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
-            redirect(site_url('article'));
+            // $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            // redirect(site_url('article'));
         }
     }
 

@@ -47,7 +47,7 @@
                 <?php $related_articles = @$data[0]->related_articles; $rel_art = explode(',', $related_articles); ?>
                 <div class="form-group">
                     <label for="related_articles">Artikel Terkait</label>
-                    <select class="article form-control" name="related_articles[]" multiple="multiple">
+                    <select class="article form-control" id="related_articles" name="related_articles[]" multiple="multiple">
                         <?php foreach ($article as $ar) { ?>
                             <option value="<?= $ar->id_article;?>" <?= (in_array($ar->id_article, $rel_art))?'selected':'';?>><?= $ar->title;?></option>
                         <?php } ?>
@@ -57,33 +57,37 @@
                 <?php $other_articles = @$data[0]->others_articles; $other = explode(',', $other_articles);?>
                 <div class="form-group">
                     <label for="others_articles">Artikel Lainnya</label>
-                    <select class="article form-control" name="others_articles[]" multiple="multiple">
+                    <select class="article form-control" id="others_articles" name="others_articles[]" multiple="multiple">
                         <?php foreach ($article as $ar) { ?>
                             <option value="<?= $ar->id_article;?>" <?= (in_array($ar->id_article, $other))?'selected':'';?>><?= $ar->title;?></option>
                         <?php } ?>
                     </select>
                 </div>
                 <div class="form-group d-flex justify-content-right">
-                    <button class="btn btn-success form-control m-3" type="button" onclick="publish()">
+                    <!-- <button class="btn btn-success form-control m-3" type="button" onclick="publish('<?= base_url()?>article')">
                         <span class="icon text-white-50">
                             <i class="fas fa-paper-plane"></i>
                         </span>
                         <span class="text"> Publish</span>
-                    </button>
+                    </button> -->
                     <!-- <button class="btn btn-warning form-control m-3" type="button" data-toggle="modal" data-target="#exampleModal">
                         <span class="icon text-white-50">
                             <i class="fas fa-clock"></i>
                         </span>
                         <span class="text"> Schedule</span>
                     </button> -->
-                    <?php if(@$data[0]->status == 0 || @$data[0]->status == 1 ){?>
-                    <button class="btn btn-danger form-control m-3" type="button" onclick="hapus_artikel(<?= $data[0]->id_article; ?>)">
+                    <!-- 0=draft, 1=publish, 2=pending, 3=delete -->
+                    <!-- 0,1,2 -->
+                    <?php if(@$data[0]->status !== null){
+                        if (@$data[0]->status != 3 ){?>
+                    <button class="btn btn-danger form-control m-3" type="button" onclick="hapus_artikel(<?= @$data[0]->id_article; ?>)">
                         <span class="icon text-white-50">
                             <i class="fas fa-trash"></i>
                         </span>
-                        <span class="text"> Delete</span>
+                        <span class="text"> Delete </span>
                     </button>
-                    <?php } else if(@$data[0]->status != 1){?>
+                    <!-- 0,2,3 -->
+                    <?php }} if(@$data[0]->status != 1){?>
                     <button class="btn btn-info form-control m-3" type="submit">
                         <span class="icon text-white-50">
                             <i class="fas fa-save"></i>
@@ -99,35 +103,26 @@
 <?php $this->load->view('article/modal_schedule'); ?>
 <!-- /.container-fluid -->
 <script>
-    function publish() {
-        // alert($('#content').val());
-        console.log(document.querySelector("#content").value);
-        
-
-        // $.ajax({
-        //     type:"POST",
-        //     url: "<?php echo base_url(); ?>article/publish",
-        //     data: {
-        //         id: document.getElementById('id').value,
-        //         title: document.getElementById('title').value,
-        //         // content: document.getElementById('content').value,
-        //         // category: document.getElementsByName('category').value,
-        //         // related_articles : document.getElementsByName('related_articles').value,
-        //         // others_articles: document.getElementsByName('others_articles').value
-        //     },
-        //     dataType: 'json',
-        //     success: function(rows)
-        //     { 
-        //         swal("Sukses!", "Artikel berhasil di publish", "success");
-        //         window.location.href = "<?= base_url()?>article";
-        //     },
-
-        //     error:function()
-        //     {
-        //         alert("Error Connection");
-        //     }
-        // });
-    }
+    // function publish(url) {
+    //     alert(document.querySelector('#category').value)
+    //     // $.ajax({
+    //     //     type:"POST",
+    //     //     url: "<?php echo base_url(); ?>article/publish",
+    //     //     data: {
+    //     //         id: document.getElementById('id').value,
+    //     //         title: document.getElementById('title').value,
+    //     //         content: document.querySelector(".tinymce").value,
+    //     //         category: document.querySelector('#category').value,
+    //     //         related_articles : document.querySelector('#related_articles').value,
+    //     //         others_articles: document.querySelector('#others_articles').value
+    //     //     },
+    //     //     success: function(rows)
+    //     //     { 
+    //     //         swal("Sukses!", "Artikel berhasil di publish", "success");
+    //     //         location.replace(url);
+    //     //     },
+    //     // });
+    // }
 
     function hapus_artikel(id) {
         $.ajax({
