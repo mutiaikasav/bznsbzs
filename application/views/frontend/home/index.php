@@ -1,43 +1,71 @@
+<script>
+    $.ajax({
+        type:"POST",
+        url: "<?php echo base_url(); ?>api/index",
+        dataType: 'json',
+        success: function(rows)
+        { 
+            // headline
+            var headline = rows['headline'];
+            document.querySelector('.carousel-indicators').innerHTML ='<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+            document.querySelector('.carousel-inner').innerHTML = '<div class="carousel-item active">'+
+            '<img src="<?= base_url();?>assets/img/banner/'+headline[0]['image']+'" class="d-block w-100" alt="...">'+
+            '<div class="carousel-container">'+
+            '<div class="carousel-content animate__animated animate__fadeInUp">'+
+            '<h2>Sequi ea ut et est quaerat</h2>'+
+            '<p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>'+
+            '<div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>'+
+            '</div>'+
+            '</div>'+
+            '</div>';
+
+            $.each(headline, function (i, item) {
+                if (i !== 0) {
+                    document.querySelector('.carousel-indicators').innerHTML +='<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="'+i+'" aria-label="Slide '+i+'"></button>';
+                    document.querySelector('.carousel-inner').innerHTML += '<div class="carousel-item">'+
+                    '<img src="<?= base_url();?>assets/img/banner/'+item['image']+'" class="d-block w-100" alt="...">'+
+                    '<div class="carousel-container">'+
+                    '<div class="carousel-content animate__animated animate__fadeInUp">'+
+                    '<h2>Sequi ea ut et est quaerat</h2>'+
+                    '<p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>'+
+                    '<div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>';
+                }
+            });
+
+            // program
+            var program = rows['program'];
+            $.each(program, function (i, item) {
+                document.querySelector('#program').innerHTML = '<div class="card-grid-space">'+
+                '<a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Bertaqwa-keagamaan-360x325.png)">'+
+                '<div><h3>Jak B Bertaqwa</h3></div></a></div>';
+            });
+
+            // total
+            // galeri
+            // report
+
+            // collab
+            var collab = rows['collab'];
+            $.each(collab, function (i, item) {
+                document.querySelector('.kerjasama').innerHTML += '<a href="'+item['link']+'" target="_blank"><img src="<?= base_url();?>/assets/img/collab/'+item['logo_collab']+'" alt=""></a>';
+            });
+        },
+        error:function()
+        {
+            alert("Error Connection");
+        }
+    });
+</script>
 <!-- Hero -->
 <section id="hero">
     <!-- Carousel -->
     <div id="carouselExampleFade" data-bs-interval="3000" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner" >
-          <div class="carousel-item active">
-            <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="d-block w-100" alt="...">
-            <div class="carousel-container">
-              <div class="carousel-content animate__animated animate__fadeInUp">
-                <h2>Sequi ea ut et est quaerat</h2>
-                <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="d-block w-100" alt="...">
-            <div class="carousel-container">
-              <div class="carousel-content animate__animated animate__fadeInUp">
-                <h2>Sequi ea ut et est quaerat</h2>
-                <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="d-block w-100" alt="...">
-            <div class="carousel-container">
-              <div class="carousel-content animate__animated animate__fadeInUp">
-                <h2>Sequi ea ut et est quaerat</h2>
-                <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>
-              </div>
-            </div>
-          </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
@@ -166,41 +194,6 @@
     <div class="widget">
     <h2 class="widget-title container">Program</h2>
     <section class="cards-wrapper" id="program">
-        <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Bertaqwa-keagamaan-360x325.png)">
-            <div>
-                <h3>Jak B Bertaqwa</h3>
-            </div>
-        </a>
-        </div>
-        <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Cerdas-Pendidikan-360x325.png)">
-            <div>
-            <h3>Jak B Cerdas</h3>
-            </div>
-        </a>
-        </div>
-        <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Sehat-Kesehatan-360x325.png)">
-            <div>
-            <h3>Jak B Sehat</h3>
-            </div>
-        </a>
-        </div>
-        <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Green-Lingkungan-360x325.png)">
-            <div>
-            <h3>Jak B Green</h3>
-            </div>
-        </a>
-        </div>
-        <div class="card-grid-space">
-        <a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Berdaya-Ekonomi-360x325.png)">
-            <div>
-            <h3>Jak B Berdaya</h3>
-            </div>
-        </a>
-        </div>
     </section>
     </div>
     <!-- <h2>Galang Dana Terbaru</h2> -->
@@ -340,16 +333,9 @@
     <div class="widget">
     <!-- <h2 class="widget-title">Kerjasama</h2> -->
     <section id="kerjasama">
-        <div class="kerjasama">
-            <center>
-            <a href="https://www.megasyariah.co.id/" target="_blank"><img src="<?php base_url();?>/assets/frontend/img/bank-mega-syariah.png" alt=""></a>
-            <a href="https://www.izi.or.id" target="_blank"><img src="<?php base_url();?>/assets/frontend/img/izi.png" alt=""></a>
-            <a href="https://www.mandiriamalinsani.or.id" target="_blank"><img src="<?php base_url();?>/assets/frontend/img/ymai.png" alt=""></a>
-            <a href="https://www.kitabisa.com" target="_blank"><img src="<?php base_url();?>/assets/frontend/img/kitabisa.png" alt=""></a>
-            <a href="https://www.pln.co.id" target="_blank"><img src="<?php base_url();?>/assets/frontend/img/pln.png" alt=""></a>
-            <a href="https://www.kurmamedia.com" target="_blank"><img src="<?php base_url();?>/assets/frontend/img/kurmamedia.png" alt=""></a>
-            </center>
-        </div>
+        <center>
+            <div class="kerjasama"></div>
+        </center>
     </section>
     </div>
     <div class="widget container">

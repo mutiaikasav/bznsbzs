@@ -10,7 +10,31 @@ class Api extends CI_Controller {
 
     public function index()
     {
-        
+        $this->load->model('headline_model');
+        $this->load->model('article_model');
+        $this->load->model('program_model');
+        $this->load->model('transactions_model');
+        $this->load->model('gallery_model');
+        $this->load->model('collaboration_model');
+
+        $headline = $this->headline_model->get();
+        $latest = $this->article_model->select_published();
+        $program = $this->program_model->get();
+        // $total = $this->transaction_model->total();
+        $gallery = $this->gallery_model->get();
+        // $report = $this->transaction_model->report();
+        $collab = $this->collaboration_model->get();
+
+        $wp = array(
+            'headline' => $headline,
+            'latest' => $latest,
+            'program' => $program,
+            // 'total' => $total,
+            'gallery' => $gallery,
+            // 'report' => $report,
+            'collab' => $collab
+        );
+        echo json_encode($wp);
     }
 
     public function about()
