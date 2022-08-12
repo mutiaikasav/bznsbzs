@@ -24,13 +24,6 @@
                     document.querySelector('.carousel-indicators').innerHTML +='<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="'+i+'" aria-label="Slide '+i+'"></button>';
                     document.querySelector('.carousel-inner').innerHTML += '<div class="carousel-item">'+
                     '<img src="<?= base_url();?>assets/img/banner/'+item['image']+'" class="d-block w-100" alt="...">'+
-                    '<div class="carousel-container">'+
-                    '<div class="carousel-content animate__animated animate__fadeInUp">'+
-                    '<h2>Sequi ea ut et est quaerat</h2>'+
-                    '<p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>'+
-                    '<div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>'+
-                    '</div>'+
-                    '</div>'+
                     '</div>';
                 }
             });
@@ -59,6 +52,7 @@
         }
     });
 </script>
+<div class="bg-nav-white"></div>
 <!-- Hero -->
 <section id="hero">
     <!-- Carousel -->
@@ -78,116 +72,115 @@
     </div>
 </section>
 <!-- End Hero -->
-<div class="bg-img-bw">
+<div>
     <div class="widget container" style="margin-top:-20px;">
-        <!-- <br><br>
+        <br><br>
         <center>
             <h2 class="widget-title" style="color: yellow;font-weight: bold;">Kabar Baznas Bazis</h2>
         </center>
         <section class="section-property">
             <div class="container">
-            <div class="row">
-                <div class="title-wrap text-right">
-                <div class="title-link">
-                    <a href="kategori.html">Lihat lainnya
-                    <span class="bi bi-chevron-right"></span>
-                    </a>
+                <div class="row">
+                    <div class="title-wrap text-right">
+                    <div class="title-link">
+                        <a href="kategori.html">Lihat lainnya
+                        <span class="bi bi-chevron-right"></span>
+                        </a>
+                    </div>
+                    </div>
                 </div>
+                <div id="property-carousel" class="swiper">
+                    <div class="swiper-wrapper">      
+                        <div class="carousel-item-b swiper-slide">
+                            <div class="card-box-a card-shadow">
+                                <div class="img-box-a">
+                                    <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" alt="" class="img-a img-fluid lozad">
+                                </div>
+                                <div class="card-overlay">
+                                    <div class="card-overlay-a-content">
+                                        <div class="card-header-a">
+                                            <h2 class="card-title-a">
+                                            <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
+                                            </h2>
+                                        </div>
+                                        <div class="card-body-a">
+                                            <a href="#" class="btn-detail">Baca Selengkapnya
+                                            <span class="bi bi-chevron-right"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-b swiper-slide">
+                            <div class="card-box-a card-shadow">
+                            <div class="img-box-a">
+                                <img src="<?php base_url();?>/assets/frontend/img/DSC05210.JPG" alt="" class="img-a img-fluid lozad">
+                            </div>
+                            <div class="card-overlay">
+                                <div class="card-overlay-a-content">
+                                <div class="card-header-a">
+                                    <h2 class="card-title-a">
+                                    <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
+                                    </h2>
+                                </div>
+                                <div class="card-body-a">
+                                    <a href="artikel.html" class="btn-detail">Baca Selengkapnya
+                                    <span class="bi bi-chevron-right"></span>
+                                    </a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-b swiper-slide">
+                            <div class="card-box-a card-shadow">
+                            <div class="img-box-a">
+                                <img src="<?php base_url();?>/assets/frontend/img/DSC05241.JPG" alt="" class="img-a img-fluid lozad">
+                            </div>
+                            <div class="card-overlay">
+                                <div class="card-overlay-a-content">
+                                <div class="card-header-a">
+                                    <h2 class="card-title-a">
+                                    <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
+                                    </h2>
+                                </div>
+                                <div class="card-body-a">
+                                    <a href="artikel.html" class="btn-detail">Baca Selengkapnya
+                                    <span class="bi bi-chevron-right"></span>
+                                    </a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item-b swiper-slide">
+                            <div class="card-box-a card-shadow">
+                            <div class="img-box-a">
+                                <img src="<?php base_url();?>/assets/frontend/img/DSC05276.JPG" alt="" class="img-a img-fluid lozad">
+                            </div>
+                            <div class="card-overlay">
+                                <div class="card-overlay-a-content">
+                                <div class="card-header-a">
+                                    <h2 class="card-title-a">
+                                    <a href="artikel.html">Lorem, ipsum dolor sit amet....</a>
+                                    </h2>
+                                </div>
+                                <div class="card-body-a">
+                                    <a href="artikel.html" class="btn-detail" >Baca Selengkapnya</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="propery-carousel-pagination carousel-pagination"></div>      
             </div>
-
-            <div id="property-carousel" class="swiper">
-                <div class="swiper-wrapper">      
-                <div class="carousel-item-b swiper-slide">
-                    <div class="card-box-a card-shadow">
-                    <div class="img-box-a">
-                        <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" alt="" class="img-a img-fluid lozad">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-a-content">
-                        <div class="card-header-a">
-                            <h2 class="card-title-a">
-                            <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
-                            </h2>
-                        </div>
-                        <div class="card-body-a">
-                            <a href="#" class="btn-detail">Baca Selengkapnya
-                            <span class="bi bi-chevron-right"></span>
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item-b swiper-slide">
-                    <div class="card-box-a card-shadow">
-                    <div class="img-box-a">
-                        <img src="<?php base_url();?>/assets/frontend/img/DSC05210.JPG" alt="" class="img-a img-fluid lozad">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-a-content">
-                        <div class="card-header-a">
-                            <h2 class="card-title-a">
-                            <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
-                            </h2>
-                        </div>
-                        <div class="card-body-a">
-                            <a href="artikel.html" class="btn-detail">Baca Selengkapnya
-                            <span class="bi bi-chevron-right"></span>
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item-b swiper-slide">
-                    <div class="card-box-a card-shadow">
-                    <div class="img-box-a">
-                        <img src="<?php base_url();?>/assets/frontend/img/DSC05241.JPG" alt="" class="img-a img-fluid lozad">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-a-content">
-                        <div class="card-header-a">
-                            <h2 class="card-title-a">
-                            <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
-                            </h2>
-                        </div>
-                        <div class="card-body-a">
-                            <a href="artikel.html" class="btn-detail">Baca Selengkapnya
-                            <span class="bi bi-chevron-right"></span>
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item-b swiper-slide">
-                    <div class="card-box-a card-shadow">
-                    <div class="img-box-a">
-                        <img src="<?php base_url();?>/assets/frontend/img/DSC05276.JPG" alt="" class="img-a img-fluid lozad">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-a-content">
-                        <div class="card-header-a">
-                            <h2 class="card-title-a">
-                            <a href="artikel.html">Lorem, ipsum dolor sit amet....</a>
-                            </h2>
-                        </div>
-                        <div class="card-body-a">
-                            <a href="artikel.html" class="btn-detail" >Baca Selengkapnya</a>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="propery-carousel-pagination carousel-pagination"></div>      
-            </div>
-        </section> -->
+        </section>
     </div>
 </div>
 <div>
@@ -340,7 +333,7 @@
     </div>
     <div class="widget container">
     <h2 class="widget-title">Zakat Online</h2>
-    <section id="zakat-online">
+    <section id="zakat-online" class="d-flex justify-content-center">
         <div class="zakat">
         <div class="row">
             <div class="form-group mt-3">
