@@ -172,6 +172,9 @@ body {
 .color-white:hover {
 	color: #fff;
 }
+.color-yellow {
+	color: #ffd602;
+}
 .bg-nav {
 	min-height: 250px;
 	background-image: url("../img/header-img.jpg");

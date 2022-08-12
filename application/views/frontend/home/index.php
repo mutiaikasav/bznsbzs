@@ -33,7 +33,7 @@
             $.each(program, function (i, item) {
                 document.querySelector('#program').innerHTML = '<div class="card-grid-space">'+
                 '<a href="program.html" class="card rounded-circle " style="--bg-img:url(<?php base_url();?>/assets/frontend/img/Jak-B-Bertaqwa-keagamaan-360x325.png)">'+
-                '<div><h3>Jak B Bertaqwa</h3></div></a></div>';
+                '<div><h3 class="color-yellow">Jak B Bertaqwa</h3></div></a></div>';
             });
 
             // total
