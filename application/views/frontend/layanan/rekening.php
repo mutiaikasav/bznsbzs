@@ -17,6 +17,7 @@
                     "<td>"+item['account_name']+"</td>"+
                     "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
                     "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
+                    "<td><button onclick='qris("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-upc-scan'></i></button></td>"+
                     "</tr>";
                 })
             },
@@ -40,6 +41,7 @@
                     "<td>"+item['account_name']+"</td>"+
                     "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
                     "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
+                    "<td><button onclick='qris("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-upc-scan'></i></button></td>"+
                     "</tr>";
                 })
             },
@@ -58,6 +60,10 @@
         }, true);
 
         document.execCommand('copy');
+    }
+
+    function qris(params) {
+        $('#Qris').modal('show');
     }
 </script>
 <div class="bg-nav"></div>
@@ -103,6 +109,7 @@
                                     <th scope="col">Rekening Atas Nama</th>
                                     <th scope="col">No Rekening</th>
                                     <th scope="col"></th>
+                                    <th scope="col">QRIS</th>
                                     </tr>
                                 </thead>
                                 <tbody id="data">
@@ -124,6 +131,7 @@
                                     <th scope="col">Rekening Atas Nama</th>
                                     <th scope="col">No Rekening</th>
                                     <th scope="col"></th>
+                                    <th scope="col">QRIS</th>
                                     </tr>
                                 </thead>
                                 <tbody id="data-infak">
@@ -137,3 +145,20 @@
     </section>
 </div>
 <!-- End Content -->
+<!-- Modal -->
+<div class="modal fade" id="Qris" tabindex="-1">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="QrisLabel">Barcode QRIS</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+</div>
