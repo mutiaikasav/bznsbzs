@@ -72,7 +72,7 @@
     </div>
 </section>
 <!-- End Hero -->
-<div>
+<div class="bg-img-bw">
     <div class="widget container" style="margin-top:-20px;">
         <br><br>
         <center>
@@ -82,103 +82,63 @@
             <div class="container">
                 <div class="row">
                     <div class="title-wrap text-right">
-                    <div class="title-link">
-                        <a href="kategori.html">Lihat lainnya
+                    <div class="title-link m-3">
+                        <a href="<?= base_url('kategori/kabar-zakat')?>">Lihat lainnya
                         <span class="bi bi-chevron-right"></span>
                         </a>
                     </div>
                     </div>
+                    <section class="cards"> 
+                        <article class="card-headline card--1">
+                            <div class="card__info-hover"></div>
+                            <div class="card__img"></div>
+                            <a href="#" class="card_link">
+                                <div class="card__img--hover"></div>
+                            </a>
+                            <div class="card__info">
+                                <span class="card__category"> Kabar Baznas Bazis</span>
+                                <h3 class="card__title">Judul artikel</h3>
+                                <button class="btn btn-sm btn-warning">Baca Selengkapnya</button>
+                            </div>
+                        </article>
+                        <article class="card-headline card--1">
+                            <div class="card__info-hover"></div>
+                            <div class="card__img"></div>
+                            <a href="" class="card_link">
+                                <div class="card__img--hover"></div>
+                            </a>
+                            <div class="card__info">
+                                <span class="card__category"> Kabar Baznas Bazis </span>
+                                <h3 class="card__title">Judul Artikel 2</h3>
+                                <button class="btn btn-sm btn-warning">Baca Selengkapnya</button>
+                            </div>
+                        </article>
+                        <article class="card-headline card--1">
+                            <div class="card__info-hover"></div>
+                            <div class="card__img"></div>
+                            <a href="" class="card_link">
+                                <div class="card__img--hover"></div>
+                            </a>
+                            <div class="card__info">
+                                <span class="card__category"> Kabar Baznas Bazis </span>
+                                <h3 class="card__title">Judul Artikel 2</h3>
+                                <button class="btn btn-sm btn-warning">Baca Selengkapnya</button>
+                            </div>
+                        </article>
+                        <article class="card-headline card--1">
+                            <div class="card__info-hover"></div>
+                            <div class="card__img"></div>
+                            <a href="" class="card_link">
+                                <div class="card__img--hover"></div>
+                            </a>
+                            <div class="card__info">
+                                <span class="card__category"> Kabar Baznas Bazis </span>
+                                <h3 class="card__title">Judul Artikel 2</h3>
+                                <button class="btn btn-sm btn-warning">Baca Selengkapnya</button>
+                            </div>
+                        </article>
+                    </section>
                 </div>
-                <div id="property-carousel" class="swiper">
-                    <div class="swiper-wrapper">      
-                        <div class="carousel-item-b swiper-slide">
-                            <div class="card-box-a card-shadow">
-                                <div class="img-box-a">
-                                    <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" alt="" class="img-a img-fluid lozad">
-                                </div>
-                                <div class="card-overlay">
-                                    <div class="card-overlay-a-content">
-                                        <div class="card-header-a">
-                                            <h2 class="card-title-a">
-                                            <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
-                                            </h2>
-                                        </div>
-                                        <div class="card-body-a">
-                                            <a href="#" class="btn-detail">Baca Selengkapnya
-                                            <span class="bi bi-chevron-right"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item-b swiper-slide">
-                            <div class="card-box-a card-shadow">
-                            <div class="img-box-a">
-                                <img src="<?php base_url();?>/assets/frontend/img/DSC05210.JPG" alt="" class="img-a img-fluid lozad">
-                            </div>
-                            <div class="card-overlay">
-                                <div class="card-overlay-a-content">
-                                <div class="card-header-a">
-                                    <h2 class="card-title-a">
-                                    <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
-                                    </h2>
-                                </div>
-                                <div class="card-body-a">
-                                    <a href="artikel.html" class="btn-detail">Baca Selengkapnya
-                                    <span class="bi bi-chevron-right"></span>
-                                    </a>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item-b swiper-slide">
-                            <div class="card-box-a card-shadow">
-                            <div class="img-box-a">
-                                <img src="<?php base_url();?>/assets/frontend/img/DSC05241.JPG" alt="" class="img-a img-fluid lozad">
-                            </div>
-                            <div class="card-overlay">
-                                <div class="card-overlay-a-content">
-                                <div class="card-header-a">
-                                    <h2 class="card-title-a">
-                                    <a href="artikel.html">Lorem, ipsum dolor sit amet...</a>
-                                    </h2>
-                                </div>
-                                <div class="card-body-a">
-                                    <a href="artikel.html" class="btn-detail">Baca Selengkapnya
-                                    <span class="bi bi-chevron-right"></span>
-                                    </a>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item-b swiper-slide">
-                            <div class="card-box-a card-shadow">
-                            <div class="img-box-a">
-                                <img src="<?php base_url();?>/assets/frontend/img/DSC05276.JPG" alt="" class="img-a img-fluid lozad">
-                            </div>
-                            <div class="card-overlay">
-                                <div class="card-overlay-a-content">
-                                <div class="card-header-a">
-                                    <h2 class="card-title-a">
-                                    <a href="artikel.html">Lorem, ipsum dolor sit amet....</a>
-                                    </h2>
-                                </div>
-                                <div class="card-body-a">
-                                    <a href="artikel.html" class="btn-detail" >Baca Selengkapnya</a>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="propery-carousel-pagination carousel-pagination"></div>      
             </div>
         </section>
     </div>
