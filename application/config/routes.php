@@ -122,6 +122,7 @@ $route['kategori/(:any)'] = 'frontend/kategori/$1';
 $route['galeri'] = 'frontend/galeri';
 $route['galeri/(:num)/(:any)'] = 'frontend/galeri_detail/$1/$1';
 $route['publikasi'] = 'frontend/publikasi';
+$route['laporan'] = 'frontend/laporan';
 $route['login'] = 'frontend/login';
 $route['login-user'] = 'frontend/login_user';
 $route['register'] = 'frontend/register';

@@ -140,6 +140,12 @@ class Frontend extends CI_Controller {
         return $this->load->view('frontend/template', $data, TRUE);
 	}
 
+	public function laporan()
+	{
+		$data['content'] = $this->helper->loadView('frontend/media/laporan');
+        return $this->load->view('frontend/template', $data, TRUE);
+	}
+
 	// User
 	public function login()
 	{

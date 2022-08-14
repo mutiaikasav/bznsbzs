@@ -882,6 +882,15 @@ body {
     width: 75%;
   }
 }
+.widget-galeri-publikasi {
+  display: flex;
+}
+@media (max-width: 992px)
+{
+  .widget-galeri-publikasi {
+    display: block;
+  }
+}
 :root {
     --color: #034e2f;
     --transition-time: 0.5s;
@@ -1132,7 +1141,18 @@ body {
   overflow: hidden;
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 }
+@media(max-width: 760px)
+{
+  .cards {
+    display: block;
+    text-align: center;
 
+  }
+  .card-headline {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
 .card-headline:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
   transform: scale(1.1, 1.1);

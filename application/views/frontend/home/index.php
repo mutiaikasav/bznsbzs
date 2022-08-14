@@ -176,41 +176,63 @@
     </div>
 </div>
 <div class="content">
-    <div class="widget container bg-img-rad pt-3">
-    <h2 class="widget-title" style="color: white;">Galeri</h2>
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-        <div class="row" data-aos="fade-up">
-            <div class="col-lg- d-flex justify-content-center">
-            <ul id="portfolio-flters">
-                <li data-filter=".filter-photo" class="filter-active">Foto</li>
-                <li data-filter=".filter-video" style="color: white;">Video</li>
-            </ul>
-            <a class="color-white" href="galeri.html">Lihat Semua > </a>
+    <div class="col-lg-12 widget-galeri-publikasi">
+        <div class="col-lg-8">
+            <div class="widget container bg-img-rad pt-3">
+                <h2 class="widget-title" style="color: white;">Galeri</h2>
+                <section id="portfolio" class="portfolio">
+                    <div class="container">
+                    <div class="row" data-aos="fade-up">
+                        <div class="col-lg- d-flex justify-content-center">
+                        <ul id="portfolio-flters">
+                            <li data-filter=".filter-photo" class="filter-active">Foto</li>
+                            <li data-filter=".filter-video" style="color: white;">Video</li>
+                        </ul>
+                        <a class="color-white" href="galeri.html">Lihat Semua > </a>
+                        </div>
+                    </div>
+        
+                    <div class="row portfolio-container" data-aos="fade-up">
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
+                            <a href="galeri-detail.html" style="text-decoration:none;">
+                            <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="img-fluid lozad" alt="">
+                        </a>
+                        </div>
+        
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-video">
+                            <a href="galeri-detail.html" style="text-decoration:none;">
+                            <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="img-fluid lozad" alt="">
+                        </a>
+                        </div>
+        
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
+                        <a href="galeri-detail.html" style="text-decoration:none;">
+                            <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="img-fluid lozad" alt="">
+                        </a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
             </div>
         </div>
-
-        <div class="row portfolio-container" data-aos="fade-up">
-            <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
-                <a href="galeri-detail.html" style="text-decoration:none;">
-                <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="img-fluid lozad" alt="">
-            </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-video">
-                <a href="galeri-detail.html" style="text-decoration:none;">
-                <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="img-fluid lozad" alt="">
-            </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
-            <a href="galeri-detail.html" style="text-decoration:none;">
-                <img src="<?php base_url();?>/assets/frontend/img/DSC05194.JPG" class="img-fluid lozad" alt="">
-            </a>
+        <div class="col-lg-4">
+            <div class="widget container pt-3">
+                <h2 class="widget-title">Publikasi</h2>
+                <section id="publication" class="portfolio">
+                    <div class="container">
+                        <div class="row publication-container" data-aos="fade-up">
+                            <div class="publication-item filter-category1">
+                                <img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">
+                                <center>
+                                  <h4>Judul Publikasi</h4>
+                                  <a href="<?= base_url(); ?>assets/upload/CamScanner-01-07-2022-10_22.pdf" target="_blank" type="button" class="btn btn-warning">Lihat</a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-        </div>
-    </section>
     </div>
     <div class="widget bg-img-bw py-5">
     <center>
@@ -222,15 +244,15 @@
         <table class="table table-hover">
             <tr>
                 <th>Zakat</th>
-                <td class="color-green"><a href="laporan.html" style="color:white"> Rp 61.013.418.918</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>" style="color:white"> Rp 61.013.418.918</a></td>
             </tr>
             <tr>
                 <th>Infak</th>
-                <td class="color-green"><a href="laporan.html"> Rp 32.993.551.086</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>"> Rp 32.993.551.086</a></td>
             </tr>
             <tr>
                 <th>Total</th>
-                <td class="color-green"><a href="laporan.html"> Rp 94.006.970.004</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>"> Rp 94.006.970.004</a></td>
             </tr>
         </table>
         <p>Pembagian Zakat per Wilayah</p>
@@ -245,38 +267,38 @@
             <tbody>
             <tr>
                 <th scope="row">BAZINAS (BAZIS) Provinsi</a></th>
-                <td class="color-green"><a href="laporan.html">Rp 15.631.381.425</a></td>
-                <td class="color-yellow"><a href="laporan.html">Rp  2.958.845.691</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>">Rp 15.631.381.425</a></td>
+                <td class="color-yellow"><a href="<?= base_url('laporan')?>">Rp  2.958.845.691</a></td>
             </tr>
             <tr>
                 <th scope="row">BAZNAS (BAZIS) Jakarta Pusat</a></th>
-                <td class="color-green"><a href="laporan.html">Rp  5.603.885.948</a></td>
-                <td class="color-yellow"><a href="laporan.html">Rp  3.520.785.405</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>">Rp  5.603.885.948</a></td>
+                <td class="color-yellow"><a href="<?= base_url('laporan')?>">Rp  3.520.785.405</a></td>
             </tr>
             <tr>
                 <th scope="row">BAZINAS (BAZIS) Jakarta Utara</a></th>
-                <td class="color-green"><a href="laporan.html">Rp  4.318.168.863</a></td>
-                <td class="color-yellow"><a href="laporan.html">Rp  3.643.880.132</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>">Rp  4.318.168.863</a></td>
+                <td class="color-yellow"><a href="<?= base_url('laporan')?>">Rp  3.643.880.132</a></td>
             </tr>
             <tr>
                 <th scope="row">BAZINAS (BAZIS) Jakarta Barat</a></th>
-                <td class="color-green"><a href="laporan.html">Rp  8.477.226.601</a></td>
-                <td class="color-yellow"><a href="laporan.html">Rp  5.080.903.720</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>">Rp  8.477.226.601</a></td>
+                <td class="color-yellow"><a href="<?= base_url('laporan')?>">Rp  5.080.903.720</a></td>
             </tr>
             <tr>
                 <th scope="row">BAZINAS (BAZIS) Jakarta Selatan</a></th>
-                <td class="color-green"><a href="laporan.html">Rp 12.434.109.961</a></td>
-                <td class="color-yellow"><a href="laporan.html">Rp  7.859.509.784</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>">Rp 12.434.109.961</a></td>
+                <td class="color-yellow"><a href="<?= base_url('laporan')?>">Rp  7.859.509.784</a></td>
             </tr>
             <tr>
                 <th scope="row">BAZINAS (BAZIS) Jakarta Timur</a></th>
-                <td class="color-green"><a href="laporan.html">Rp 13.773.962.961</a></td>
-                <td class="color-yellow"><a href="laporan.html">Rp  8.176.940.338</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>">Rp 13.773.962.961</a></td>
+                <td class="color-yellow"><a href="<?= base_url('laporan')?>">Rp  8.176.940.338</a></td>
             </tr>
             <tr>
                 <th scope="row">BAZINAS (BAZIS) Adm. Kep. Seribu</a></th>
-                <td class="color-green"><a href="laporan.html">Rp    771.683.159</a></td>
-                <td class="color-yellow"><a href="laporan.html">Rp    302.666.016</a></td>
+                <td class="color-green"><a href="<?= base_url('laporan')?>">Rp    771.683.159</a></td>
+                <td class="color-yellow"><a href="<?= base_url('laporan')?>">Rp    302.666.016</a></td>
             </tr>
             </tbody>
         </table>
