@@ -232,11 +232,11 @@ body {
 	width: 100%;
 	max-height: 250px;
 	overflow: hidden;
-	margin-top: 90px;
 }
 @media (max-width: 767px) {
-	.break-img {
-		max-height: 150px;
+  .break-img {
+    max-height: 150px;
+    margin-top: 90px;
 	}
 }
 .break-img img {
