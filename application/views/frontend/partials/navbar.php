@@ -22,7 +22,6 @@
         }
     });
 </script>
-<!-- <div class="bg-nav-white"></div> -->
 <!-- Start Navbar -->
 <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top" id="myNav">
     <div class="container">

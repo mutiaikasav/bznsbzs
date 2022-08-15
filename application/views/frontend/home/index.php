@@ -7,9 +7,9 @@
         { 
             // headline
             var headline = rows['headline'];
-            document.querySelector('.carousel-indicators').innerHTML ='<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+            document.querySelector('.carousel-indicators').innerHTML ='<button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
             document.querySelector('.carousel-inner').innerHTML = '<div class="carousel-item active">'+
-            '<img src="<?= base_url();?>assets/img/banner/'+headline[0]['image']+'" class="d-block w-100" alt="...">'+
+            '<div class="layer"><img src="<?= base_url();?>assets/img/banner/'+headline[0]['image']+'" class="d-block w-100" alt="..."></div>'+
             '<div class="carousel-container">'+
             '<div class="carousel-content animate__animated animate__fadeInUp">'+
             '<h2>Sequi ea ut et est quaerat</h2>'+
@@ -21,9 +21,9 @@
 
             $.each(headline, function (i, item) {
                 if (i !== 0) {
-                    document.querySelector('.carousel-indicators').innerHTML +='<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="'+i+'" aria-label="Slide '+i+'"></button>';
+                    document.querySelector('.carousel-indicators').innerHTML +='<button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="'+i+'" aria-label="Slide '+i+'"></button>';
                     document.querySelector('.carousel-inner').innerHTML += '<div class="carousel-item">'+
-                    '<img src="<?= base_url();?>assets/img/banner/'+item['image']+'" class="d-block w-100" alt="...">'+
+                    '<div class="layer"><img src="<?= base_url();?>assets/img/banner/'+item['image']+'" class="d-block w-100 layer" alt="...">'+
                     '</div>';
                 }
             });
@@ -52,7 +52,6 @@
         }
     });
 </script>
-<div class="bg-nav-white"></div>
 <!-- Hero -->
 <section id="hero">
     <!-- Carousel -->
@@ -61,11 +60,11 @@
         </div>
         <div class="carousel-inner" >
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
           <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
           <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
