@@ -63,4 +63,9 @@
     </div>
 </footer>
 <!-- End Footer -->
+<div class="service-button d-flex align-items-center justify-content-center">
+    <span><i class="bi bi-gift"></i></span>
+    <a type="button" data-toggle="modal" data-target="#bayarzis" onclick="bayar()">Bayar ZIS</a>
+    <a href="https://simpulkebaikan.id/" target="_blank">Donasi</a>
+</div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>

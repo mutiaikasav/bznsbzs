@@ -15,4 +15,7 @@
     function show(params) {
         $('#exampleModal').modal('show');
     }
+    function bayar() {
+        $('#bayarzis').modal('show');
+    }
 </script>
