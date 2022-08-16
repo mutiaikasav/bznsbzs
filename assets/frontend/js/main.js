@@ -8,8 +8,13 @@ window.addEventListener('DOMContentLoaded', event => {
         }
         if (window.scrollY === 0) {
             navbarCollapsible.classList.remove('navbar-shrink');
-            document.body.querySelector('.logo-green').style.display = "none";
-            document.body.querySelector('.logo-white').style.display = "block";
+            if (screen.width <= '991') {
+              document.body.querySelector('.logo-green').style.display = "block";
+              document.body.querySelector('.logo-white').style.display = "none";
+            } else {
+              document.body.querySelector('.logo-green').style.display = "none";
+              document.body.querySelector('.logo-white').style.display = "block";
+            }
         } else {
             navbarCollapsible.classList.add('navbar-shrink');
             document.body.querySelector('.logo-white').style.display = "none";

@@ -489,6 +489,9 @@ body {
     height: auto;
   }
   @media (max-width: 991px) {
+    .navbar-default.navbar-reduce .navbar-brand.logo-green {
+      display: block;
+    }
     .navbar-default .navbar-brand img{
         width: 75px;
         height: auto;
