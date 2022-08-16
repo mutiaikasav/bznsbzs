@@ -1,3 +1,25 @@
+<script>
+    $.ajax({
+        type:"GET",
+        url: "<?php echo base_url(); ?>api/menu",
+        dataType: 'json',
+        success: function(rows)
+        { 
+            var program = rows['program'];
+            var kategori = rows['category'];
+            $.each(program, function (i, p) {
+                document.querySelector(".footer-program").innerHTML += '<li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('program')?>/'+p['slug']+'">'+p['program_name']+'</a></li>';
+            });
+            $.each(kategori, function (j, k) {
+                document.querySelector(".footer-kategori").innerHTML += '<li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('kategori')?>/'+k['slug']+'">'+k['category_name']+'</a></li>';
+            });
+        },
+        error:function()
+        {
+            alert("Error Connection");
+        }
+    });
+</script>
 <!-- Start Footer -->
 <footer id="footer">
     <div class="footer-top">
@@ -19,21 +41,13 @@
 
             <div class="col-lg-3 col-md-6 footer-links">
                 <h4>Berita dan Artikel</h4>
-                <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="kategori.html">Inspirasi (285)</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="kategori.html">Kabar Zakat Baznas Bazis (380)</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="kategori.html">Lainnya (21)</a></li>
+                <ul class="footer-kategori">
                 </ul>
             </div>
 
             <div class="col-lg-3 col-md-6 footer-links">
                 <h4>Program Kami</h4>
-                <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="program.html">Jak B Sehat</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="program.html">Jak B Bertaqwa</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="program.html">Jak B Cerdas</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="program.html">Jak B Berdaya</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="program.html">Jak B Green</a></li>
+                <ul class="footer-program">
                 </ul>
             </div>
 
