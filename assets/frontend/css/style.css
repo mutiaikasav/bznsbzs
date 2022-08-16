@@ -374,7 +374,6 @@ body {
     backface-visibility: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     border: 0.0625rem hidden rgba(0, 0, 0, 0.5);
-    border-radius: 0 0.5rem;
   }
   @media (max-width: 991px) {
     .navbar-default {
@@ -456,6 +455,9 @@ body {
   .navbar-default.navbar-trans .nav-link.active {
     color: #ffd602;
   }
+  .navbar-default.navbar-shrink .navbar-collapse .navbar-nav .nav-item a {
+    color: #034e2f;
+  }
   .navbar-default.navbar-reduce {
     transition: all 0.5s ease-in-out;
     padding-top: 19px;
@@ -478,6 +480,9 @@ body {
   }
   .navbar-default.navbar-reduce .navbar-brand {
     color: #000000;
+  }
+  .navbar-default.navbar-reduce .navbar-brand.logo-green {
+    display: none;
   }
   .navbar-default .navbar-brand img{
     width: 100px;

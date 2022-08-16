@@ -7,9 +7,13 @@ window.addEventListener('DOMContentLoaded', event => {
             return;
         }
         if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
+            navbarCollapsible.classList.remove('navbar-shrink');
+            document.body.querySelector('.logo-green').style.display = "none";
+            document.body.querySelector('.logo-white').style.display = "block";
         } else {
-            navbarCollapsible.classList.add('navbar-shrink')
+            navbarCollapsible.classList.add('navbar-shrink');
+            document.body.querySelector('.logo-white').style.display = "none";
+            document.body.querySelector('.logo-green').style.display = "block";
         }
 
     };

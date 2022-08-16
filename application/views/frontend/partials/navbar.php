@@ -30,7 +30,8 @@
         <span></span>
         <span></span>
         </button>
-        <a class="navbar-brand text-brand" href="<?= base_url(); ?>"><img src="<?php base_url();?>/assets/frontend/img/Logo Baznas Bazis_2019_v2.png" alt="Logo Baznas Bazis DKI Jakarta"></a>
+        <a class="navbar-brand logo-white text-brand" href="<?= base_url(); ?>"><img src="<?php base_url();?>/assets/frontend/img/Logo Baznas Bazis_2019_v2_putih.png" alt="Logo Baznas Bazis DKI Jakarta"></a>
+        <a class="navbar-brand logo-green text-brand" href="<?= base_url(); ?>"><img src="<?php base_url();?>/assets/frontend/img/Logo Baznas Bazis_2019_v2.png" alt="Logo Baznas Bazis DKI Jakarta"></a>
 
         <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
