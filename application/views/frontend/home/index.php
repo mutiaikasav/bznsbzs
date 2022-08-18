@@ -7,17 +7,6 @@
         { 
             // headline
             var headline = rows['headline'];
-            document.querySelector('.carousel-indicators').innerHTML ='<button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
-            document.querySelector('.carousel-inner').innerHTML = '<div class="carousel-item active">'+
-            '<div class="layer"><img src="<?= base_url();?>assets/img/banner/'+headline[0]['image']+'" class="d-block w-100" alt="..."></div>'+
-            '<div class="carousel-container">'+
-            '<div class="carousel-content animate__animated animate__fadeInUp">'+
-            '<h2>Sequi ea ut et est quaerat</h2>'+
-            '<p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>'+
-            '<div class="text-center"><a href="" class="btn-get-started">Lihat Selengkapnya</a></div>'+
-            '</div>'+
-            '</div>'+
-            '</div>';
 
             $.each(headline, function (i, item) {
                 if (i !== 0) {
@@ -57,8 +46,89 @@
     <!-- Carousel -->
     <div id="carouselExampleFade" data-bs-interval="3000" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         </div>
         <div class="carousel-inner" >
+            <div class="carousel-item active">
+                <div class="layer">
+                    <img src="" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel-content animate__animated animate__fadeInUp">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#umum">Umum</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#asn">Pejabat / ASN DKI</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content tab-content-header">
+                            <div id="umum" class="container tab-pane active"><br>
+                                <form action="">
+                                <div class="form-group mt-3">
+                                    <p><b>Mulai Bayar Zakat/ZIS</b></p>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <select name="" id="" class="form-select">
+                                    <option >Jenis Zakat/ZIS</option>
+                                    <option value="Zakat Penghasilan">Zakat Penghasilan</option>
+                                    <option value="Zakat Maal">Zakat Maal</option>
+                                    <option value="Infaq">Infaq</option>
+                                    <option value="Sedekah Baznas Bazis DKI">Sedekah Baznas Bazis DKI</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-control">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <select name="" id="" class="form-control">
+                                    <option>Pilih Metode Pembayaran</option>
+                                    <option value="Gopay">Gopay</option>
+                                    <option value="Ovo">Ovo</option>
+                                    </select>
+                                </div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="anonim" id="anonim">
+                                    <label class="form-check-label" for="anonim">Jadikan Anonim (Hamba Allah)</label><br>
+                                </div>
+                                </form></br>
+                            </div>
+                            <div id="asn" class="container tab-pane fade"><br>
+                                <form action="">
+                                <div class="form-group mt-3">
+                                    <b>Mulai Bayar Zakat/ZIS Pejabat/ASN DKI</b>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <select name="" id="" class="form-select">
+                                    <option >Jenis Zakat/ZIS</option>
+                                    <option value="Zakat Penghasilan">Zakat Penghasilan</option>
+                                    <option value="Zakat Maal">Zakat Maal</option>
+                                    <option value="Infaq">Infaq</option>
+                                    <option value="Sedekah Baznas Bazis DKI">Sedekah Baznas Bazis DKI</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-control">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <select name="" id="" class="form-control">
+                                    <option>Pilih Metode Pembayaran</option>
+                                    <option value="Gopay">Gopay</option>
+                                    <option value="Ovo">Ovo</option>
+                                    </select>
+                                </div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="anonim" id="anonim">
+                                    <label class="form-check-label" for="anonim">Jadikan Anonim (Hamba Allah)</label><br>
+                                </div>
+                                </form><br>
+                            </div>
+                        </div>
+                        <div class="text-center"><a href="<?= base_url()?>bayarzis" class="btn-get-started">Donasi Sekarang</a></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
           <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>

@@ -25,7 +25,7 @@
                         <b>Mulai Bayar Zakat/ZIS</b>
                     </div>
                     <div class="form-group mt-3">
-                        <select name="" id="" class="form-control">
+                        <select name="" id="" class="form-select">
                         <option >Jenis Zakat/ZIS</option>
                         <option value="Zakat Penghasilan">Zakat Penghasilan</option>
                         <option value="Zakat Maal">Zakat Maal</option>
@@ -34,7 +34,7 @@
                         </select>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-control">
+                        <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-select">
                     </div>
                     <div class="form-group mt-3">
                         <select name="" id="" class="form-control">
@@ -43,9 +43,9 @@
                         <option value="Ovo">Ovo</option>
                         </select>
                     </div>
-                    <div class="form-group mt-3">
-                        <input type="radio" id="anonim" name="fav_language" value="anonim">
-                        <label for="anonim">Jadikan Anonim (Hamba Allah)</label><br>
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" value="anonim" id="anonim">
+                        <label class="form-check-label" for="anonim">Jadikan Anonim (Hamba Allah)</label><br>
                     </div>
                     <div class="form-group mt-3">
                         <center>
@@ -68,7 +68,7 @@
                         <b>Mulai Bayar Zakat/ZIS</b>
                     </div>
                     <div class="form-group mt-3">
-                        <select name="" id="" class="form-control">
+                        <select name="" id="" class="form-select">
                         <option >Jenis Zakat/ZIS</option>
                         <option value="Zakat Penghasilan">Zakat Penghasilan</option>
                         <option value="Zakat Maal">Zakat Maal</option>
@@ -77,7 +77,7 @@
                         </select>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-control">
+                        <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-select">
                     </div>
                     <div class="form-group mt-3">
                         <select name="" id="" class="form-control">
@@ -86,9 +86,9 @@
                         <option value="Ovo">Ovo</option>
                         </select>
                     </div>
-                    <div class="form-group mt-3">
-                        <input type="radio" id="anonim" name="fav_language" value="anonim">
-                        <label for="anonim">Jadikan Anonim (Hamba Allah)</label><br>
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" value="anonim" id="anonim">
+                        <label class="form-check-label" for="anonim">Jadikan Anonim (Hamba Allah)</label><br>
                     </div>
                     <div class="form-group mt-3">
                         <center>
