@@ -227,6 +227,47 @@
     <script src="<?php base_url(); ?>/assets/js/demo/select2-demo.min.js"></script>
     <script src="<?php base_url(); ?>/assets/js/demo/datepicker.min.js"></script>
     <script type="text/javascript">
+        function searchMenu() {
+            let data = document.querySelector('#search_menu').value;
+            if (data.match(/article/g)||data.match(/artikel/g)) {
+                window.location.href='article';
+            } else if (data.match(/dashboar/g)||data.match(/home/g)) {
+                window.location.href='dashboard';
+            } else if (data.match(/tentang/g)||data.match(/about/g)) {
+                window.location.href='about';
+            } else if (data.match(/hubungi/g)||data.match(/contact/g)) {
+                window.location.href='about';
+            } else if (data.match(/banner/g)) {
+                window.location.href='banner';
+            } else if (data.match(/headline/g)) {
+                window.location.href='headline';
+            } else if (data.match(/mitra/g)||data.match(/kerjasama/g)) {
+                window.location.href='collaboration';
+            } else if (data.match(/transaksi/g)||data.match(/transaction/g)||data.match(/zakat/g)) {
+                window.location.href='transaction';
+            } else if (data.match(/rekening/g)||data.match(/bank/g)) {
+                window.location.href='bank';
+            } else if (data.match(/program/g)) {
+                window.location.href='program';
+            } else if (data.match(/category/g)||data.match(/berita/g)||data.match(/news/g)||data.match(/kategori/g)) {
+                window.location.href='category';
+            } else if (data.match(/galeri/g)||data.match(/gallery/g)) {
+                window.location.href='gallery';
+            } else if (data.match(/publikasi/g)||data.match(/publication/g)) {
+                window.location.href='publication';
+            } else if (data.match(/laporan/g)||data.match(/report/g)) {
+                window.location.href='report';
+            } else if (data.match(/donatur/g)||data.match(/mustahik/g)||data.match(/muzakki/g)||data.match(/user/g)) {
+                window.location.href='user';
+            } else if (data.match(/role/g)||data.match(/bagian/g)||data.match(/peran/g)) {
+                window.location.href='role';
+            } else if (data.match(/admin/g)) {
+                window.location.href='admin';
+            } else {
+                alert('Silahkan masukkan menu yang tersedia');
+            }
+        }
+
         function hapus(url){
             swal({
                 title: "Anda yakin menghapus data ini?",

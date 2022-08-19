@@ -8,18 +8,19 @@
     </a>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
-    <form
-        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <br>
+    <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                aria-label="Search" aria-describedby="basic-addon2">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." id="search_menu"
+                aria-label="Search" aria-describedby="basic-addon2" onchange="searchMenu()">
             <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-primary" type="button" onclick="searchMenu()">
                     <i class="fas fa-search fa-sm"></i>
                 </button>
             </div>
         </div>
-    </form>
+    </div>
+    <br>
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
     <li class="nav-item <?php echo ($this->uri->segment(1) == 'dashboard')?'active':''?>">
@@ -34,28 +35,28 @@
     <div class="sidebar-heading">
         General
     </div>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'about')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'about')?'active':''?>" id="tentang-kami">
         <a class="nav-link" href="<?php base_url()?>/about">
             <i class="fas fa-fw fa-info"></i>
             <span>Tentang Kami</span>
         </a>
     </li>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'banner')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'banner')?'active':''?>" id="banner">
         <a class="nav-link" href="<?php base_url()?>/banner">
             <i class="fas fa-fw fa-image"></i>
             <span>Banner</span>
         </a>
     </li>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'headline')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'headline')?'active':''?>" id="headline">
         <a class="nav-link" href="<?php base_url()?>/headline">
             <i class="fas fa-fw fa-heading"></i>
             <span>Headline</span>
         </a>
     </li>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'collaboration')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'collaboration')?'active':''?>" id="mitra">
         <a class="nav-link" href="<?php base_url()?>/collaboration">
             <i class="fas fa-fw fa-handshake"></i>
-            <span>Kerjasama</span>
+            <span>Mitra</span>
         </a>
     </li>
     <!-- Divider -->
@@ -65,25 +66,25 @@
         Layanan Muzakki
     </div>
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'transaction')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'transaction')?'active':''?>" id="transaction">
         <a class="nav-link" href="<?php base_url()?>/transaction">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Transaksi</span>
         </a>
     </li>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'donation')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'donation')?'active':''?>" id="donation">
         <a class="nav-link" href="<?php base_url()?>/donation">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Donasi</span>
         </a>
     </li>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'bank')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'bank')?'active':''?>" id="bank">
         <a class="nav-link" href="<?php base_url()?>/bank">
             <i class="fas fa-fw fa-money-check"></i>
             <span>Rekening</span>
         </a>
     </li>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'confirmation')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'confirmation')?'active':''?>" id="konfirmasi">
         <a class="nav-link" href="<?php base_url()?>/confirmation">
             <i class="fas fa-fw fa-money-check"></i>
             <span>Konfirmasi Zakat</span>
@@ -96,20 +97,20 @@
         Article
     </div>
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item  <?php echo ($this->uri->segment(1) == 'program')?'active':''?>">
+    <li class="nav-item  <?php echo ($this->uri->segment(1) == 'program')?'active':''?>" id="program-category">
         <a class="nav-link" href="<?php base_url()?>/program">
             <i class="fas fa-fw fa-object-group"></i>
-            <span>Program Category</span>
+            <span>Program</span>
         </a>
     </li>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'category')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'category')?'active':''?>" id="news-category">
         <a class="nav-link" href="<?php base_url()?>/category">
             <i class="fas fa-fw fa-layer-group"></i>
             <span>News Category</span>
         </a>
     </li>
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'article')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'article')?'active':''?>" id="article">
         <a class="nav-link collapsed" href="<?php base_url()?>/#" data-toggle="collapse" data-target="#collapseArticle"
             aria-expanded="true" aria-controls="collapseArticle">
             <i class="fas fa-fw fa-file"></i>
@@ -134,20 +135,20 @@
         Galeri
     </div>
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'gallery')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'gallery')?'active':''?>" id="gallery">
         <a class="nav-link" href="<?php base_url()?>/gallery">
             <i class="fas fa-fw fa-images"></i>
             <span>Galeri</span>
         </a>
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'publication')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'publication')?'active':''?>" id="publikasi">
         <a class="nav-link" href="<?php base_url()?>/publication">
             <i class="fas fa-fw fa-file"></i>
             <span>Publikasi</span>
         </a>
     </li>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'report')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'report')?'active':''?>" id="report">
         <a class="nav-link" href="<?php base_url()?>/report">
             <i class="fas fa-fw fa-file"></i>
             <span>Laporan</span>
@@ -161,20 +162,20 @@
     </div>
     <!-- Nav Item - Utilities Collapse Menu -->
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'user')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'user')?'active':''?>" id="mustahik">
         <a class="nav-link" href="<?php base_url()?>/user">
             <i class="fas fa-fw fa-users"></i>
-            <span>User</span>
+            <span>Donatur</span>
         </a>
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'role')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'role')?'active':''?>" id="role-menu">
         <a class="nav-link" href="<?php base_url()?>/role">
             <i class="fas fa-fw fa-user"></i>
             <span>Role</span>
         </a>
     </li>
-    <li class="nav-item <?php echo ($this->uri->segment(1) == 'admin')?'active':''?>">
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'admin')?'active':''?>" id="admin">
         <a class="nav-link" href="<?php base_url()?>/admin">
             <i class="fas fa-fw fa-user"></i>
             <span>Admin</span>
