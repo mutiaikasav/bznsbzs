@@ -68,93 +68,7 @@
                         <button type="button" class="btn btn-danger btn-sm" onclick="hapusHeadline('<?= base_url()?>/headline/delete/4')"><i class="fas fa-trash"></i></button>
                         <button type="button" class="btn btn-info btn-sm" onclick="cari(4)" data-toggle="modal" data-target="#headlineModal">Pilih</button>
                     </div>
-                    <div class="col-lg-2">
-                        <label for="photo">Headline 5</label>
-                        
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[4]->image; ?>" alt="" id="img5" width="150">
-                        <p id="title5"><?= @$data[4]->title; ?></p>
-                        <input type="hidden" id="idheadline5" name="idheadline5" value="<?= @$data[4]->id_headline; ?>">
-                        <input type="hidden" id="id5" name="id5" value="<?= @$data[4]->id_content; ?>">
-                        <input type="hidden" id="type5" name="type[]" value="<?= @$data[4]->type; ?>">
-                        <input type="hidden" id="image5" name="image5" value="<?= @$data[4]->image; ?>">
-                        <input type="hidden" id="title_input5" name="title_input5" value="<?= @$data[4]->title; ?>">
-
-                        <button type="button" class="btn btn-danger btn-sm" onclick="hapusHeadline('<?= base_url()?>/headline/delete/5')"><i class="fas fa-trash"></i></button>
-                        <button type="button" class="btn btn-info btn-sm" onclick="cari(5)" data-toggle="modal" data-target="#headlineModal">Pilih</button>
-                    </div>
-                </div>
-                <div class="form-group d-flex">
-                    <div class="col-lg-2">
-                        <label for="photo">Headline 6</label>
-                        
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[5]->image; ?>" alt="" id="img6" width="150">
-                        <p id="title6"><?= @$data[5]->title; ?></p>
-                        <input type="hidden" id="idheadline6" name="idheadline6" value="<?= @$data[5]->id_headline; ?>">
-                        <input type="hidden" id="id6" name="id6" value="<?= @$data[5]->id_content; ?>">
-                        <input type="hidden" id="type6" name="type[]" value="<?= @$data[5]->type; ?>">
-                        <input type="hidden" id="image6" name="image6" value="<?= @$data[5]->image; ?>">
-                        <input type="hidden" id="title_input6" name="title_input6" value="<?= @$data[5]->title; ?>">
-
-                        <button type="button" class="btn btn-danger btn-sm" onclick="hapusHeadline('<?= base_url()?>/headline/delete/6')"><i class="fas fa-trash"></i></button>
-                        <button type="button" class="btn btn-info btn-sm" onclick="cari(6)" data-toggle="modal" data-target="#headlineModal">Pilih</button>
-                    </div>
-                    <div class="col-lg-2">
-                        <label for="photo">Headline 7</label>
-                        
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[6]->image; ?>" alt="" id="img7" width="150">
-                        <p id="title7"><?= @$data[6]->title; ?></p>
-                        <input type="hidden" id="idheadline7" name="idheadline7" value="<?= @$data[6]->id_headline; ?>">
-                        <input type="hidden" id="id7" name="id7" value="<?= @$data[6]->id_content; ?>">
-                        <input type="hidden" id="type7" name="type[]" value="<?= @$data[6]->type; ?>">
-                        <input type="hidden" id="image7" name="image7" value="<?= @$data[6]->image; ?>">
-                        <input type="hidden" id="title_input7" name="title_input7" value="<?= @$data[6]->title; ?>">
-
-                        <button type="button" class="btn btn-danger btn-sm" onclick="hapusHeadline('<?= base_url()?>/headline/delete/7')"><i class="fas fa-trash"></i></button>
-                        <button type="button" class="btn btn-info btn-sm" onclick="cari(7)" data-toggle="modal" data-target="#headlineModal">Pilih</button>
-                    </div>
-                    <div class="col-lg-2">
-                        <label for="photo">Headline 8</label>
-                        
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[7]->image; ?>" alt="" id="img8" width="150">
-                        <p id="title8"><?= @$data[7]->title; ?></p>
-                        <input type="hidden" id="idheadline8" name="idheadline8" value="<?= @$data[7]->id_headline; ?>">
-                        <input type="hidden" id="id8" name="id8" value="<?= @$data[7]->id_content; ?>">
-                        <input type="hidden" id="type8" name="type[]" value="<?= @$data[7]->type; ?>">
-                        <input type="hidden" id="image8" name="image8" value="<?= @$data[7]->image; ?>">
-                        <input type="hidden" id="title_input8" name="title_input8" value="<?= @$data[7]->title; ?>">
-
-                        <button type="button" class="btn btn-danger btn-sm" onclick="hapusHeadline('<?= base_url()?>/headline/delete/8')"><i class="fas fa-trash"></i></button>
-                        <button type="button" class="btn btn-info btn-sm" onclick="cari(8)" data-toggle="modal" data-target="#headlineModal">Pilih</button>
-                    </div>
-                    <div class="col-lg-2">
-                        <label for="photo">Headline 9</label>
-                        
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[8]->image; ?>" alt="" id="img9" width="150">
-                        <p id="title9"><?= @$data[8]->title; ?></p>
-                        <input type="hidden" id="idheadline9" name="idheadline9" value="<?= @$data[8]->id_headline; ?>">
-                        <input type="hidden" id="id9" name="id9" value="<?= @$data[8]->id_content; ?>">
-                        <input type="hidden" id="type9" name="type[]" value="<?= @$data[8]->type; ?>">
-                        <input type="hidden" id="image9" name="image9" value="<?= @$data[8]->image; ?>">
-                        <input type="hidden" id="title_input9" name="title_input9" value="<?= @$data[8]->title; ?>">
-
-                        <button type="button" class="btn btn-danger btn-sm" onclick="hapusHeadline('<?= base_url()?>/headline/delete/9')"><i class="fas fa-trash"></i></button>
-                        <button type="button" class="btn btn-info btn-sm" onclick="cari(9)" data-toggle="modal" data-target="#headlineModal">Pilih</button>
-                    </div>
-                    <div class="col-lg-2">
-                        <label for="photo">Headline 10</label>
-
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[9]->image; ?>" alt="" id="img10" width="150">
-                        <p id="title10"><?= @$data[9]->title; ?></p>
-                        <input type="hidden" id="idheadline10" name="idheadline10" value="<?= @$data[9]->id_headline; ?>">
-                        <input type="hidden" id="id10" name="id10" value="<?= @$data[9]->id_content; ?>">
-                        <input type="hidden" id="type10" name="type[]" value="<?= @$data[9]->type; ?>">
-                        <input type="hidden" id="image10" name="image10" value="<?= @$data[9]->image; ?>">
-                        <input type="hidden" id="title_input10" name="title_input10" value="<?= @$data[9]->title; ?>">
-
-                        <button type="button" class="btn btn-danger btn-sm" onclick="hapusHeadline('<?= base_url()?>/headline/delete/10')"><i class="fas fa-trash"></i></button>
-                        <button type="button" class="btn btn-info btn-sm" onclick="cari(10)" data-toggle="modal" data-target="#headlineModal">Pilih</button>
-                    </div>
-                </div>           
+                </div>       
                 <div class="form-group">
                     <button class="btn btn-success btn-icon-split" type="submit">
                         <span class="icon text-white-50">
@@ -173,48 +87,15 @@
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="headlineModalLabel">Headline</h5>
+        <h5 class="modal-title" id="headlineModalLabel">Pilih Artikel untuk ditampilkan di Headline</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs">
-            <li class="nav-link active"><a data-toggle="tab" href="#banner">Banner</a></li>
-            <li class="nav-link"><a data-toggle="tab" href="#artikel">Artikel</a></li>
-        </ul>
-
         <div class="tab-content mt-3">
             <input type="hidden" id="order" name="order">
-            <div id="banner" class="tab-pane active">
-                <h3>Banner</h3>
-                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Gambar</th>
-                            <th>Link</th>
-                            <th>Deskripsi</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $i=1; foreach ($banner as $ban) { ?>
-                        <tr>
-                            <td><?= $i; ?></td>
-                            <td><img src="<?php echo base_url('assets/img/banner/'.$ban->image.''); ?>" alt="<?= $ban->description_banner; ?>" width="100"></td>
-                            <td><?= $ban->link; ?></td>
-                            <td><?= $ban->description_banner; ?></td>
-                            <td>
-                                <button type="button" onclick="pilih(<?= $ban->id_banner ?>, 'banner', '<?= $ban->image ?>', '<?= $ban->description_banner ?>')" class="btn btn-sm btn-warning">Pilih</button>
-                            </td>
-                        </tr>
-                        <?php $i++; } ?>
-                    </tbody>
-                </table>
-            </div>
-            <div id="artikel" class="tab-pane fade">
-                <h3>Artikel</h3>
+            <div>
                 <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
