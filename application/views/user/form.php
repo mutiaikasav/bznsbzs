@@ -9,7 +9,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><?= @$title;?> Pengguna</h6>
+            <h6 class="m-0 font-weight-bold text-primary"><?= @$title;?> Mustahik/Muzakki/Donatur</h6>
         </div>
         <div class="card-body">
             <form action="<?php base_url();?>/user/save" method="post" enctype="multipart/form-data">
