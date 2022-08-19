@@ -34,10 +34,10 @@
                         </select>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-select">
+                        <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-control">
                     </div>
                     <div class="form-group mt-3">
-                        <select name="" id="" class="form-control">
+                        <select name="" id="" class="form-select">
                         <option>Pilih Metode Pembayaran</option>
                         <option value="Gopay">Gopay</option>
                         <option value="Ovo">Ovo</option>
@@ -77,10 +77,10 @@
                         </select>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-select">
+                        <input type="text" placeholder="Masukkan nominal min Rp 10.000" class="form-control">
                     </div>
                     <div class="form-group mt-3">
-                        <select name="" id="" class="form-control">
+                        <select name="" id="" class="form-select">
                         <option>Pilih Metode Pembayaran</option>
                         <option value="Gopay">Gopay</option>
                         <option value="Ovo">Ovo</option>
