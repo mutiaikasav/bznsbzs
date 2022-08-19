@@ -21,7 +21,7 @@ class About extends CI_Controller {
 
     public function upload()
     {
-        $accepted_origins = array("http://bznsbzs.com", "http://103.154.128.18");
+        $accepted_origins = array("http://bznsbzs.com", "http://103.154.128.18:8392");
         $imageFolder = "assets/img";
 
         if (isset($_SERVER['HTTP_ORIGIN'])) {
