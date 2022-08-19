@@ -145,7 +145,7 @@
     <div class="widget container" style="margin-top:-20px;">
         <br><br>
         <center>
-            <h2 class="widget-title" style="color: yellow;font-weight: bold;">Kabar Baznas Bazis</h2>
+            <h2 class="widget-kabar">Kabar Baznas Bazis</h2>
         </center>
         <section class="section-property">
             <div class="container">
