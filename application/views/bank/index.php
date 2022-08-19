@@ -23,6 +23,7 @@
                             <th>Nomor Rekening</th>
                             <th>Atas Nama</th>
                             <th>Kategori</th>
+                            <th>QRIS</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -35,6 +36,7 @@
                             <td><?= $bank->account_number; ?></td>
                             <td><?= $bank->account_name; ?></td>
                             <td><?= $bank->category; ?></td>
+                            <td><img src="<?= base_url('assets/img/bank/'.$bank->qris)?>" alt="" width="100"></td>
                             <td>
                                 <a href="bank-edit/<?= $bank->id_bank_account; ?>" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-pen"></i>

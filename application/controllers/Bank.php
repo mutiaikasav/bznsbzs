@@ -35,8 +35,7 @@ class Bank extends CI_Controller
             $config['upload_path']          = './assets/img/bank';
             $config['allowed_types']        = 'jpeg|jpg|png';
             $config['max_size']             = 2040;
-            // $config['max_width']            = 2048;
-            // $config['max_height']           = 1024;
+            $config['file_name']            = 'logo-bank';
     
             $this->load->library('upload', $config);
     
@@ -58,6 +57,30 @@ class Bank extends CI_Controller
         $data['account_number'] = $this->input->post('account_number');
         $data['account_name'] = $this->input->post('account_name');
         $data['category'] = $this->input->post('category');
+        if (!empty($_FILES['qris']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/img/bank';
+            $config['allowed_types']        = 'jpeg|jpg|png';
+            $config['max_size']             = 2040;
+            $config['file_name']            = 'logo-qris';
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('qris'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload_qris = $this->upload->data();
+                $qris = $upload_qris['file_name'];
+            }
+        } else {
+            $qris = $this->input->post('old_qris');
+        }
+        $data['qris'] = $qris;
+
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");

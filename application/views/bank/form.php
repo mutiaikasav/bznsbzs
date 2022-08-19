@@ -19,7 +19,7 @@
                     <img src="<?= base_url().'assets/img/bank/'.@$data[0]->logo_bank; ?>" alt="" width="100">
                 </div>
                 <div class="form-group">
-                    <label for="logo">Logo</label>
+                    <label for="logo">Logo</label><small>* Ukuran foto maks. 2MB</small>
                     <input type="file" id="logo" name="logo" class="form-control">
                 </div>
                 <div class="form-group">
@@ -40,6 +40,14 @@
                         <option value="Rekening Zakat">Rekening Zakat</option>
                         <option value="Rekening Infak">Rekening Infak</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" id="old_qris" name="old_qris" value="<?= @$data[0]->qris; ?>" class="form-control">
+                    <img src="<?= base_url().'assets/img/bank/'.@$data[0]->qris; ?>" alt="" width="100">
+                </div>
+                <div class="form-group">
+                    <label for="qris">QRIS</label><small>* Ukuran foto maks. 2MB</small>
+                    <input type="file" id="qris" name="qris" class="form-control">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success btn-icon-split form-control" type="submit">
