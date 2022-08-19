@@ -18,7 +18,6 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Foto</th>
                             <th>NIK</th>
                             <th>Nama</th>
                             <th>Username</th>
@@ -30,7 +29,6 @@
                         <?php $i=1; foreach ($data as $admin) { ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><img src="<?= base_url()?>/assets/img/admin/<?= $admin->photo; ?>" alt="" width="100"></td>
                             <td><?= $admin->nik; ?></td>
                             <td><?= $admin->name; ?></td>
                             <td><?= $admin->username; ?></td>

@@ -43,31 +43,6 @@ class Admin extends CI_Controller
         }
         $data['role'] = $this->input->post('role');
         $data['phone'] = $this->input->post('phone');
-        if (!empty($_FILES['photo']['name'])) {
-            # code...
-            $config['upload_path']          = './assets/img/admin';
-            $config['allowed_types']        = 'jpeg|jpg|png';
-            $config['max_size']             = 102400;
-            // $config['max_width']            = 2048;
-            // $config['max_height']           = 1024;
-            $config['file_name']            = 'admin';
-    
-            $this->load->library('upload', $config);
-    
-            if ( ! $this->upload->do_upload('photo'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                echo $this->upload->display_errors();
-            }
-            else
-            {
-                $upload = $this->upload->data();
-                $photo = $upload['file_name'];
-            }
-        } else {
-            $photo = $this->input->post('old_photo');
-        }
-        $data['photo'] = $photo;
 
         // update
         if ($id!=null || $id!='') {        

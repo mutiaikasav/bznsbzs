@@ -64,14 +64,6 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="hidden" id="old_photo" name="old_photo" value="<?= @$data[0]->photo; ?>" class="form-control">
-                    <img src="<?= base_url()?>/assets/img/admin/<?= @$data[0]->photo; ?>" alt="" width="100">
-                </div>
-                <div class="form-group">
-                    <label for="photo">Foto</label>
-                    <input type="file" id="photo" name="photo" class="form-control">
-                </div>
-                <div class="form-group">
                     <button class="btn btn-success btn-icon-split form-control" type="submit">
                         <span class="icon text-white-50">
                             <i class="fas fa-save"></i>
