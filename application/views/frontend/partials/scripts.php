@@ -1,9 +1,9 @@
 <script src="<?php base_url();?>/assets/frontend/vendor/purecounter/purecounter.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="<?php base_url();?>/assets/frontend/js/bootstrap.bundle.min.js"></script>
 <script src="<?php base_url();?>/assets/frontend/js/main.js"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+<script type="text/javascript" src="<?php base_url();?>/assets/frontend/js/lozad.min.js"></script>
+<script type="text/javascript" src="<?php base_url();?>/assets/frontend/js/datatables.min.js"></script>
 <script>
     $(document).ready( function () {
         $('#table_donatur').DataTable();
