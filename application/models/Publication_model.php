@@ -2,6 +2,7 @@
 class Publication_model extends CI_Model {
     public function get()
     {
+        $this->db->join('category_publication', 'category_publication.id=publications.category','left');
         $query = $this->db->get('publications');
         return $query->result();
     }

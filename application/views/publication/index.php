@@ -18,6 +18,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Kategori</th>
                             <th>Judul</th>
                             <th>Konten</th>
                             <th>Deskripsi</th>
@@ -28,6 +29,7 @@
                         <?php $i=1; foreach ($data as $publication) { ?>
                         <tr>
                             <td><?= $i; ?></td>
+                            <td><?= $publication->name; ?></td>
                             <td><?= $publication->title_publication; ?></td>
                             <td><a href="<?= base_url('assets/upload/').$publication->content_publication?>" target="_blank"><?= $publication->content_publication; ?></a></td>
                             <td><?= $publication->description_publication; ?></td>

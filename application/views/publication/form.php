@@ -15,6 +15,14 @@
             <form action="<?php base_url();?>/publication/save" method="post" enctype="multipart/form-data">
                 <input type="hidden" id="id" name="id" class="form-control" value="<?= @$data[0]->id_publication; ?>">
                 <div class="form-group">
+                    <label for="category">Kategori</label>
+                    <select name="category" id="category" class="custom-select">
+                        <?php foreach ($category as $r) { ?>
+                            <option value="<?= $r->id; ?>"><?= $r->name; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="title_publication">Judul</label>
                     <input type="text" id="title_publication" name="title_publication" class="form-control" value="<?= @$data[0]->title_publication; ?>">
                 </div>

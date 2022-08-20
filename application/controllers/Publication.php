@@ -23,6 +23,7 @@ class Publication extends CI_Controller
     public function add()
     {
         $content['title'] = 'Tambah';
+        $content['category'] = $this->publication_model->get_category();
         $data['content'] = $this->helper->loadView('publication/form', $content, TRUE);
         return $this->load->view('template', $data, TRUE);
     }
@@ -75,6 +76,7 @@ class Publication extends CI_Controller
     public function edit($id)
     {
         $content['title'] = 'Ubah';
+        $content['category'] = $this->publication_model->get_category();
         $content['data'] = $this->publication_model->select($id);
         $data['content'] = $this->helper->loadView('publication/form', $content, TRUE);
         return $this->load->view('template', $data, TRUE);
