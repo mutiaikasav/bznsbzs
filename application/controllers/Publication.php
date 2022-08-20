@@ -85,4 +85,52 @@ class Publication extends CI_Controller
         $this->publication_model->delete($id);
         redirect(site_url('publication'));
     }
+
+    public function category()
+    {
+        $content['data'] = $this->publication_model->get_category();
+        $data['content'] = $this->helper->loadView('publication/category', $content, TRUE);
+        return $this->load->view('template', $data, TRUE);
+    }
+
+    public function add_category()
+    {
+        $content['title'] = 'Tambah';
+        $data['content'] = $this->helper->loadView('publication/category-form', $content, TRUE);
+        return $this->load->view('template', $data, TRUE);
+    }
+
+    public function save_category()
+    {
+        $id = $this->input->post('id');
+        $data['name'] = $this->input->post('name');
+        // update
+        if ($id!=null || $id!='') {        
+            $data['updated_at'] = date("Y-m-d H:i:s");
+            $data['updated_by'] = $this->session->userdata('id');
+            $this->publication_model->update_category($id, $data);
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('publication-category'));
+        } else { // insert
+            $data['created_at'] = date("Y-m-d H:i:s");
+            $data['created_by'] = $this->session->userdata('id');
+            $this->publication_model->insert_category($data);
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('publication-category'));
+        }
+    }
+
+    public function edit_category($id)
+    {
+        $content['title'] = 'Ubah';
+        $content['data'] = $this->publication_model->select_category($id);
+        $data['content'] = $this->helper->loadView('publication/category-form', $content, TRUE);
+        return $this->load->view('template', $data, TRUE);
+    }
+
+    public function delete_category($id)
+    {
+        $this->publication_model->delete_category($id);
+        redirect(site_url('publication-category'));
+    }
 }

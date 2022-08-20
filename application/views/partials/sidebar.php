@@ -155,10 +155,18 @@
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item <?php echo ($this->uri->segment(1) == 'publication')?'active':''?>" id="publikasi">
-        <a class="nav-link" href="<?php base_url()?>/publication">
+        <a class="nav-link collapsed" href="<?php base_url()?>/#" data-toggle="collapse" data-target="#collapsePublication"
+            aria-expanded="true" aria-controls="collapsePublication">
             <i class="fas fa-fw fa-file"></i>
             <span>Publikasi</span>
         </a>
+        <div id="collapsePublication" class="collapse" aria-labelledby="headingPublication"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?php base_url()?>/publication-category">Kategori Publikasi</a>
+                <a class="collapse-item" href="<?php base_url()?>/publication">Publikasi</a>
+            </div>
+        </div>
     </li>
     <li class="nav-item <?php echo ($this->uri->segment(1) == 'report')?'active':''?>" id="report">
         <a class="nav-link" href="<?php base_url()?>/report">
