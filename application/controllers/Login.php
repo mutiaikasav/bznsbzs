@@ -27,9 +27,9 @@ class Login extends CI_Controller {
             $newdata = array( 
                 'id'        => $login[0]->id_admin,
                 'name'      => $login[0]->name,
-                'photo'     => $login[0]->photo,
                 'username'  => $login[0]->username, 
-                'email'     => $login[0]->email, 
+                'email'     => $login[0]->email,
+                'role'      => $login[0]->access, 
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($newdata);

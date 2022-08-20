@@ -33,6 +33,7 @@ class Admin_model extends CI_Model {
     {
         $this->db->where('username', $username);
         $this->db->where('password', $pass);
+        $this->db->join('roles', 'roles.id_role=admins.role');
         $query = $this->db->get('admins');
         return $query->result();
     }

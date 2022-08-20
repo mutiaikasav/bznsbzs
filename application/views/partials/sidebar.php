@@ -22,6 +22,7 @@
     </div>
     <br>
     <hr class="sidebar-divider my-0">
+    <?php $role = $this->session->userdata('role'); $access = explode(", ",$role); ?>
     <!-- Nav Item - Dashboard -->
     <li class="nav-item <?php echo ($this->uri->segment(1) == 'dashboard')?'active':''?>">
         <a class="nav-link" href="<?php base_url()?>/dashboard">
@@ -29,6 +30,8 @@
             <span>Dashboard</span>
         </a>
     </li>
+    <?php foreach ($access as $a) {
+        if ($a == 'general') { ?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Heading -->
@@ -59,6 +62,9 @@
             <span>Mitra</span>
         </a>
     </li>
+    <?php
+        } if ($a == 'muzakki') {
+    ?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Heading -->
@@ -90,6 +96,9 @@
             <span>Konfirmasi Zakat</span>
         </a>
     </li>
+    <?php
+        } if ($a == 'artikel') {
+    ?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Heading -->
@@ -128,6 +137,9 @@
             </div>
         </div>
     </li>
+    <?php
+        } if ($a == 'galeri') {
+    ?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Heading -->
@@ -154,6 +166,9 @@
             <span>Laporan</span>
         </a>
     </li>
+    <?php
+        } if ($a == 'credentials') {
+    ?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Heading -->
@@ -181,6 +196,7 @@
             <span>Admin</span>
         </a>
     </li>
+    <?php } } ?>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <!-- Sidebar Toggler (Sidebar) -->
