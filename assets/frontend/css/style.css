@@ -792,7 +792,7 @@ body {
   @media(max-width: 760px)
   {
     #hero {
-      height: 50vh;
+      height: 63vh;
       margin-top: 85px;
     }
     #hero .carousel-inner .carousel-item{

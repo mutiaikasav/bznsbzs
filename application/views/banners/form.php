@@ -19,8 +19,16 @@
                     <img src="<?= base_url('assets/img/banner/'.@$data[0]->image);?>" alt="" width="200">
                 </div>
                 <div class="form-group">
-                    <label for="image">Gambar</label>
+                    <label for="image">Gambar Desktop</label><small>* Ukuran Gambar maks. 2MB dengan resolusi lebar 2560px dan tinggi 1191px (lanscape)</small>
                     <input type="file" id="image" name="image" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" id="old_image_mobile" class="form-control" name="old_image_mobile" value="<?= @$data[0]->image;?>">
+                    <img src="<?= base_url('assets/img/banner/'.@$data[0]->image_mobile);?>" alt="" width="200">
+                </div>
+                <div class="form-group">
+                    <label for="image_mobile">Gambar Mobile</label><small>* Ukuran Gambar maks. 2MB dengan resolusi tinggi 600 px (potrait)</small>
+                    <input type="file" id="image_mobile" name="image_mobile" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="link">Link</label>

@@ -55,6 +55,31 @@ class Banner extends CI_Controller
             $image = $this->input->post('old_image');
         }
         $data['image'] = $image;
+        if (!empty($_FILES['image_mobile']['name'])) {
+            # code...
+            $config['upload_path']          = './assets/img/banner';
+            $config['allowed_types']        = 'jpeg|jpg|png';
+            $config['max_size']             = 102400;
+            // $config['max_width']            = 2048;
+            // $config['max_height']           = 1024;
+            $config['file_name']            = 'banner-mobile';
+    
+            $this->load->library('upload', $config);
+    
+            if ( ! $this->upload->do_upload('image_mobile'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();
+            }
+            else
+            {
+                $upload_mobile = $this->upload->data();
+                $image_mobile = $upload_mobile['file_name'];
+            }
+        } else {
+            $image_mobile = $this->input->post('old_image_mobile');
+        }
+        $data['image_mobile'] = $image_mobile;
         $data['link'] = $this->input->post('link');
         $data['description_banner'] = $this->input->post('description_banner');
         // update

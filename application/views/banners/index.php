@@ -28,7 +28,10 @@
                         <?php $i=1; foreach ($data as $banner) { ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><img src="<?php echo base_url('assets/img/banner/'.$banner->image.''); ?>" alt="<?= $banner->description_banner; ?>" width="200"></td>
+                            <td>
+                                <img src="<?php echo base_url('assets/img/banner/'.$banner->image.''); ?>" alt="<?= $banner->description_banner; ?>" width="100"><br><br>
+                                <img src="<?php echo base_url('assets/img/banner/'.$banner->image_mobile.''); ?>" alt="<?= $banner->description_banner; ?>" width="100">
+                            </td>
                             <td><?= $banner->link; ?></td>
                             <td><?= $banner->description_banner; ?></td>
                             <td>
