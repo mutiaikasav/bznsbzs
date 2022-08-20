@@ -236,7 +236,7 @@
             } else if (data.match(/tentang/g)||data.match(/about/g)) {
                 window.location.href='about';
             } else if (data.match(/hubungi/g)||data.match(/contact/g)) {
-                window.location.href='about';
+                window.location.href='contact';
             } else if (data.match(/banner/g)) {
                 window.location.href='banner';
             } else if (data.match(/headline/g)) {
