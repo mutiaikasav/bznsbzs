@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="<?php base_url();?>/assets/img/logo-dark.png" rel="icon">
-    <link href="<?php base_url();?>/assets/img/logo-dark.png" rel="apple-touch-icon">
+    <link href="<?php base_url();?>assets/img/logo-dark-min.png" rel="icon">
+    <link href="<?php base_url();?>assets/img/logo-dark-min.png" rel="apple-touch-icon">
 
     <title>CMS Baznas Bazis DKI Jakarta</title>
 
@@ -41,7 +41,7 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center mb-4">
-                                        <img src="<?php echo base_url().'/assets/img/logo-dark.png'?>" alt="" width="100">
+                                        <img src="<?php echo base_url().'assets/img/logo-dark-min.png'?>" alt="" width="100">
                                     </div>
                                     <form class="user" method="post" action="<?php base_url()?>/authentication">
                                         <div class="form-group">
