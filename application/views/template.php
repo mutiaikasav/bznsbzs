@@ -308,7 +308,7 @@
         $('.datepicker').datepicker();
 
         $(document).ready(function(){
-            $("#jum_foto").change(function(){
+            function jumfoto() {
                 let jum = $("#jum_foto").val();
                 document.querySelector(".foto").innerHTML = "";
                 console.log(jum);
@@ -323,6 +323,9 @@
                     "<input type='file' id='content_gallery' name='content_gallery[]' class='form-control'>"+
                     "</div>";
                 }
+            }
+            $("#jum_foto").change(function(){
+                jumfoto();
             });
         });
     </script>

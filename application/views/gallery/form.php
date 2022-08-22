@@ -21,8 +21,9 @@
                 <?php $foto = @$data[0]->content_gallery; $foto_array = explode(',', $foto); $count_foto = count($foto_array);?>
                 <div class="form-group">
                     <label for="sum">Jumlah Foto</label>
-                    <input type="text" id="jum_foto" name="jum_foto" class="form-control" value="<?= (@$data[0]->id_gallery==null)?'':$count_foto; ?>">
                     <small>*Upload ulang semua foto jika ingin edit salah satu foto</small>
+                    <input type="text" id="jum_foto" name="jum_foto" class="form-control" value="<?= (@$data[0]->id_gallery==null)?'':$count_foto; ?>">
+                    <button type="button" class="btn btn-success btn-sm" onclick="jumfoto()">Tambah Foto</button>
                 </div>
                 <div class="d-flex">
                     <div class="foto">
@@ -33,7 +34,7 @@
                                     <img src="<?= base_url('assets/img/galeri/'.$value)?>" alt="" width="100">
                                 </div>
                                 <div class="form-group">
-                                    <label for="content_gallery">Foto</label>
+                                    <label for="content_gallery">Foto</label><small>* Ukuran foto maks. 2MB</small>
                                     <input type="file" id="content_gallery" name="content_gallery[]" class="form-control">
                                 </div>
                         <?php } }?>
@@ -42,7 +43,7 @@
                 <div class="video">
                     <div class="form-group">
                         <label for="video">Video</label>
-                        <input type="text" id="video" name="video" class="form-control" value="<?= @$data[0]->video; ?>">
+                        <input type="text" id="video" name="video" class="form-control" value="<?= @$data[0]->video; ?>" placeholder="Contoh : https://www.youtube.com/watch?v=9s6tlh97iaU">
                     </div>
                 </div>
                 <!-- <div class="form-group">

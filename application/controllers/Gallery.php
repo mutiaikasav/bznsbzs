@@ -30,11 +30,13 @@ class Gallery extends CI_Controller
     public function save()
     {
         $id = $this->input->post('id');
+        $slug = str_replace(' ', '-', strtolower($this->input->post('title_gallery')));
         $foto = array();
         $old = $this->input->post('old_content_gallery');
         $old_content = array();
         $count = count($_FILES['content_gallery']['name']);
         for($i=0;$i<$count;$i++){
+            $filename = 'img_'.$slug;
             if (!empty($_FILES['content_gallery']['name'][$i])) {
                 $_FILES['content']['name'] = $_FILES['content_gallery']['name'][$i];
                 $_FILES['content']['type'] = $_FILES['content_gallery']['type'][$i];
@@ -47,6 +49,7 @@ class Gallery extends CI_Controller
                 $config['max_size']             = 102400;
                 // $config['max_width']            = 2048;
                 // $config['max_height']           = 1024;
+                $config['file_name']            = $filename;                
         
                 $this->load->library('upload', $config);
         
@@ -59,6 +62,24 @@ class Gallery extends CI_Controller
                 {
                     $upload = $this->upload->data();
                     array_push($foto, $upload['file_name']);
+                    
+                    // upload thumb
+                    $config_thumb = array(
+                        'image_library' => 'gd2',
+                        'source_image' => './assets/img/galeri/'.$upload['file_name'],
+                        'new_image' => './assets/img/galeri/thumb_'.$upload['file_name'],
+                        'maintain_ratio' => TRUE,
+                        'width' => 251,
+                        'height' => 167
+                    );
+                    
+                    $this->load->library('image_lib', $config_thumb);
+                    if (!$this->image_lib->resize()) {
+                        echo $this->image_lib->display_errors();
+                        exit;                        
+                    }
+                    $this->image_lib->clear();
+                    
                     $content_gallery = implode(",",$foto);
                 }
             } else {
@@ -66,11 +87,12 @@ class Gallery extends CI_Controller
                 $content_gallery = implode(",",$old_content);
             }
         }
+
         $data['title_gallery'] = $this->input->post('title_gallery');
         $data['description_gallery'] = $this->input->post('description_gallery');
         $data['content_gallery'] = $content_gallery;
         $data['video'] = $this->input->post('video');
-        $data['slug'] = str_replace(' ', '-', strtolower($this->input->post('title_gallery'))); 
+        $data['slug'] = $slug; 
         
         // update
         if ($id!=null || $id!='') {        
