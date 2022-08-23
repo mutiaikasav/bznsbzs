@@ -27,12 +27,18 @@
                         <tr>
                             <td><?= $i; ?></td>
                             <td><?= $comment->id_user; ?></td>
-                            <td><?= $comment->id_article; ?></td>
+                            <td><?= $comment->title; ?></td>
                             <td><?= $comment->comment; ?></td>
                             <td>
-                                <a href="comment-delete/<?= $comment->id_comment; ?>" class="btn btn-danger btn-circle btn-sm">
-                                    <i class="fas fa-trash"></i>
-                                </a>
+                                <?php if ($comment->status == 1) {?>
+                                    <a href="comment-delete/<?= $comment->id_comment; ?>" class="btn btn-danger btn-circle btn-sm">
+                                        <i class="fas fa-eye-slash"></i>
+                                    </a>
+                                <?php } else {?>
+                                    <a href="comment-show/<?= $comment->id_comment; ?>" class="btn btn-info btn-circle btn-sm">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                <?php } ?>
                             </td>
                         </tr>
                         <?php $i++; } ?>

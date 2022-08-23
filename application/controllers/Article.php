@@ -218,9 +218,17 @@ class Article extends CI_Controller
 
     public function comment_delete($id)
     {
-        $data['status'] = 1; //nonaktif
+        $data['status'] = 0; //nonaktif
         $this->comment_model->update($id, $data);
         $this->session->set_flashdata('flashSimpan','Komentar Berhasil dihapus', 'success');
-        redirect(site_url('article'));
+        redirect(site_url('comments'));
+    }
+
+    public function comment_show($id)
+    {
+        $data['status'] = 1; //aktif
+        $this->comment_model->update($id, $data);
+        $this->session->set_flashdata('flashSimpan','Komentar Berhasil ditampilkan', 'success');
+        redirect(site_url('comments'));
     }
 }
