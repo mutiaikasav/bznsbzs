@@ -15,7 +15,7 @@
                     <div class="col-lg-2">
                         <label for="photo">Headline 1</label>
 
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[0]->image; ?>" alt="" id="img1" width="150">
+                        <img src="<?= @$data[0]->image; ?>" alt="" id="img1" width="150">
                         <p id="title1"><?= @$data[0]->title; ?></p>
                         <input type="hidden" id="idheadline1" name="idheadline1" value="<?= @$data[0]->id_headline; ?>">
                         <input type="hidden" id="id1" name="id1" value="<?= @$data[0]->id_content; ?>">
@@ -29,7 +29,7 @@
                     <div class="col-lg-2">
                         <label for="photo">Headline 2</label>
                         
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[1]->image; ?>" alt="" id="img2" width="150">
+                        <img src="<?= @$data[1]->image; ?>" alt="" id="img2" width="150">
                         <p id="title2"><?= @$data[1]->title; ?></p>
                         <input type="hidden" id="idheadline2" name="idheadline2" value="<?= @$data[1]->id_headline; ?>">
                         <input type="hidden" id="id2" name="id2" value="<?= @$data[1]->id_content; ?>">
@@ -43,7 +43,7 @@
                     <div class="col-lg-2">
                         <label for="photo">Headline 3</label>
                         
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[2]->image; ?>" alt="" id="img3" width="150">
+                        <img src="<?= @$data[2]->image; ?>" alt="" id="img3" width="150">
                         <p id="title3"><?= @$data[2]->title; ?></p>
                         <input type="hidden" id="idheadline3" name="idheadline3" value="<?= @$data[2]->id_headline; ?>">
                         <input type="hidden" id="id3" name="id3" value="<?= @$data[2]->id_content; ?>">
@@ -57,7 +57,7 @@
                     <div class="col-lg-2">
                         <label for="photo">Headline 4</label>
                         
-                        <img src="<?= base_url().'assets/img/banner/'.@$data[3]->image; ?>" alt="" id="img4" width="150">
+                        <img src="<?= @$data[3]->image; ?>" alt="" id="img4" width="150">
                         <p id="title4"><?= @$data[3]->title; ?></p>
                         <input type="hidden" id="idheadline4" name="idheadline4" value="<?= @$data[3]->id_headline; ?>">
                         <input type="hidden" id="id4" name="id4" value="<?= @$data[3]->id_content; ?>">
@@ -113,8 +113,15 @@
                             <td><?= $art->title; ?></td>
                             <td><?= $art->show_at; ?></td>
                             <td><?= $art->published_at; ?></td>
+                            <?php
+                                $html = @$art->content;
+                                $doc = new DOMDocument();
+                                @$doc->loadHTML( @$html );
+
+                                $images = $doc->getElementsByTagName("img");
+                            ?>
                             <td>
-                                <button type="button" onclick="pilih(<?= $art->id_article ?>, 'article', '', '<?= $art->title ?>')" class="btn btn-sm btn-warning">Pilih</button>
+                                <button type="button" onclick="pilih(<?= $art->id_article ?>, 'article','<?= ($images->item(0)!=null)? $images->item(0)->attributes->getNamedItem( 'src' )->nodeValue:'';?>','<?= $art->title ?>')" class="btn btn-sm btn-warning">Pilih</button>
                             </td>
                         </tr>
                         <?php $i++; } ?>
@@ -139,7 +146,7 @@
         document.getElementById('type'+order).value = type;
         document.getElementById('image'+order).value = image;
         document.getElementById('title_input'+order).value = title;
-        document.getElementById('img'+order).src = <?php base_url()?>'assets/img/banner/'+image;
+        document.getElementById('img'+order).src = image;
         document.getElementById("title"+order).innerHTML = title;
         $("#headlineModal").modal("hide");
     }
