@@ -59,7 +59,7 @@
                     <label for="role">Peran</label>
                     <select name="role" id="role" class="custom-select">
                         <?php foreach ($role as $r) { ?>
-                            <option value="<?= $r->id_role; ?>"><?= $r->role_name; ?></option>
+                            <option value="<?= $r->id_role; ?>" <?= (@$data[0]->role==$r->id_role)?'selected':'';?>><?= $r->role_name; ?></option>
                         <?php } ?>
                     </select>
                 </div>

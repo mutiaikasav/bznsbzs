@@ -37,8 +37,8 @@
                 <div class="form-group">
                     <label for="category">Kategori</label>
                     <select name="category" id="category" class="form-control">
-                        <option value="Rekening Zakat">Rekening Zakat</option>
-                        <option value="Rekening Infak">Rekening Infak</option>
+                        <option value="Rekening Zakat" <?= (@$data[0]->category=='Rekening Zakat')?'selected':'';?>>Rekening Zakat</option>
+                        <option value="Rekening Infak" <?= (@$data[0]->category=='Rekening Infak')?'selected':'';?>>Rekening Infak</option>
                     </select>
                 </div>
                 <div class="form-group">
