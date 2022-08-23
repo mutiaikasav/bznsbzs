@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group">
                     <label for="content">Konten Berita</label>
-                    <small>*Ukuran File Gambar < 2Mb</small>
+                    <small>*Ukuran File Gambar < 2Mb, format .JPG,.PNG</small>
                     <textarea name="content" id="content" class="tinymce"><?= @$data[0]->content;?></textarea>
                 </div>
                 <!-- show at -->

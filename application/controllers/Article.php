@@ -62,7 +62,7 @@ class Article extends CI_Controller
     public function upload()
     {
         $accepted_origins = array("http://bznsbzs.com", "http://103.154.128.18:8392");
-        $imageFolder = "assets/img/article";
+        $imageFolder = "assets/img/article/";
 
         if (isset($_SERVER['HTTP_ORIGIN'])) {
             if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
@@ -96,6 +96,22 @@ class Article extends CI_Controller
 
             $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "https://" : "http://";
             $baseurl = $protocol . $_SERVER["HTTP_HOST"] .  "/";
+
+            $config_thumb = array(
+                'image_library' => 'gd2',
+                'source_image' => './'. $filetowrite,
+                'new_image' => './'. $imageFolder .'thumb_'. $temp['name'],
+                'maintain_ratio' => TRUE,
+                'width' => 124,
+                'height' => 122
+            );
+            
+            $this->load->library('image_lib', $config_thumb);
+            if (!$this->image_lib->resize()) {
+                echo $this->image_lib->display_errors();
+                exit;                        
+            }
+            $this->image_lib->clear();
             
             echo json_encode(array('location' => $baseurl . $filetowrite));
         } else {
