@@ -78,6 +78,12 @@
         Layanan Muzakki
     </div>
     <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'division')?'active':''?>" id="division">
+        <a class="nav-link" href="<?php base_url()?>/division">
+            <i class="fas fa-solid fa-suitcase"></i>
+            <span>Unit Kerja</span>
+        </a>
+    </li>
     <li class="nav-item <?php echo ($this->uri->segment(1) == 'transaction')?'active':''?>" id="transaction">
         <a class="nav-link" href="<?php base_url()?>/transaction">
             <i class="fas fa-fw fa-chart-area"></i>

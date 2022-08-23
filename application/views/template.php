@@ -243,6 +243,8 @@
                 window.location.href='headline';
             } else if (data.match(/mitra/g)||data.match(/kerjasama/g)) {
                 window.location.href='collaboration';
+            } else if (data.match(/divisi/g)||data.match(/division/g)||data.match(/unit/g)) {
+                window.location.href='division';
             } else if (data.match(/transaksi/g)||data.match(/transaction/g)||data.match(/zakat/g)) {
                 window.location.href='transaction';
             } else if (data.match(/rekening/g)||data.match(/bank/g)) {
