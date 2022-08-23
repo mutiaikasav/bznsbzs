@@ -176,7 +176,6 @@
             paste_as_text: true,
             file_picker_types: 'file image media',
             images_upload_url: '<?php echo base_url()?>about/upload',
-            automatic_uploads: true,
             image_upload_handler: example_image_upload_handler_about,
             file_picker_callback: function (cb, value, meta) {
                 var input = document.createElement('input');
