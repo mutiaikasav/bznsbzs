@@ -34,6 +34,10 @@
                                             <input class="form-control" placeholder="Ulangi Password Baru" type="password" name="repassword">
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <?= $script; ?>
+                                            <?= $widget; ?>
+                                        </div>
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary my-4">Ubah Password</button>

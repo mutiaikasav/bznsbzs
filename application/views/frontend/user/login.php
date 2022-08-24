@@ -40,6 +40,10 @@
                                         <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
                                         <label class="custom-control-label" for=" customCheckLogin"><span>Ingat Saya</span></label>
                                     </div> -->
+                                    <div class="form-group">
+                                        <?= $script; ?>
+                                        <?= $widget; ?>
+                                    </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary my-4">Masuk</button>
                                     </div>

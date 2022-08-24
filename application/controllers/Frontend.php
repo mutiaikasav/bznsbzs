@@ -98,7 +98,9 @@ class Frontend extends CI_Controller {
 
 	public function bayarzis()
 	{
-		$data['content'] = $this->helper->loadView('frontend/layanan/bayarzis');
+		$content['widget'] = $this->recaptcha->getWidget();
+		$content['script'] = $this->recaptcha->getScriptTag();
+		$data['content'] = $this->helper->loadView('frontend/layanan/bayarzis', $content, TRUE);
         return $this->load->view('frontend/template', $data, TRUE);
 	}
 
@@ -149,7 +151,9 @@ class Frontend extends CI_Controller {
 	// User
 	public function login()
 	{
-		$data['content'] = $this->helper->loadView('frontend/user/login');
+		$content['widget'] = $this->recaptcha->getWidget();
+		$content['script'] = $this->recaptcha->getScriptTag();
+		$data['content'] = $this->helper->loadView('frontend/user/login', $content, TRUE);
         return $this->load->view('frontend/template', $data, TRUE);
 	}
 
@@ -182,7 +186,9 @@ class Frontend extends CI_Controller {
 
 	public function register()
 	{
-		$data['content'] = $this->helper->loadView('frontend/user/register');
+		$content['widget'] = $this->recaptcha->getWidget();
+		$content['script'] = $this->recaptcha->getScriptTag();
+		$data['content'] = $this->helper->loadView('frontend/user/register', $content, TRUE);
         return $this->load->view('frontend/template', $data, TRUE);
 	}
 
@@ -207,13 +213,17 @@ class Frontend extends CI_Controller {
 
 	public function forgot()
 	{
-		$data['content'] = $this->helper->loadView('frontend/user/forgot');
+		$content['widget'] = $this->recaptcha->getWidget();
+		$content['script'] = $this->recaptcha->getScriptTag();
+		$data['content'] = $this->helper->loadView('frontend/user/forgot', $content, TRUE);
         return $this->load->view('frontend/template', $data, TRUE);
 	}
 
 	public function change_password()
 	{
-		$data['content'] = $this->helper->loadView('frontend/user/change');
+		$content['widget'] = $this->recaptcha->getWidget();
+		$content['script'] = $this->recaptcha->getScriptTag();
+		$data['content'] = $this->helper->loadView('frontend/user/change', $content, TRUE);
         return $this->load->view('frontend/template', $data, TRUE);
 	}
 

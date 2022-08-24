@@ -90,6 +90,10 @@
                                   <p>“Saya berniat sengaja mengeluarkan zakat fardhu karena Allah Ta’ala”</p>
                                 </center>
                               </div>
+                              <div class="form-group">
+                                  <?= $script; ?>
+                                  <?= $widget; ?>
+                              </div>
                               <div class="form-group mt-3">
                                 <button class="btn btn-warning form-control">Lanjutkan Pembayaran</button>
                               </div>
@@ -124,6 +128,11 @@
                                   <option value="Ovo">Ovo</option>
                                 </select>
                               </div>
+                              <div class="form-group mt-3">
+                                    <select name="division" id="division" class="form-select division">
+                                        <option>Pilih Unit Kerja</option>
+                                    </select>
+                                </div>
                               <div class="form-check mt-3">
                                   <input class="form-check-input" type="checkbox" value="anonim" id="anonim">
                                   <label class="form-check-label" for="anonim">Jadikan Anonim (Hamba Allah)</label><br>
@@ -135,6 +144,10 @@
                                   <p>Nawaitu an Ukhrija Zakaata Maali Fardhon Lillaahi Ta’aala</p>
                                   <p>“Saya berniat sengaja mengeluarkan zakat fardhu karena Allah Ta’ala”</p>
                                 </center>
+                              </div>
+                              <div class="form-group">
+                                  <?= $script; ?>
+                                  <?= $widget; ?>
                               </div>
                               <div class="form-group mt-3">
                                 <button class="btn btn-warning form-control">Lanjutkan Pembayaran</button>
