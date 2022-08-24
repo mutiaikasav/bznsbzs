@@ -8,6 +8,7 @@
                         <div class="box-login">
                             <div class="text-center mb-3">Ubah Password</div>
                             <div class="box-login-content">
+                                <?php echo $this->session->flashdata('pesan')?>
                                 <form method="post" action="<?php base_url()?>/change-pass">
                                     <div class="form-group mb-3">
                                         <div class="form-group mb-3">

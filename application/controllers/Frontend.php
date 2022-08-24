@@ -169,18 +169,23 @@ class Frontend extends CI_Controller {
             $this->session->set_flashdata('pesan','<div class="alert alert-danger" role="alert">Username/Password salah</div>');
             redirect(site_url('login'));
         } else {
-            $newdata = array( 
-                'id_user'        => $login[0]->id_user,
-                'name_user'      => $login[0]->name_user ,
-                'photo_user'     => $login[0]->photo,
-                'username_user'  => $login[0]->username, 
-                'email_user'     => $login[0]->email, 
-                'logged_in_user' => TRUE
-            );
-            $this->session->set_userdata($newdata);
-
-            $this->session->set_flashdata('pesan','<div class="alert alert-danger" role="alert">Berhasil Login</div>');
-            redirect(site_url('profile'));
+			$recaptcha = $this->input->post('g-recaptcha-response');
+			if (!empty($recaptcha)) {
+				$newdata = array( 
+					'id_user'        => $login[0]->id_user,
+					'name_user'      => $login[0]->name_user ,
+					'photo_user'     => $login[0]->photo,
+					'username_user'  => $login[0]->username, 
+					'email_user'     => $login[0]->email, 
+					'logged_in_user' => TRUE
+				);
+				$this->session->set_userdata($newdata);
+				$this->session->set_flashdata('pesan','<div class="alert alert-success" role="alert">Berhasil Login</div>');
+				redirect(site_url('profile'));
+			} else {
+				$this->session->set_flashdata('pesan','<div class="alert alert-danger" role="alert">Mohon cek Recaptcha</div>');
+				redirect(site_url('login'));
+			}
         }
     }
 
@@ -206,9 +211,14 @@ class Frontend extends CI_Controller {
         $data['password'] = md5($this->input->post('password'));
 		$this->load->database();
 		$this->load->model('user_model');
-		$this->user_model->insert($data);
-		$this->session->set_flashdata('pesan','<div class="alert alert-success" role="alert">Anda telah terdaftar dalam Sistem. Silahkan login dengan username dan password yang sudah anda daftarkan.</div>');
-        redirect(site_url('register'));
+		$recaptcha = $this->input->post('g-recaptcha-response');
+		if (!empty($recaptcha)) {
+			$this->user_model->insert($data);
+			$this->session->set_flashdata('pesan','<div class="alert alert-success" role="alert">Anda telah terdaftar dalam Sistem. Silahkan login dengan username dan password yang sudah anda daftarkan.</div>');
+		} else {
+			$this->session->set_flashdata('pesan','<div class="alert alert-danger" role="alert">Mohon cek Recaptcha.</div>');
+		}
+		redirect(site_url('register'));
 	}
 
 	public function forgot()
@@ -235,9 +245,15 @@ class Frontend extends CI_Controller {
 		$this->load->database();
 		$this->load->model('user_model');
 		$id = $this->session->userdata('id_user');
-		$this->user_model->update($id, $data);
-		$this->session->set_flashdata('pesan','<div class="alert alert-success" role="alert">Password berhasil diubah.</div>');
-        redirect(site_url('login'));
+		$recaptcha = $this->input->post('g-recaptcha-response');
+		if (!empty($recaptcha)) {
+			$this->user_model->update($id, $data);
+			$this->session->set_flashdata('pesan','<div class="alert alert-success" role="alert">Password berhasil diubah.</div>');
+			redirect(site_url('login'));
+		} else {
+			$this->session->set_flashdata('pesan','<div class="alert alert-danger" role="alert">Mohon cek Recaptcha.</div>');
+			redirect(site_url('change-password'));
+		}
 	}
 
 	public function profile()
