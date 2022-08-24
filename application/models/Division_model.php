@@ -12,6 +12,12 @@ class Division_model extends CI_Model {
         return $query->result();
     }
 
+    public function select_by_prov($prov)
+    {
+        $query = $this->db->get_where('divisions', array('province'=>$prov));
+        return $query->result();
+    }
+
     public function insert($data)
     {
         $this->db->insert('divisions', $data);

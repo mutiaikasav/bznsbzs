@@ -1,3 +1,22 @@
+<script>
+var province = 'Jakarta Pusat';
+$.ajax({
+    type:"POST",
+    url: "<?php echo base_url(); ?>api/division",
+    data: {province : province},
+    dataType: 'json',
+    success: function(rows)
+    {
+        $.each(rows, function (i, item) {
+            document.querySelector('.unit-kerja').innerHTML += '<option value="'+['id']+'">'+item['name']+'</option>';
+        });
+    },
+    error:function()
+    {
+        alert("Error Connection Get Unit Kerja");
+    }
+});
+</script>
 <!-- Start Content -->
 <div class="bg-img">
   <div class="content">
@@ -129,7 +148,7 @@
                                 </select>
                               </div>
                               <div class="form-group mt-3">
-                                    <select name="division" id="division" class="form-select division">
+                                    <select name="division" id="division" class="form-select unit-kerja">
                                         <option>Pilih Unit Kerja</option>
                                     </select>
                                 </div>

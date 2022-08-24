@@ -10,16 +10,16 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#umum">Umum</a>
+                    <a class="nav-link active" data-bs-toggle="tab" href="#umum-modal">Umum</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#asn">Pejabat / ASN DKI</a>
+                    <a class="nav-link" data-bs-toggle="tab" href="#asn-modal">Pejabat / ASN DKI</a>
                 </li>
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
-                <div id="umum" class="container tab-pane active"><br>
+                <div id="umum-modal" class="container tab-pane active"><br>
                     <form action="">
                     <div class="form-group mt-3">
                         <b>Mulai Bayar Zakat/ZIS</b>
@@ -62,7 +62,7 @@
                     </div>
                     </form>
                 </div>
-                <div id="asn" class="container tab-pane fade"><br>
+                <div id="asn-modal" class="container tab-pane fade"><br>
                     <form action="">
                     <div class="form-group mt-3">
                         <b>Mulai Bayar Zakat/ZIS</b>
@@ -84,6 +84,11 @@
                         <option>Pilih Metode Pembayaran</option>
                         <option value="Gopay">Gopay</option>
                         <option value="Ovo">Ovo</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-3">
+                        <select name="division" id="division" class="form-select division-modal">
+                            <option>Pilih Unit Kerja</option>
                         </select>
                     </div>
                     <div class="form-check mt-3">

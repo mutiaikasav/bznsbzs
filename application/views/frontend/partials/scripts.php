@@ -18,4 +18,22 @@
     function bayar() {
         $('#bayarzis').modal('show');
     }
+
+    var prov = 'Jakarta Pusat';
+    $.ajax({
+        type:"POST",
+        url: "<?php echo base_url(); ?>api/division",
+        data: {province : prov},
+        dataType: 'json',
+        success: function(rows)
+        {
+            $.each(rows, function (i, item) {
+                document.querySelector('.division-modal').innerHTML += '<option value="'+['id']+'">'+item['name']+'</option>';
+            });
+        },
+        error:function()
+        {
+            alert("Error Connection Get Unit Kerja");
+        }
+    });
 </script>

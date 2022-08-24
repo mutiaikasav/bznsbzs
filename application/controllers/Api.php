@@ -37,6 +37,13 @@ class Api extends CI_Controller {
         echo json_encode($wp);
     }
 
+    public function division()
+    {
+        $prov = $this->input->post('province');
+        $this->load->model('division_model');
+        echo json_encode($this->division_model->select_by_prov($prov));
+    }
+
     public function about()
     {
         $this->load->model('about_model');
