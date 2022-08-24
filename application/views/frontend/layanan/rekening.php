@@ -11,13 +11,14 @@
             { 
                 var url_image = window.location.origin+'/assets/img/bank/';
                 $.each(rows, function (i, item) {
+                    var qris = '"'+url_image+item['qris']+'"';
                     document.querySelector("#data").innerHTML += "<tr>"+
                     "<td><img src='"+url_image+item['logo_bank']+"' alt='"+item['name_bank']+"' width='100'></td>"+
                     "<td>"+item['name_bank']+"</td>"+
                     "<td>"+item['account_name']+"</td>"+
                     "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
                     "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
-                    "<td><button onclick='qris("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-upc-scan'></i></button></td>"+
+                    "<td><button onclick='qris("+qris+")' class='btn btn-sm'><i class='bi bi-upc-scan'></i></button></td>"+
                     "</tr>";
                 })
             },
@@ -35,13 +36,14 @@
             {
                 var url_image = window.location.origin+'/assets/img/bank/';
                 $.each(rows, function (i, item) {
+                    var qris = '"'+url_image+item['qris']+'"';
                     document.querySelector("#data-infak").innerHTML += "<tr>"+
                     "<td><img src='"+url_image+item['logo_bank']+"' alt='"+item['name_bank']+"' width='100'></td>"+
                     "<td>"+item['name_bank']+"</td>"+
                     "<td>"+item['account_name']+"</td>"+
                     "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
                     "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
-                    "<td><button onclick='qris("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-upc-scan'></i></button></td>"+
+                    "<td><button onclick='qris("+qris+")' class='btn btn-sm'><i class='bi bi-upc-scan'></i></button></td>"+
                     "</tr>";
                 })
             },
@@ -64,6 +66,7 @@
 
     function qris(params) {
         $('#Qris').modal('show');
+        $("#image-qris").attr("src", params);
     }
 </script>
 <div class="bg-nav"></div>
@@ -154,7 +157,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-
+            <center>
+                <img src="" alt="" width="300" id="image-qris">
+            </center>
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
