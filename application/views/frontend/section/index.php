@@ -61,7 +61,7 @@
                                             '<a href="<?= base_url()?>artikel/'+rows[0]['id_article']+'/'+rows[0]['slug']+'">'+rows[0]['title']+'</a>'+
                                         '</h1>'+
                                     '</div>'+
-                                    '<div class="headline__date">'+rows[0]['published_at']+
+                                    '<div class="headline__date">'+dateIndo(rows[0]['published_at'])+
                                     '</div>'+
                                 '</div>'+
                             '</div>'+
@@ -91,7 +91,7 @@
                                 '<div class="latest__title">'+
                                     '<h2><a href="<?= base_url()?>artikel/'+article['id_article']+'/'+article['slug']+'"> '+article['title']+'</a></h2>'+
                                 '</div>'+
-                                '<div class="latest__date">'+article['published_at']+
+                                '<div class="latest__date">'+dateIndo(article['published_at'])+
                                 '</div>'+
                             '</div>'+
                         '</div>';

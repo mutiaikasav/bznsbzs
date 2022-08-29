@@ -36,4 +36,33 @@
             alert("Error Connection Get Unit Kerja");
         }
     });
+
+    function dateIndo(params) {
+        var split = params.split(" ");
+        var date = split[0];
+        var date_split = date.split("-");
+        var tahun = date_split[0];
+        var bulan = date_split[1];
+        var tanggal = date_split[2];
+        var time = split[1];
+        var time_split = time.split(":");
+        var jam = time_split[0];
+        var menit = time_split[1];
+        switch(bulan) {
+            case '01': bulan = "Januari"; break;
+            case '02': bulan = "Februari"; break;
+            case '03': bulan = "Maret"; break;
+            case '04': bulan = "April"; break;
+            case '05': bulan = "Mei"; break;
+            case '06': bulan = "Juni"; break;
+            case '07': bulan = "Juli"; break;
+            case '08': bulan = "Agustus"; break;
+            case '09': bulan = "September"; break;
+            case '10': bulan = "Oktober"; break;
+            case '11': bulan = "November"; break;
+            case '12': bulan = "Desember"; break;
+        }
+        var tampilTanggal = tanggal + " " + bulan + " " + tahun + " " + jam + ":" + menit;
+        return tampilTanggal;
+    }
 </script>
