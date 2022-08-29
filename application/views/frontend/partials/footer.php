@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="container d-md-flex py-4">
+    <div class="container d-md-flex py-4 mb-4">
         <div class="me-md-auto text-center text-md-start">
             <div class="copyright">
             &copy; Copyright <strong><span>Baznas Bazis DKI Jakarta</span> 2022</strong>. All Rights Reserved
@@ -79,7 +79,14 @@
 <!-- End Footer -->
 <div class="service-button d-flex align-items-center justify-content-center">
     <span><i class="bi bi-gift"></i></span>
-    <a type="button" data-toggle="modal" data-target="#bayarzis" onclick="bayar()">Bayar ZIS</a>
+    <!-- <a type="button" data-toggle="modal" data-target="#bayarzis" onclick="bayar()">Bayar ZIS</a> -->
+    <a href="https://simpulkebaikan.id/donasi-cepat/" target="_blank">Bayar ZIS</a>
     <a href="https://simpulkebaikan.id/" target="_blank">Donasi</a>
 </div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
+<div class="mobileShow mobile-zis">
+    <a href="https://simpulkebaikan.id/donasi-cepat/" target="_blank" class="">Bayar ZIS</a>
+</div>
+<div class="mobileShow mobile-donasi">
+    <a href="https://simpulkebaikan.id/" target="_blank" class="mobile-donasi">Donasi</a>
+</div>
