@@ -132,17 +132,35 @@ class Article extends CI_Controller
         $data['others_articles'] = $others;
         $data['status'] = 0;
         $data['slug'] = str_replace(' ', '-', strtolower($this->input->post('title'))); 
+        $cat = $this->input->post('category');
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");
             $data['updated_by'] = $this->session->userdata('id');
             $this->article_model->update($id, $data);
+            $this->article_model->delete_detail($id);
+            foreach ($cat as $c) {
+                $k = explode("|", $c);
+                $set['id_article'] = $id;
+                $set['category'] = $k[0];
+                $set['id_category'] = $k[1];
+                $this->article_model->insert_detail($set);
+            }
+
             $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
             redirect(site_url('article-draft'));
         } else { // insert
             $data['created_at'] = date("Y-m-d H:i:s");
             $data['created_by'] = $this->session->userdata('id');
             $this->article_model->insert($data);
+            $insert_id = $this->db->insert_id();
+            foreach ($cat as $c) {
+                $k = explode("|", $c);
+                $set['id_article'] = $insert_id;
+                $set['category'] = $k[0];
+                $set['id_category'] = $k[1];
+                $this->article_model->insert_detail($set);
+            }
             $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
             redirect(site_url('article-draft'));
         }

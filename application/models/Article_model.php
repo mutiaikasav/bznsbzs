@@ -49,4 +49,25 @@ class Article_model extends CI_Model
         $this->db->where('id_article', $id);
         $this->db->delete('articles');
     }
+
+    public function insert_detail($data)
+    {
+        $this->db->insert('detail_article', $data);
+    }
+
+    public function delete_detail($id)
+    {
+        $this->db->where('id_article', $id);
+        $this->db->delete('detail_article');
+    }
+
+    public function select_section($id, $category)
+    {
+        $this->db->join('articles', 'articles.id_article = detail_article.id_article');
+        $this->db->where('detail_article.category', $category);
+        $this->db->where('detail_article.id_category', 1);
+        $this->db->where('articles.status', 1);
+        $query = $this->db->get('detail_article');
+        return $query->result();
+    }
 }

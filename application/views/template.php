@@ -117,6 +117,8 @@
             file_picker_types: 'file image media',
             images_upload_url: '<?php echo base_url()?>article/upload',
             image_upload_handler: example_image_upload_handler,
+            relative_urls: false,
+            remove_script_host: false,
             file_picker_callback: function (cb, value, meta) {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'file');
@@ -177,6 +179,8 @@
             file_picker_types: 'file image media',
             images_upload_url: '<?php echo base_url()?>about/upload',
             image_upload_handler: example_image_upload_handler_about,
+            relative_urls: false,
+            remove_script_host: false,
             file_picker_callback: function (cb, value, meta) {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'file');
