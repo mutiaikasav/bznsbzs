@@ -62,13 +62,13 @@
         </div>
     </div>
 
-    <div class="container d-md-flex py-4 mb-4">
+    <div class="container d-md-flex py-4">
         <div class="me-md-auto text-center text-md-start">
             <div class="copyright">
             &copy; Copyright <strong><span>Baznas Bazis DKI Jakarta</span> 2022</strong>. All Rights Reserved
             </div>
         </div>
-        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <div class="social-links text-center text-md-right pt-3 pt-md-0 mb-4">
             <a href="https://www.instagram.com/baznasbazisdkijakarta/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
             <a href="https://www.facebook.com/baznasbazis/" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
             <a href="https://www.twitter.com/baznasbazis" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
