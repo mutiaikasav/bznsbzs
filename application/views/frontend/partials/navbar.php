@@ -35,11 +35,6 @@
 
         <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
-
-            <li class="nav-item">
-            <a href="<?= base_url(); ?>" class="nav-link <?php echo ($this->uri->segment(1) == '')?'active':''?>">Beranda</a>
-            </li>
-
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'legalitas' || $this->uri->segment(1) == 'visimisi' || $this->uri->segment(1) == 'struktur' || $this->uri->segment(1) == 'organisasi' || $this->uri->segment(1) == 'sejarah' || $this->uri->segment(1) == 'hubungi-kami' || $this->uri->segment(1) == 'kebijakan')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang</a>
             <div class="dropdown-menu">
