@@ -1,5 +1,5 @@
 <script>
-var province = 'Jakarta Pusat';
+var province = 'Semua Wilayah';
 $.ajax({
     type:"POST",
     url: "<?php echo base_url(); ?>api/division",

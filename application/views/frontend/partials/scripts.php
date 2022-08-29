@@ -19,7 +19,7 @@
         $('#bayarzis').modal('show');
     }
 
-    var prov = 'Jakarta Pusat';
+    var prov = 'Semua Wilayah';
     $.ajax({
         type:"POST",
         url: "<?php echo base_url(); ?>api/division",
@@ -28,7 +28,7 @@
         success: function(rows)
         {
             $.each(rows, function (i, item) {
-                document.querySelector('.division-modal').innerHTML += '<option value="'+['id']+'">'+item['name']+'</option>';
+                document.querySelector('.division-modal').innerHTML += '<option value="'+item['id']+'">'+item['name']+'</option>';
             });
         },
         error:function()

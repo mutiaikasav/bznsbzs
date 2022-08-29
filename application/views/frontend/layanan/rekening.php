@@ -17,7 +17,7 @@
                     "<td>"+item['name_bank']+"</td>"+
                     "<td>"+item['account_name']+"</td>"+
                     "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
-                    "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
+                    "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm' id='copy-button-"+item['id_bank_account']+"'><i class='bi bi-clipboard'></i></button></td>"+
                     "<td><button onclick='qris("+qris+")' class='btn btn-sm'><i class='bi bi-upc-scan'></i></button></td>"+
                     "</tr>";
                 })
@@ -42,7 +42,7 @@
                     "<td>"+item['name_bank']+"</td>"+
                     "<td>"+item['account_name']+"</td>"+
                     "<td>"+item['account_number']+"<input type='hidden' id='"+item['id_bank_account']+"' value='"+item['account_number']+"'></td>"+
-                    "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm'><i class='bi bi-clipboard'></i></button></td>"+
+                    "<td><button onclick='copy("+item['id_bank_account']+")' class='btn btn-sm' id='copy-button-"+item['id_bank_account']+"'><i class='bi bi-clipboard'></i></button></td>"+
                     "<td><button onclick='qris("+qris+")' class='btn btn-sm'><i class='bi bi-upc-scan'></i></button></td>"+
                     "</tr>";
                 })
@@ -62,6 +62,7 @@
         }, true);
 
         document.execCommand('copy');
+        document.querySelector('#copy-button-'+param).innerHTML = 'Copied!';
     }
 
     function qris(params) {
@@ -103,7 +104,7 @@
                 <br>
                 <div class="col-lg-12">
                     <div class="konfirmasi">
-                        <div class="row col-lg-12">
+                        <div class="row col-lg-12 table-responsive">
                             <input type="hidden" value="" id="empty">
                             <table class="table table-hover">
                                 <thead>
@@ -126,7 +127,7 @@
                 <br>
                 <div class="col-lg-12">
                     <div class="konfirmasi">
-                        <div class="row col-lg-12">
+                        <div class="row col-lg-12 table-responsive">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>

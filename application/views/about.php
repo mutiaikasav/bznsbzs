@@ -5,13 +5,14 @@
         <h1 class="h3 mb-2 text-gray-800">Tentang Kami</h1>
     </div>
     <form action="about/save" method="post">
+        <input type="hidden" name="id" id="id" value="<?= @$data[0]->id?>">
         <!-- Legalitas Form -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Legalitas</h6>
             </div>
             <div class="card-body">
-                <textarea class="tinymceabout" id="legalitas" name="legalitas"><?= $data[0]->legalitas?></textarea>
+                <textarea class="tinymceabout" id="legalitas" name="legalitas"><?= @$data[0]->legalitas?></textarea>
             </div>
         </div>
         <!-- Visi Misi Form -->
@@ -20,7 +21,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Visi Misi</h6>
             </div>
             <div class="card-body">
-                <textarea class="tinymceabout" id="visimisi" name="visimisi"><?= $data[0]->visimisi?></textarea>
+                <textarea class="tinymceabout" id="visimisi" name="visimisi"><?= @$data[0]->visimisi?></textarea>
             </div>
         </div>
         <!-- Struktur Form -->
@@ -29,7 +30,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Struktur Organisasi</h6>
             </div>
             <div class="card-body">
-                <textarea class="tinymceabout" id="struktur" name="struktur"><?= $data[0]->struktur?></textarea>
+                <textarea class="tinymceabout" id="struktur" name="struktur"><?= @$data[0]->struktur?></textarea>
             </div>
         </div>
         <!-- Organisasi Form -->
@@ -38,7 +39,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Organisasi</h6>
             </div>
             <div class="card-body">
-                <textarea class="tinymceabout" id="organisasi" name="organisasi"><?= $data[0]->organisasi?></textarea>
+                <textarea class="tinymceabout" id="organisasi" name="organisasi"><?= @$data[0]->organisasi?></textarea>
             </div>
         </div>
         <!-- Sejarah Form -->
@@ -47,7 +48,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Sejarah</h6>
             </div>
             <div class="card-body">
-                <textarea class="tinymceabout" id="sejarah" name="sejarah"><?= $data[0]->sejarah?></textarea>
+                <textarea class="tinymceabout" id="sejarah" name="sejarah"><?= @$data[0]->sejarah?></textarea>
             </div>
         </div>
         <!-- Kebijakan Form -->
@@ -56,7 +57,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Kebijakan Privasi</h6>
             </div>
             <div class="card-body">
-                <textarea class="tinymceabout" id="kebijakan" name="kebijakan"><?= $data[0]->kebijakan?></textarea>
+                <textarea class="tinymceabout" id="kebijakan" name="kebijakan"><?= @$data[0]->kebijakan?></textarea>
             </div>
         </div>
         <button class="btn btn-success btn-icon-split" type="submit">

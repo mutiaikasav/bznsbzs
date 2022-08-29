@@ -57,6 +57,7 @@ class Publication extends CI_Controller
         $data['content_publication'] = $content_publication;
         $data['title_publication'] = $this->input->post('title_publication');
         $data['description_publication'] = $this->input->post('description_publication');
+        $data['category'] = $this->input->post('category');
         // update
         if ($id!=null || $id!='') {        
             $data['updated_at'] = date("Y-m-d H:i:s");

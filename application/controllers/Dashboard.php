@@ -9,8 +9,8 @@ class Dashboard extends CI_Controller {
             redirect(site_url('cms'));
         }
         $this->load->database();
-        $this->load->model('transactions_model');
-        $content['wilayah'] = $this->transactions_model->group_wilayah();
+        $this->load->model('message_model');
+        $content['message'] = $this->message_model->get_latest();
         $data['content'] = $this->helper->loadView('dashboard', $content, TRUE);
         return $this->load->view('template', $data, TRUE);
     }

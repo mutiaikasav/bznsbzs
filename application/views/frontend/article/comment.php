@@ -1,19 +1,66 @@
+<script>
+    function send_comment() {
+        var comment = document.querySelector('#comment').value;
+        $.ajax({
+            type:"POST",
+            url: "<?php echo base_url(); ?>api/comment_post",
+            data: {id:id, comment:comment},
+            dataType: 'json',
+            success: function(rows)
+            { 
+                // console.log(rows);
+                // location.reload();
+            },
+            error:function()
+            {
+                alert("Error Connection");
+            }
+        });
+    }
+
+    $.ajax({
+        type:"POST",
+        url: "<?php echo base_url(); ?>api/comment",
+        data: {id:id},
+        dataType: 'json',
+        success: function(rows)
+        { 
+            $.each(rows, function (i, item) {
+                document.querySelector('.comments').innerHTML += '<div id="comment-1" class="comment">'+
+                '<div class="d-flex">'+
+                '<div class="comment-img"><img src="assets/img/user.png" alt="" class="lozad"></div>'+
+                '<div>'+
+                '<h5>'+item['name_user']+'<a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>'+
+                '<time datetime="'+item['created_at']+'">'+item['created_at']+'</time>'+
+                '<p>'+item['comment']+'</p>'+
+                '</div>'+
+                '</div>'+
+                '</div>';
+            });
+        },
+        error:function()
+        {
+            alert("Error Connection");
+        }
+    });
+        
+</script>
 <div class="blog-comments">
     <p class="blog-comments-title">Komentar</p>
     <div class="reply-form">
         <h4>Berikan Komentar/Tanggapan Anda</h4>
-        <p>* Masuk ke akun anda terlebih dahulu </p>
-        <form action="">
+        <!-- <p>* Masuk ke akun anda terlebih dahulu </p> -->
         <div class="row">
             <div class="col form-group">
-            <textarea name="comment" class="form-control" placeholder="Komentar Anda" rows="5"></textarea>
+                <textarea id="comment" name="comment" class="form-control" placeholder="Komentar Anda" rows="5"></textarea>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Kirim</button>    
-        </form>
-        <br>
-        <h4 class="comments-count">6 Komentar</h4>
-        <div id="comment-1" class="comment">
+        <button type="submit" class="btn btn-primary" onclick="send_comment()">Kirim</button>
+        <div class="comments">
+
+        </div>
+        <!-- <h4 class="comments-count">6 Komentar</h4> -->
+        <!-- <div id="comment-1" class="comment">
         <div class="d-flex">
             <div class="comment-img"><img src="assets/img/user.png" alt="" class="lozad"></div>
             <div>
@@ -25,7 +72,7 @@
             </p>
             </div>
         </div>
-        </div><!-- End comment #1 -->
+        </div>
 
         <div id="comment-2" class="comment">
         <div class="d-flex">
@@ -67,11 +114,11 @@
                 </div>
             </div>
 
-            </div><!-- End comment reply #2-->
+            </div>
 
-        </div><!-- End comment reply #1-->
+        </div>
 
-        </div><!-- End comment #2-->
+        </div>
 
         <div id="comment-3" class="comment">
         <div class="d-flex">
@@ -86,7 +133,7 @@
             </div>
         </div>
 
-        </div><!-- End comment #3 -->
+        </div>
 
         <div id="comment-4" class="comment">
         <div class="d-flex">
@@ -98,8 +145,8 @@
                 Dolorem atque aut. Omnis doloremque blanditiis quia eum porro quis ut velit tempore. Cumque sed quia ut maxime. Est ad aut cum. Ut exercitationem non in fugiat.
             </p>
             </div>
-        </div>
+        </div> 
 
-        </div><!-- End comment #4 -->
+        </div> -->
     </div>      
 </div>

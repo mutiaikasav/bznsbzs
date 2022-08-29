@@ -7,6 +7,14 @@ class Publication_model extends CI_Model {
         return $query->result();
     }
 
+    public function get_limit($limit = 10)
+    {
+        $this->db->order_by("id_publication", "desc");
+        $this->db->limit($limit);
+        $query = $this->db->get('publications');
+        return $query->result();
+    }
+
     public function select($id)
     {
         $query = $this->db->get_where('publications', array('id_publication'=>$id));

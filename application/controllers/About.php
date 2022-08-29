@@ -65,6 +65,7 @@ class About extends CI_Controller {
 
     public function save()
     {   
+        $id = $this->input->post('id');
         $data['legalitas'] = $this->input->post('legalitas');
         $data['visimisi'] = $this->input->post('visimisi');
         $data['struktur'] = $this->input->post('struktur');
@@ -72,14 +73,20 @@ class About extends CI_Controller {
         $data['sejarah'] = $this->input->post('sejarah');
         $data['kebijakan'] = $this->input->post('kebijakan');
 
-        // $data['created_at'] = date("Y-m-d H:i:s");
-        // $data['created_by'] = $this->session->userdata('id');
-        $data['updated_at'] = date("Y-m-d H:i:s");
-        $data['updated_by'] = $this->session->userdata('id');
-
-        $this->about_model->update(1,$data);
-        $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
-        redirect(site_url('about'));
+        // update
+        if ($id!=null || $id!='') { 
+            $data['updated_at'] = date("Y-m-d H:i:s");
+            $data['updated_by'] = $this->session->userdata('id');
+            $this->about_model->update($id,$data);
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('about'));
+        } else { // insert
+            $data['created_at'] = date("Y-m-d H:i:s");
+            $data['created_by'] = $this->session->userdata('id');
+            $this->about_model->insert($data);
+            $this->session->set_flashdata('flashSimpan','Data Berhasil disimpan', 'success');
+            redirect(site_url('about'));
+        }       
 
     }
 }

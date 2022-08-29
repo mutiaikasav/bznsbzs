@@ -8,7 +8,7 @@
             $.each(rows, function (i, item) {
                 document.querySelector(".publication-container").innerHTML += '<div class="col-lg-3 col-md-6 publication-item filter-category1">'+
               '<a href="<?= base_url(); ?>assets/upload/'+item['content_publication']+'" target="_blank">'+
-                '<img src="<?= base_url(); ?>assets/frontend/img/DSC05210.JPG" class="img-fluid" alt="">'+
+              '<iframe src="<?= base_url(); ?>assets/upload/'+item['content_publication']+'" width="100%" height="200px"></iframe>'+
                 '<center>'+
                   '<h4>'+item['title_publication']+'</h4>'+
                   '<button class="btn btn-warning">Download</button>'+

@@ -45,7 +45,7 @@
 	<meta name="content_PublishedDate" content="" />
 	<!-- S:fb meta -->
 	<meta property="og:type" content="article" />
-	<meta property="og:image" content="<?php base_url();?>assets/img/logo-dark-min.png" />
+	<meta property="og:image" content="<?php echo base_url();?>assets/img/logo-dark-min.png" />
 	<meta property="og:title" content="Home - Baznas Bazis DKI Jakarta" />
 	<meta property="og:description" content="Badan Amil Zakat Nasional Provinsi DKI Jakarta atau Baznas (Bazis) merupakan badan resmi yang dibentuk oleh pemerintah provinsi Jakarta yang memiliki tugas dan fungsi menghimpun dan menyalurkan zakat, infaq, dan sedekah (ZIS) di wilayah Jakarta.">
 	<meta property="og:url" content="https://baznasbazisdki.id/" />
@@ -63,8 +63,8 @@
 	<meta name="twitter:image" content="<?php base_url();?>assets/img/logo-dark-min.png" />
 	<!-- E:tweeter card -->
 
-    <link href="<?php base_url();?>assets/img/logo-dark-min.png" rel="icon">
-    <link href="<?php base_url();?>assets/img/logo-dark-min.png" rel="apple-touch-icon">
+    <link href="<?php echo base_url();?>assets/img/logo-dark-min.png" rel="icon">
+    <link href="<?php echo base_url();?>assets/img/logo-dark-min.png" rel="apple-touch-icon">
 
     <link rel="stylesheet" href="<?php base_url();?>/assets/frontend/css/style.css">
     <link rel="stylesheet" href="<?php base_url();?>/assets/frontend/css/bootstrap.min.css">

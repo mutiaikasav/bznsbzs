@@ -1,3 +1,43 @@
+<script>
+    window.addEventListener('load', function () {
+        $.ajax({
+            type:"GET",
+            url: "<?php echo base_url(); ?>api/contact",
+            dataType: 'json',
+            success: function(rows)
+            { 
+                $.each(rows, function (i, item) {
+                    document.querySelector('#bagian').innerHTML += '<option value="'+item['email']+'">'+item['name']+'</option>';
+                });
+            },
+            error:function()
+            {
+                alert("Error Connection");
+            }
+        });
+    });
+
+    function send_message() {
+        var name = document.querySelector('#name').value;
+        var subject = document.querySelector('#subject').value;
+        var bagian = document.querySelector('#bagian').value;
+        var message = document.querySelector('#message').value;
+        $.ajax({
+            type:"POST",
+            url: "<?php echo base_url(); ?>api/message",
+            data: {name:name, subject:subject, bagian:bagian, message:message},
+            success: function(rows)
+            { 
+                alert('Terima kasih sudah menghubungi kami. Pesan Anda sudah terkirim, silahkan tunggu balasan dari kami dan cek email Anda sekala berkala.');
+                location.reload();
+            },
+            error:function()
+            {
+                alert("Error Connection");
+            }
+        });
+    }
+</script>
 <div class="bg-nav"></div>
 <div class="content">
     <section class="intro-single">
@@ -13,7 +53,7 @@
                 <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                    <a href="index.html">Beranda</a>
+                    <a href="<?= base_url()?>">Beranda</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
                     Hubungi Kami
@@ -62,24 +102,27 @@
                 </div>
                 <div class="row mt-5 justify-content-center" data-aos="fade-up">
                     <div class="col-lg-10">
-                    <form action="" method="post" role="form" class="php-email-form">
                         <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama" required>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama" value="<?= ($this->session->userdata('logged_in_user') == TRUE)?$this->session->userdata('name_user'):''?>" required>
                         </div>
                         <div class="form-group mt-3">
                         <input type="text" class="form-control" name="subject" id="subject" placeholder="Subjek" required>
                         </div>
                         <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Pesan" required></textarea>
+                        <select class="form-select" name="bagian" id="bagian">
+                            <option disabled>Kategori/Bagian yang dituju</option>
+                        </select>
                         </div>
-                        <div class="my-3">
+                        <div class="form-group mt-3">
+                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Pesan" required></textarea>
+                        </div>
+                        <!-- <div class="my-3">
                         <div class="loading">Loading</div>
                         <div class="error-message"></div>
                         <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button type="submit">Kirim</button></div>
-                    </form>
+                        </div> -->
+                        <div class="form-group mt-3 text-center"><button type="button" class="btn btn-primary" onclick="send_message()">Kirim</button></div>
                     </div>
                 </div>
                 </div>

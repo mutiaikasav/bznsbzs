@@ -6,6 +6,14 @@ class Gallery_model extends CI_Model {
         return $query->result();
     }
 
+    public function get_limit($limit = 10)
+    {
+        $this->db->order_by("id_gallery", "desc");
+        $this->db->limit($limit);
+        $query = $this->db->get('gallery');
+        return $query->result();
+    }
+
     public function select($id)
     {
         $query = $this->db->get_where('gallery', array('id_gallery'=>$id));
