@@ -72,6 +72,7 @@
     
     <!-- Vendor CSS Files -->
     <link href="<?php base_url();?>/assets/frontend/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="<?php base_url();?>/assets/frontend/vendor/slick/slick.min.css" rel="stylesheet">
 
     <script src="<?php base_url(); ?>/assets/vendor/jquery/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php base_url();?>/assets/frontend/css/datatables.min.css"/>

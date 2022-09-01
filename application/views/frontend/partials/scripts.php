@@ -4,6 +4,8 @@
 
 <script type="text/javascript" src="<?php base_url();?>/assets/frontend/js/lozad.min.js"></script>
 <script type="text/javascript" src="<?php base_url();?>/assets/frontend/js/datatables.min.js"></script>
+<script src="<?php base_url();?>/assets/frontend/vendor/slick/slick.min.js"></script>
+
 <script>
     $(document).ready( function () {
         $('#table_donatur').DataTable();
