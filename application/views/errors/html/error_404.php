@@ -85,7 +85,7 @@
             <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang Kami</a>
                     <div class="dropdown-menu">
                         <a href="../../../../legalitas" class="dropdown-item">Legalitas</a>
                         <a href="../../visimisi" class="dropdown-item">Visi Misi</a>
@@ -104,6 +104,13 @@
                         <a href="../../program/jak-b-sehat" class="dropdown-item">Jak B Sehat</a>
                         <a href="../../program/jak-b-green" class="dropdown-item">Jak B Green</a>
                         <a href="../../program/jak-b-berdaya" class="dropdown-item">Jak B Berdaya</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang Zakat</a>
+                    <div class="dropdown-menu">
+                        <a href="../../../../zakat-fitrah" class="dropdown-item">Zakat Fitrah</a>
                     </div>
                 </li>
 
