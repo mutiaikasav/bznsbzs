@@ -36,7 +36,7 @@
         <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'legalitas' || $this->uri->segment(1) == 'visimisi' || $this->uri->segment(1) == 'struktur' || $this->uri->segment(1) == 'organisasi' || $this->uri->segment(1) == 'sejarah' || $this->uri->segment(1) == 'hubungi-kami' || $this->uri->segment(1) == 'kebijakan')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang</a>
+            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'legalitas' || $this->uri->segment(1) == 'visimisi' || $this->uri->segment(1) == 'struktur' || $this->uri->segment(1) == 'organisasi' || $this->uri->segment(1) == 'sejarah' || $this->uri->segment(1) == 'hubungi-kami' || $this->uri->segment(1) == 'kebijakan')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang Kami</a>
             <div class="dropdown-menu">
                 <a href="<?= base_url('legalitas'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'legalitas')?'active':''?>">Legalitas</a>
                 <a href="<?= base_url('visimisi'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'visimisi')?'active':''?>">Visi Misi</a>
@@ -47,15 +47,20 @@
                 <a href="<?= base_url('kebijakan'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'kebijakan')?'active':''?>">Kebijakan Privasi</a>
             </div>
             </li>
-
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'program')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Program</a>
-            <div class="dropdown-menu menu-program">
+                <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'program')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Program</a>
+                <div class="dropdown-menu menu-program">
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'zakat-fitrah')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tentang Zakat</a>
+            <div class="dropdown-menu">
+                <a href="<?= base_url('zakat-fitrah'); ?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'zakat-fitrah')?'active':''?>">Zakat Fitrah</a>
             </div>
             </li>
-
+                
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'kalkulator' || $this->uri->segment(1) == 'rekening' || $this->uri->segment(1) == 'konfirmasi' || $this->uri->segment(1) == 'bayarzis' || $this->uri->segment(1) == 'daftar-donatur')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Layanan Muzakki</a>
+            <a class="nav-link dropdown-toggle <?php echo ($this->uri->segment(1) == 'kalkulator' || $this->uri->segment(1) == 'rekening' || $this->uri->segment(1) == 'konfirmasi' || $this->uri->segment(1) == 'bayarzis' || $this->uri->segment(1) == 'daftar-donatur')?'active':''?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Layanan</a>
             <div class="dropdown-menu">
                 <a href="<?= base_url('kalkulator')?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'kalkulator')?'active':''?>">Kalkulator Zakat</a>
                 <a href="<?= base_url('rekening')?>" class="dropdown-item <?php echo ($this->uri->segment(1) == 'rekening')?'active':''?>">Rekening Zakat</a>
