@@ -5,6 +5,7 @@
 <script src="<?= base_url()?>assets/frontend/vendor/aos/aos.js"></script>
 <script src="<?= base_url()?>assets/frontend/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="<?= base_url()?>assets/frontend/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="<?= base_url()?>assets/frontend/js/gallery.js"></script>
 
 <script>
     var url = window.location.href;
