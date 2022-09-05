@@ -20,9 +20,9 @@
 	<meta http-equiv="content-language" content="In-Id" />
 	<meta name="geo.placename" content="Indonesia" />
 	<meta http-equiv="Copyright" content="Baznas Bazis DKI Jakarta" />
-	<meta name="thumbnailUrl" content="<?php base_url();?>assets/img/logo-dark-min.png" itemprop="thumbnailUrl" />
+	<meta name="thumbnailUrl" content="<?php echo base_url();?>assets/img/logo-dark-min.png" itemprop="thumbnailUrl" />
 	<meta content="https://baznasbazisdki.id/" itemprop="url" />	
-    <link rel="shortcut icon" href="<?php base_url();?>assets/img/logo-dark-min.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/logo-dark-min.png" type="image/x-icon">
 	<meta name="content_id" content="" />
 	<meta name="content_site" content="Baznas Bazis DKI Jakarta" />
 	<meta name="content_site_id" content="" />
@@ -60,7 +60,7 @@
 	<meta name="twitter:creator" content="@baznasbazis">
 	<meta name="twitter:title" content="" />
 	<meta name="twitter:description" content="Badan Amil Zakat Nasional Provinsi DKI Jakarta atau Baznas (Bazis) merupakan badan resmi yang dibentuk oleh pemerintah provinsi Jakarta yang memiliki tugas dan fungsi menghimpun dan menyalurkan zakat, infaq, dan sedekah (ZIS) di wilayah Jakarta." />
-	<meta name="twitter:image" content="<?php base_url();?>assets/img/logo-dark-min.png" />
+	<meta name="twitter:image" content="<?php echo base_url();?>assets/img/logo-dark-min.png" />
 	<!-- E:tweeter card -->
 
     <link href="<?php echo base_url();?>assets/img/logo-dark-min.png" rel="icon">
