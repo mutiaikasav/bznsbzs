@@ -237,6 +237,8 @@
                 window.location.href='dashboard';
             } else if (data.match(/tentang/g)||data.match(/about/g)) {
                 window.location.href='about';
+            } else if (data.match(/zakat/g)) {
+                window.location.href='zakat';
             } else if (data.match(/hubungi/g)||data.match(/contact/g)) {
                 window.location.href='contact';
             } else if (data.match(/banner/g)) {

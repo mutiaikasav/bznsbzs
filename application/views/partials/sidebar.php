@@ -44,6 +44,12 @@
             <span>Tentang Kami</span>
         </a>
     </li>
+    <li class="nav-item <?php echo ($this->uri->segment(1) == 'zakat')?'active':''?>" id="tentang-zakat">
+        <a class="nav-link" href="<?php base_url()?>/zakat">
+            <i class="fas fa-fw fa-info"></i>
+            <span>Tentang Zakat</span>
+        </a>
+    </li>
     <li class="nav-item <?php echo ($this->uri->segment(1) == 'contact')?'active':''?>" id="hubungi-kami">
         <a class="nav-link" href="<?php base_url()?>/contact">
             <i class="fas fa-fw fa-phone"></i>
