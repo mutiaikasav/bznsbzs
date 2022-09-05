@@ -5,11 +5,23 @@ class Frontend extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
+		$this->load->database();
+        $this->load->model('article_model');
+		$this->load->model('banner_model');
+        $this->load->model('comment_model');
+        $this->load->model('collaboration_model');
+        $this->load->model('gallery_model');
+        $this->load->model('headline_model');
+        $this->load->model('program_model');
+        $this->load->model('publication_model');
+        $this->load->model('report_model');
     }
 
 	public function index()
 	{
-		$data['content'] = $this->helper->loadView('frontend/home/index');
+		$program['data'] = $this->program_model->get();
+		$content['program'] = $this->helper->loadView('frontend/home/program', $program, TRUE);
+		$data['content'] = $this->helper->loadView('frontend/home/index', $content, TRUE);
         return $this->load->view('frontend/template', $data, TRUE);
 	}
 
