@@ -15,7 +15,7 @@
     <meta name="googlebot" content="index,follow" />
 
     <meta name="language" content="id" />
-	<meta name="generator" content="by PT. Prima Infosarana Media" />
+	<meta name="generator" content="by Baznas Bazis DKI Jakarta" />
 	<meta name="geo.country" content="id" />
 	<meta http-equiv="content-language" content="In-Id" />
 	<meta name="geo.placename" content="Indonesia" />
